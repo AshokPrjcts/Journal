@@ -212,12 +212,12 @@ During the preparation of this work the author used a generative AI assistant to
 
 [19] Z. Zhang, et al., MOQEA/D: multi-objective QEA with decomposition mechanism and excellent global search and its application, IEEE Trans. Intell. Transp. Syst. 25 (2024) 12456–12470. https://doi.org/10.1109/TITS.2024.3373510.
 
-[20] G. Acampora, A. Vitiello, Quantum-inspired evolutionary algorithms: a survey of recent advances and applications, IEEE Comput. Intell. Mag. 18 (2023) 36–50. https://doi.org/10.1109/MCI.2023.3304085. [bibliographic fields to verify]
+[20] A. Dey, S. Bhattacharyya, S. Dey, D. Konar, J. Platoš, V. Snášel, L. Mrsic, P. Pal, A review of quantum-inspired metaheuristic algorithms for automatic clustering, Mathematics 11 (2023) 2018. https://doi.org/10.3390/math11092018.
 
 [21] P.K. Gupta, et al., Portfolio optimization problem: a taxonomic review of solution methodologies, IEEE Access 11 (2023) 33100–33120. https://doi.org/10.1109/ACCESS.2023.3263198.
 
 [22] F. Glover, G. Kochenberger, Y. Du, Quantum bridge analytics I: a tutorial on formulating and using QUBO models, 4OR 17 (2019) 335–371. https://doi.org/10.1007/s10288-019-00424-y.
 
-[23] D. Schlör, et al., Explainable machine learning for intrusion detection, Comput. Secur. 128 (2023) 103160. https://doi.org/10.1016/j.cose.2023.103160. [bibliographic fields to verify]
+[23] M.S.A. Muthanna, et al., Leveraging explainable artificial intelligence in real-time cyberattack identification: intrusion detection system approach, Appl. Sci. 13 (2023) 8587. https://doi.org/10.3390/app13158587.
 
 [24] [Author Name], QAI-CIP: Quantum-Inspired AI for Cybersecurity Investment Prioritization [software], GitHub, 2026. https://github.com/AshokPrjcts/Journal/tree/main/qai-cyber-investment.

@@ -131,18 +131,19 @@ Section~\ref{sec:disc} discusses implications, limitations, and conclusions.
 \textbf{Security economics and investment.} Gordon and Loeb established the economic
 foundations of security investment~\cite{gordon2002}, followed by portfolio and
 game-theoretic treatments~\cite{grossklags2008,bier2007}. Knowledge-based and
-multi-criteria methods have since been applied to security evaluation and platform
-selection, including hesitant-fuzzy AHP--TOPSIS models~\cite{kumar2020} and fuzzy
-multi-criteria frameworks for cybersecurity platform selection~\cite{ighravwe2026}.
-These works largely assume additive utilities or rank alternatives independently, and do
-not provide an operational, learning-enabled tool for budgeted portfolio selection.
+multi-criteria methods have since been applied to security evaluation, including
+hesitant-fuzzy AHP--TOPSIS models for security--durability assessment~\cite{kumar2020},
+while machine-learning-based intrusion detection has been studied extensively for IoT
+networks~\cite{ighravwe2026}. These works largely assume additive utilities, rank
+alternatives independently, or target detection rather than budgeting, and do not
+provide an operational tool for budgeted portfolio selection.
 
 \textbf{Machine learning for security risk.} Data-driven models are now central to
 threat detection and risk estimation: recent surveys and empirical studies cover
 machine-learning-based IoT security~\cite{almars2025}, ensemble intrusion
-detection~\cite{gyamfi2024}, optimized anomaly detection with gradient-boosting
-classifiers~\cite{alsulami2024}, and systematic analyses of IoT cybersecurity
-risk~\cite{humayun2023}. We adopt a comparable data-driven predictor to estimate
+detection~\cite{gyamfi2024}, machine-learning-based anomaly detection in server
+logs~\cite{alsulami2024}, and unsupervised anomaly detection over streaming cybersecurity
+logs~\cite{humayun2023}. We adopt a comparable data-driven predictor to estimate
 per-control mitigation effectiveness, but embed it within an optimization pipeline rather
 than using it for detection alone.
 
@@ -164,9 +165,9 @@ subsequent surveys and advances in knapsack, feature-selection, and multi-object
 tasks~\cite{zhang2021,layeb2011,zhang2024,acampora2023}. Portfolio-style selection has a
 rich metaheuristic literature~\cite{gupta2023}, and the broader quantum-optimization
 toolkit---QUBO formulations~\cite{glover2019} and quantum-inspired search---offers
-principled ways to handle non-additive objectives. Explainable machine learning for
-intrusion detection further motivates transparent models in
-security~\cite{schlor2023}. We are, to our knowledge, the first to apply a QIEA to
+principled ways to handle non-additive objectives. Deep and federated anomaly-detection
+models for zero-day cyberattacks further motivate data-driven security
+analytics~\cite{schlor2023}. We are, to our knowledge, the first to apply a QIEA to
 synergy-aware cybersecurity investment prioritization, and to combine it with a learning
 and knowledge layer in a single framework.
 
@@ -466,9 +467,9 @@ optimization algorithms, Artif. Intell. Rev. 54 (2021) 1--45.
 fuzzy set, AHP and TOPSIS for evaluating security--durability of web applications, IEEE
 Access 8 (2020) 48870--48885. \url{https://doi.org/10.1109/ACCESS.2020.2978038}.
 
-\bibitem{ighravwe2026} D.E. Ighravwe, et al., A fuzzy multi-criteria decision framework
-for selecting cybersecurity platforms under strategic PESTEL factors, Appl. Sci. 16
-(2026) 6326. \url{https://doi.org/10.3390/app16136326}.
+\bibitem{ighravwe2026} E. Altulaihan, M.A. Almaiah, A. Aljughaiman, Anomaly detection IDS
+for detecting DoS attacks in IoT networks based on machine learning algorithms, Sensors
+24 (2024) 713. \url{https://doi.org/10.3390/s24020713}.
 
 \bibitem{almars2025} M. Almars, F. Alharbi, E. Atlam, I. Mahgoub, Machine learning-based
 security solutions for IoT networks: a comprehensive survey, Sensors 25 (2025) 3341.
@@ -478,13 +479,13 @@ security solutions for IoT networks: a comprehensive survey, Sensors 25 (2025) 3
 detection in the Internet of Medical Things, Sensors 24 (2024) 5937.
 \url{https://doi.org/10.3390/s24185937}.
 
-\bibitem{alsulami2024} A.A. Alsulami, et al., Optimizing anomaly detection through
-machine learning, Electronics 13 (2024) 2148.
-\url{https://doi.org/10.3390/electronics13112148}.
+\bibitem{alsulami2024} G. Folino, et al., Comprehensive analysis and evaluation of
+anomalous user activity in web server logs, Sensors 24 (2024) 746.
+\url{https://doi.org/10.3390/s24030746}.
 
-\bibitem{humayun2023} M. Humayun, et al., Cybersecurity risk analysis in the IoT: a
-systematic review, Electronics 12 (2023) 3958.
-\url{https://doi.org/10.3390/electronics12183958}.
+\bibitem{humayun2023} \'A. Michelena, et al., Design and evaluation of unsupervised
+machine learning models for anomaly detection in streaming cybersecurity logs,
+Mathematics 10 (2022) 4043. \url{https://doi.org/10.3390/math10214043}.
 
 \bibitem{zadeh1965} L.A. Zadeh, Fuzzy sets, Inf. Control 8 (1965) 338--353.
 \url{https://doi.org/10.1016/S0019-9958(65)90241-X}.
@@ -497,9 +498,9 @@ technique to evaluate security risks: a healthcare perspective, Mathematics 11 (
 assessment of information security risk of industrial Internet of Things, Symmetry 15
 (2023) 1958. \url{https://doi.org/10.3390/sym15101958}.
 
-\bibitem{chakraborty2024} P. Chakraborty, et al., Explainable artificial
-intelligence-based decision support systems: a recent review, Electronics 13 (2024)
-2842. \url{https://doi.org/10.3390/electronics13142842}.
+\bibitem{chakraborty2024} F. Ullah, et al., An intrusion detection system over the IoT
+data streams using eXplainable artificial intelligence (XAI), Sensors 25 (2025) 847.
+\url{https://doi.org/10.3390/s25030847}.
 
 \bibitem{teng2024} S. Teng, et al., A synthetic review on enterprise digital
 transformation: a bibliometric analysis, Sustainability 16 (2024) 1836.
@@ -522,9 +523,9 @@ review of solution methodologies, IEEE Access 11 (2023) 33100--33120.
 tutorial on formulating and using QUBO models, 4OR 17 (2019) 335--371.
 \url{https://doi.org/10.1007/s10288-019-00424-y}.
 
-\bibitem{schlor2023} M.S.A. Muthanna, et al., Leveraging explainable artificial
-intelligence in real-time cyberattack identification: intrusion detection system
-approach, Appl. Sci. 13 (2023) 8587. \url{https://doi.org/10.3390/app13158587}.
+\bibitem{schlor2023} A. Diaba, et al., Deep anomaly detection framework utilizing
+federated learning for electricity theft zero-day cyberattacks, Sensors 24 (2024) 3236.
+\url{https://doi.org/10.3390/s24103236}.
 
 \bibitem{qaip2026} Author Name, QAI-CIP: Quantum-Inspired AI for Cybersecurity Investment
 Prioritization [software], GitHub, 2026.
