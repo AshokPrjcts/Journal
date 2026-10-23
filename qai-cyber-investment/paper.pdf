@@ -66,7 +66,7 @@ BT /F1 10 Tf 1 0 0 1 56.0 70.5 Tm (systematically misallocates capital [3,4].) T
 endstream
 endobj
 6 0 obj
-<< /Length 6694 >>
+<< /Length 6789 >>
 stream
 BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm (A credible decision-support system for this problem must therefore satisfy three requirements) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 772.5 Tm (simultaneously: it must \(i\) estimate how effective each control is from data, \(ii\) incorporate) Tj ET
@@ -77,7 +77,7 @@ BT /F1 10 Tf 1 0 0 1 56.0 718.5 Tm (computational-intelligence optimization ? ye
 BT /F1 10 Tf 1 0 0 1 56.0 705.0 Tm (Security-economics models optimize additive utilities but do not learn effectiveness from data) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 691.5 Tm ([1,2,3]; knowledge-based risk tools reason over expert rules but do not optimize a budgeted) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 678.0 Tm (portfolio [4]; and quantum-inspired optimizers solve generic knapsack problems without any) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 664.5 Tm (domain learning or knowledge layer [5,6,7]. No existing method unifies learning, knowledge, and) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 664.5 Tm (domain learning or knowledge layer [5,6]. No existing method unifies learning, knowledge, and) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 651.0 Tm (interaction-aware optimization for cybersecurity investment, and none treats the allocation as) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 637.5 Tm (the non-additive problem it actually is. This is the gap we address.) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 621.0 Tm (We contribute a hybrid decision-intelligence framework that closes this gap. Its optimization) Tj ET
@@ -101,277 +101,280 @@ BT /F1 10 Tf 1 0 0 1 56.0 391.0 Tm (The remainder of the paper is organized as f
 BT /F1 10 Tf 1 0 0 1 56.0 377.5 Tm (formalizes the problem and the three-layer framework; Section 4 reports the experimental) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 364.0 Tm (evaluation; and Section 5 discusses implications, limitations, and conclusions.) Tj ET
 BT /F2 12.5 Tf 1 0 0 1 56.0 341.5 Tm (2. Related work) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 323.0 Tm (Security economics and investment. Gordon and Loeb established the economic foundations of) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 309.5 Tm (security investment [1], followed by portfolio and game-theoretic treatments [2,3].) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 296.0 Tm (Knowledge-based and multi-criteria methods have since been applied to security evaluation,) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 282.5 Tm (including hesitant-fuzzy AHP?TOPSIS models for security?durability assessment [8], while) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 269.0 Tm (machine-learning-based intrusion detection has been studied extensively for IoT networks [9].) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 255.5 Tm (These works largely assume additive utilities, rank alternatives independently, or target) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 242.0 Tm (detection rather than budgeting, and do not provide an operational tool for budgeted portfolio) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 228.5 Tm (selection.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 212.0 Tm (Machine learning for security risk. Data-driven models are now central to threat detection and) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 198.5 Tm (risk estimation: recent surveys and empirical studies cover machine-learning-based IoT security) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 185.0 Tm ([10], ensemble intrusion detection [11], machine-learning-based anomaly detection in server logs) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 171.5 Tm ([12], and unsupervised anomaly detection over streaming cybersecurity logs [13]. We adopt a) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 158.0 Tm (comparable data-driven predictor to estimate per-control mitigation effectiveness, but embed it) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 144.5 Tm (within an optimization pipeline rather than using it for detection alone.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 128.0 Tm (Knowledge-based and explainable decision support. Expert systems and fuzzy inference have long) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 114.5 Tm (supported risk assessment under uncertainty [4,14], and remain central to the scope of) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 101.0 Tm (knowledge-based systems; recent instances include fuzzy unified decision techniques for) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 87.5 Tm (healthcare security risk [15] and fuzzy-logic assessment for the industrial IoT [16].) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 74.0 Tm (Explainability is increasingly emphasized in AI-based decision support [17], and transparent,) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 323.0 Tm (Security economics and investment. Quantifying and prioritizing security weaknesses underpins) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 309.5 Tm (any investment decision; principled vulnerability-metric frameworks move beyond static severity) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 296.0 Tm (scores toward context-aware ranking [1], and empirical studies link cyber-attack exposure and) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 282.5 Tm (organizational capability to investment levels [3]. Combinatorial decision-support methods frame) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 269.0 Tm (project and resource selection as budget-constrained optimization [2]. Knowledge-based and) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 255.5 Tm (multi-criteria methods have also been applied to security evaluation, including hesitant-fuzzy) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 242.0 Tm (AHP?TOPSIS models for security?durability assessment [7], while machine-learning-based intrusion) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 228.5 Tm (detection has been studied extensively for IoT networks [8]. These works largely assume additive) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 215.0 Tm (utilities, rank alternatives independently, or target detection rather than budgeting, and do) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 201.5 Tm (not provide an operational tool for budgeted portfolio selection.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 185.0 Tm (Machine learning for security risk. Data-driven models are now central to threat detection and) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 171.5 Tm (risk estimation: recent surveys and empirical studies cover machine-learning-based IoT security) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 158.0 Tm ([9], ensemble intrusion detection [10], machine-learning-based anomaly detection in server logs) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 144.5 Tm ([11], and unsupervised anomaly detection over streaming cybersecurity logs [12]. We adopt a) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 131.0 Tm (comparable data-driven predictor to estimate per-control mitigation effectiveness, but embed it) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 117.5 Tm (within an optimization pipeline rather than using it for detection alone.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 101.0 Tm (Knowledge-based and explainable decision support. Expert systems and fuzzy inference have long) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 87.5 Tm (supported risk assessment under uncertainty [4,13], and remain central to the scope of) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 74.0 Tm (knowledge-based systems; recent instances include intuitionistic-fuzzy TOPSIS methods for) Tj ET
 endstream
 endobj
 7 0 obj
-<< /Length 6105 >>
+<< /Length 6121 >>
 stream
-BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm (auditable recommendations are a core requirement for security governance. We adopt fuzzy) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 772.5 Tm (amplification as the mechanism by which domain rules correct data-driven estimates, and our) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 759.0 Tm (layered decomposition makes each recommendation explainable. The broader motivation?securing the) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 745.5 Tm (digital transformation of enterprises?is well documented [18].) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 729.0 Tm (Quantum-inspired and combinatorial optimization. Han and Kim introduced quantum-inspired) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 715.5 Tm (evolutionary algorithms for combinatorial problems [5], with subsequent surveys and advances in) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 702.0 Tm (knapsack, feature-selection, and multi-objective tasks [6,7,19,20]. Portfolio-style selection) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 688.5 Tm (has a rich metaheuristic literature [21], and the broader quantum-optimization toolkit?QUBO) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 675.0 Tm (formulations [22] and quantum-inspired search?offers principled ways to handle non-additive) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 661.5 Tm (objectives. Deep and federated anomaly-detection models for zero-day cyberattacks further) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 648.0 Tm (motivate data-driven security analytics [23]. We are, to our knowledge, the first to apply a) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 634.5 Tm (QIEA to synergy-aware cybersecurity investment prioritization, and to combine it with a learning) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 621.0 Tm (and knowledge layer in a single framework.) Tj ET
-BT /F2 12.5 Tf 1 0 0 1 56.0 598.5 Tm (3. Problem formulation and framework) Tj ET
-BT /F2 11 Tf 1 0 0 1 56.0 577.0 Tm (3.1 Decision problem) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 563.0 Tm (Let C = {c1, ?, cn} be candidate controls. Control ci has cost ki, protected asset value ai,) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 549.5 Tm (annual breach probability pi, and an unknown mitigation effectiveness mi ? [0,1]. A decision) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 536.0 Tm (vector x ? {0,1}n selects controls subject to budget B. The expected annual loss reduction \(ELR\)) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 522.5 Tm (of a single control is) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 506.0 Tm (ELR\(ci\) = ai · pi · mi. \(1\)) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 492.0 Tm (Defence-in-depth means that funding a complementary pair \(i, j\) ? S yields an additional) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 478.5 Tm (super-additive bonus proportional to the smaller of the two partners' exposures, weighted by) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 465.0 Tm (wij. The portfolio objective is therefore quadratic:) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 448.5 Tm (V\(x\) = ?i xi · ELR\(ci\) + ?\(i,j\)?S wij · xi · xj · min\(Ei, Ej\), \(2\)) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 434.5 Tm (maximized subject to ?i ki xi ? B, where Ei = ai pi. Problem \(2\) is a quadratic knapsack ?) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 421.0 Tm (NP-hard and non-submodular ? so value-density greedy selection has no approximation guarantee,) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 407.5 Tm (motivating global search.) Tj ET
-BT /F2 11 Tf 1 0 0 1 56.0 388.0 Tm (3.2 Layer 1 ? Prediction) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 374.0 Tm (Mitigation effectiveness mi is estimated from a feature vector \(asset criticality, threat) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 360.5 Tm (velocity, exposure, maturity gap, data sensitivity\) using an L2-regularized logistic regressor) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 347.0 Tm (trained by gradient descent. The learned estimate m?i replaces the unknown mi in Eq. \(1\).) Tj ET
-BT /F2 11 Tf 1 0 0 1 56.0 327.5 Tm (3.3 Layer 2 ? Knowledge) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 313.5 Tm (Some value is invisible to a model of marginal features: crown-jewel assets that are) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 300.0 Tm (simultaneously under active, high-velocity threat realize an interaction premium. Three expert) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 286.5 Tm (rules \(regulatory exposure, active-threat urgency, maturity-gap opportunity\) are encoded as) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 273.0 Tm (trapezoidal fuzzy memberships and aggregated into a bounded multiplicative weight ?i ? [1.0,) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 259.5 Tm (1.6] that amplifies m?i, recovering the premium the predictor cannot observe.) Tj ET
-BT /F2 11 Tf 1 0 0 1 56.0 240.0 Tm (3.4 Layer 3 ? Quantum-inspired optimization) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 226.0 Tm (Each decision xi is represented by a qubit with phase angle ?i; a measurement collapses the) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 212.5 Tm (qubit to xi = 1 with probability sin²?i and to 0 otherwise. The population is initialized in) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 199.0 Tm (uniform superposition \(?i = ?/4, so sin²?i = 0.5\), giving unbiased exploration. In each) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 185.5 Tm (generation the algorithm \(i\) measures a population of P candidate portfolios, \(ii\) repairs any) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 172.0 Tm (budget violation by removing the lowest value-density funded controls, \(iii\) evaluates the full) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 158.5 Tm (quadratic objective V\(x\) in Eq. \(2\), and \(iv\) applies a rotation gate that nudges every qubit) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 145.0 Tm (toward the incumbent best solution by a fixed step ??, emulating quantum amplitude) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 131.5 Tm (amplification. After the generational loop, a 1-flip/swap local-search step refines the) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 118.0 Tm (collapsed state. Because the fitness in step \(iii\) is the full quadratic objective, the QIEA is) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 104.5 Tm (the only method in our comparison that can perceive and exploit control synergies. The procedure) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 91.0 Tm (is given in Algorithm 1; the parameter settings used throughout \(P = 24, G = 140 generations, ??) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 77.5 Tm (= 0.035 rad\) are fixed across all experiments.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm (multi-attribute decision-making [14], fuzzy unified decision techniques for healthcare security) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 772.5 Tm (risk [15], and fuzzy-logic assessment for the industrial IoT [16]. Explainability is) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 759.0 Tm (increasingly emphasized in AI-based decision support [17], and transparent, auditable) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 745.5 Tm (recommendations are a core requirement for security governance. We adopt fuzzy amplification as) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 732.0 Tm (the mechanism by which domain rules correct data-driven estimates, and our layered decomposition) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 718.5 Tm (makes each recommendation explainable. The broader motivation?securing the digital) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 705.0 Tm (transformation of enterprises?is well documented [18].) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 688.5 Tm (Quantum-inspired and combinatorial optimization. Han and Kim introduced quantum-inspired) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 675.0 Tm (evolutionary algorithms for combinatorial problems [5], with subsequent advances on the 0-1) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 661.5 Tm (knapsack problem [6] and in multi-objective and clustering tasks [19,20]. Portfolio-style) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 648.0 Tm (selection has a rich metaheuristic literature [21], and the broader quantum-optimization) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 634.5 Tm (toolkit?QUBO formulations [22] and quantum-inspired search?offers principled ways to handle) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 621.0 Tm (non-additive objectives. Deep and federated anomaly-detection models for zero-day cyberattacks) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 607.5 Tm (further motivate data-driven security analytics [23]. We are, to our knowledge, the first to) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 594.0 Tm (apply a QIEA to synergy-aware cybersecurity investment prioritization, and to combine it with a) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 580.5 Tm (learning and knowledge layer in a single framework.) Tj ET
+BT /F2 12.5 Tf 1 0 0 1 56.0 558.0 Tm (3. Problem formulation and framework) Tj ET
+BT /F2 11 Tf 1 0 0 1 56.0 536.5 Tm (3.1 Decision problem) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 522.5 Tm (Let C = {c1, ?, cn} be candidate controls. Control ci has cost ki, protected asset value ai,) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 509.0 Tm (annual breach probability pi, and an unknown mitigation effectiveness mi ? [0,1]. A decision) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 495.5 Tm (vector x ? {0,1}n selects controls subject to budget B. The expected annual loss reduction \(ELR\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 482.0 Tm (of a single control is) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 465.5 Tm (ELR\(ci\) = ai · pi · mi. \(1\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 451.5 Tm (Defence-in-depth means that funding a complementary pair \(i, j\) ? S yields an additional) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 438.0 Tm (super-additive bonus proportional to the smaller of the two partners' exposures, weighted by) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 424.5 Tm (wij. The portfolio objective is therefore quadratic:) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 408.0 Tm (V\(x\) = ?i xi · ELR\(ci\) + ?\(i,j\)?S wij · xi · xj · min\(Ei, Ej\), \(2\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 394.0 Tm (maximized subject to ?i ki xi ? B, where Ei = ai pi. Problem \(2\) is a quadratic knapsack ?) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 380.5 Tm (NP-hard and non-submodular ? so value-density greedy selection has no approximation guarantee,) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 367.0 Tm (motivating global search.) Tj ET
+BT /F2 11 Tf 1 0 0 1 56.0 347.5 Tm (3.2 Layer 1 ? Prediction) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 333.5 Tm (Mitigation effectiveness mi is estimated from a feature vector \(asset criticality, threat) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 320.0 Tm (velocity, exposure, maturity gap, data sensitivity\) using an L2-regularized logistic regressor) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 306.5 Tm (trained by gradient descent. The learned estimate m?i replaces the unknown mi in Eq. \(1\).) Tj ET
+BT /F2 11 Tf 1 0 0 1 56.0 287.0 Tm (3.3 Layer 2 ? Knowledge) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 273.0 Tm (Some value is invisible to a model of marginal features: crown-jewel assets that are) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 259.5 Tm (simultaneously under active, high-velocity threat realize an interaction premium. Three expert) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 246.0 Tm (rules \(regulatory exposure, active-threat urgency, maturity-gap opportunity\) are encoded as) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 232.5 Tm (trapezoidal fuzzy memberships and aggregated into a bounded multiplicative weight ?i ? [1.0,) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 219.0 Tm (1.6] that amplifies m?i, recovering the premium the predictor cannot observe.) Tj ET
+BT /F2 11 Tf 1 0 0 1 56.0 199.5 Tm (3.4 Layer 3 ? Quantum-inspired optimization) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 185.5 Tm (Each decision xi is represented by a qubit with phase angle ?i; a measurement collapses the) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 172.0 Tm (qubit to xi = 1 with probability sin²?i and to 0 otherwise. The population is initialized in) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 158.5 Tm (uniform superposition \(?i = ?/4, so sin²?i = 0.5\), giving unbiased exploration. In each) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 145.0 Tm (generation the algorithm \(i\) measures a population of P candidate portfolios, \(ii\) repairs any) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 131.5 Tm (budget violation by removing the lowest value-density funded controls, \(iii\) evaluates the full) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 118.0 Tm (quadratic objective V\(x\) in Eq. \(2\), and \(iv\) applies a rotation gate that nudges every qubit) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 104.5 Tm (toward the incumbent best solution by a fixed step ??, emulating quantum amplitude) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 91.0 Tm (amplification. After the generational loop, a 1-flip/swap local-search step refines the) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 77.5 Tm (collapsed state. Because the fitness in step \(iii\) is the full quadratic objective, the QIEA is) Tj ET
 endstream
 endobj
 8 0 obj
-<< /Length 6377 >>
+<< /Length 6332 >>
 stream
-BT /F1 8.5 Tf 1 0 0 1 70.0 786.0 Tm (Algorithm 1. Quantum-Inspired Evolutionary Algorithm \(QIEA\) for synergy-aware control selection.) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 775.0 Tm () Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 764.0 Tm (Input: controls with costs k, exposures E, linear values ELR; budget B; objective V\(·\); population P;) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 753.0 Tm (generations G; rotation step ??.) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 742.0 Tm (Output: best portfolio x\\.) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 731.0 Tm (1. Initialize qubit angles ?i ? ?/4 for all i; x\\ ? ?, V\\ ? 0.) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 720.0 Tm (2. for g = 1 ? G do) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 709.0 Tm (3. for p = 1 ? P do) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 698.0 Tm (4. measure: xi ? 1 with prob. sin²?i, else 0, for all i.) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 687.0 Tm (5. x ? Repair\(x, B\) ? drop lowest ELR/cost items until ?kixi ? B.) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 676.0 Tm (6. if V\(x\) > V\\ then x\\ ? x, V\\ ? V\(x\).) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 665.0 Tm (7. for each bit i do ? rotation-gate update toward incumbent.) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 654.0 Tm (8. if x\\i = 1 then ?i ? min\(?/2, ?i + ??\) else ?i ? max\(0, ?i ? ??\).) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 643.0 Tm (9. x\\ ? LocalSearch\(x\\, B\) ? 1-flip / swap hill-climbing on V.) Tj ET
-BT /F1 8.5 Tf 1 0 0 1 70.0 632.0 Tm (10. return x\\.) Tj ET
-BT /F2 11 Tf 1 0 0 1 56.0 615.0 Tm (3.5 Positioning and complexity) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 601.0 Tm (The quadratic objective in Eq. \(2\) is an instance of the quadratic knapsack problem, which is) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 587.5 Tm (NP-hard; exact solution is intractable for realistic portfolio sizes, motivating the) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 574.0 Tm (metaheuristic route taken by the broader portfolio-optimization literature [21]. Our choice of a) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 560.5 Tm (quantum-inspired evolutionary algorithm is deliberate: quantum-inspired metaheuristics retain a) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 547.0 Tm (compact probabilistic \(qubit\) state that balances exploration and exploitation without the) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 533.5 Tm (overhead of maintaining an explicit population of full solutions, and have repeatedly) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 520.0 Tm (outperformed classical evolutionary algorithms on combinatorial benchmarks [6,7,19,20]. The) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 506.5 Tm (objective can equivalently be expressed as a quadratic unconstrained binary optimization \(QUBO\)) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 493.0 Tm (model after a penalty reformulation of the budget constraint [22], which makes the framework) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 479.5 Tm (portable to quantum-annealing and gate-based hardware in future work while remaining fully) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 466.0 Tm (classical here. Each QIEA generation costs O\(P·\(n + |S|\)\) time ? linear in the number of) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 452.5 Tm (controls n and synergy pairs |S| ? so the method scales gracefully; the full 20-seed study) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 439.0 Tm (completes in roughly twenty seconds on a commodity CPU.) Tj ET
-BT /F2 12.5 Tf 1 0 0 1 56.0 416.5 Tm (4. Experiments) Tj ET
-BT /F2 11 Tf 1 0 0 1 56.0 395.0 Tm (4.1 Setup) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 381.0 Tm (We generate a reproducible portfolio of n = 120 controls with a known ground truth \(fixed seed\),) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 367.5 Tm (a budget B equal to 35% of full portfolio cost, and eight complementary synergy pairs; several) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 354.0 Tm (synergy partners are deliberately low value-density so that myopic methods skip them. The) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 340.5 Tm (prediction layer attains a mitigation mean-absolute-error of 0.062. We compare the QIEA against) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 327.0 Tm (four baselines: \(i\) random search \(3200 budget-feasible samples per run\); \(ii\) value-density) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 313.5 Tm (greedy selection; \(iii\) a classical genetic algorithm \(GA\) with population 24, 140 generations,) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 300.0 Tm (elitist selection \(top 20%\), single-point crossover, and 3% bit-flip mutation; and \(iv\) an exact) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 286.5 Tm (dynamic-programming optimizer of the linear surrogate \(synergy-blind\). For a controlled) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 273.0 Tm (comparison the GA and the QIEA use the same population size \(24\) and generation budget \(140\);) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 259.5 Tm (the QIEA additionally uses a rotation step ?? = 0.035 rad. All optimizers maximize the identical) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 246.0 Tm (quadratic objective of Eq. \(2\) and all results are means over twenty independent seeds. Figures) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 232.5 Tm (are generated directly from the experiment.) Tj ET
-BT /F2 11 Tf 1 0 0 1 56.0 213.0 Tm (4.2 Results) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 199.0 Tm (Table 1 reports the comparison. The QIEA achieves the smallest mean gap to the best solution) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 185.5 Tm (found \(0.06%\), ahead of the GA \(0.54%\), greedy value-density selection \(1.84%\), and the) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 172.0 Tm (synergy-blind linear optimizer \(2.58%\). Random search is not competitive \(26.83%\), confirming) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 158.5 Tm (that the search space is non-trivial. The Linear-DP result is the key finding: an exact) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 145.0 Tm (optimizer of the conventional additive objective is outperformed by every interaction-aware) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 131.5 Tm (heuristic, because its provably optimal additive solution leaves defence-in-depth value) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 118.0 Tm (unclaimed. This confirms that synergy modelling, not optimizer choice alone, governs allocation) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 104.5 Tm (quality. The QIEA also delivers the highest return on security investment \(144.2%\) and the) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 91.0 Tm (fullest budget utilization \(100.0%\). Although the QIEA and the GA share the same population and) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 77.5 Tm (generation budget, the QIEA's edge \(0.06% versus 0.54% gap\) arises from its probabilistic qubit) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm (the only method in our comparison that can perceive and exploit control synergies. The procedure) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 772.5 Tm (is given in Algorithm 1; the parameter settings used throughout \(P = 24, G = 140 generations, ??) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 759.0 Tm (= 0.035 rad\) are fixed across all experiments.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 742.5 Tm (Algorithm 1. Quantum-Inspired Evolutionary Algorithm \(QIEA\) for synergy-aware control selection.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 731.5 Tm () Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 720.5 Tm (Input: controls with costs k, exposures E, linear values ELR; budget B; objective V\(·\); population P;) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 709.5 Tm (generations G; rotation step ??.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 698.5 Tm (Output: best portfolio x\\.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 687.5 Tm (1. Initialize qubit angles ?i ? ?/4 for all i; x\\ ? ?, V\\ ? 0.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 676.5 Tm (2. for g = 1 ? G do) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 665.5 Tm (3. for p = 1 ? P do) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 654.5 Tm (4. measure: xi ? 1 with prob. sin²?i, else 0, for all i.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 643.5 Tm (5. x ? Repair\(x, B\) ? drop lowest ELR/cost items until ?kixi ? B.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 632.5 Tm (6. if V\(x\) > V\\ then x\\ ? x, V\\ ? V\(x\).) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 621.5 Tm (7. for each bit i do ? rotation-gate update toward incumbent.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 610.5 Tm (8. if x\\i = 1 then ?i ? min\(?/2, ?i + ??\) else ?i ? max\(0, ?i ? ??\).) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 599.5 Tm (9. x\\ ? LocalSearch\(x\\, B\) ? 1-flip / swap hill-climbing on V.) Tj ET
+BT /F1 8.5 Tf 1 0 0 1 70.0 588.5 Tm (10. return x\\.) Tj ET
+BT /F2 11 Tf 1 0 0 1 56.0 571.5 Tm (3.5 Positioning and complexity) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 557.5 Tm (The quadratic objective in Eq. \(2\) is an instance of the quadratic knapsack problem, which is) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 544.0 Tm (NP-hard; exact solution is intractable for realistic portfolio sizes, motivating the) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 530.5 Tm (metaheuristic route taken by the broader portfolio-optimization literature [21]. Our choice of a) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 517.0 Tm (quantum-inspired evolutionary algorithm is deliberate: quantum-inspired metaheuristics retain a) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 503.5 Tm (compact probabilistic \(qubit\) state that balances exploration and exploitation without the) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 490.0 Tm (overhead of maintaining an explicit population of full solutions, and have repeatedly) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 476.5 Tm (outperformed classical evolutionary algorithms on combinatorial benchmarks [6,14,19,20]. The) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 463.0 Tm (objective can equivalently be expressed as a quadratic unconstrained binary optimization \(QUBO\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 449.5 Tm (model after a penalty reformulation of the budget constraint [22], which makes the framework) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 436.0 Tm (portable to quantum-annealing and gate-based hardware in future work while remaining fully) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 422.5 Tm (classical here. Each QIEA generation costs O\(P·\(n + |S|\)\) time ? linear in the number of) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 409.0 Tm (controls n and synergy pairs |S| ? so the method scales gracefully; the full 20-seed study) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 395.5 Tm (completes in roughly twenty seconds on a commodity CPU.) Tj ET
+BT /F2 12.5 Tf 1 0 0 1 56.0 373.0 Tm (4. Experiments) Tj ET
+BT /F2 11 Tf 1 0 0 1 56.0 351.5 Tm (4.1 Setup) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 337.5 Tm (We generate a reproducible portfolio of n = 120 controls with a known ground truth \(fixed seed\),) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 324.0 Tm (a budget B equal to 35% of full portfolio cost, and eight complementary synergy pairs; several) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 310.5 Tm (synergy partners are deliberately low value-density so that myopic methods skip them. The) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 297.0 Tm (prediction layer attains a mitigation mean-absolute-error of 0.062. We compare the QIEA against) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 283.5 Tm (four baselines: \(i\) random search \(3200 budget-feasible samples per run\); \(ii\) value-density) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 270.0 Tm (greedy selection; \(iii\) a classical genetic algorithm \(GA\) with population 24, 140 generations,) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 256.5 Tm (elitist selection \(top 20%\), single-point crossover, and 3% bit-flip mutation; and \(iv\) an exact) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 243.0 Tm (dynamic-programming optimizer of the linear surrogate \(synergy-blind\). For a controlled) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 229.5 Tm (comparison the GA and the QIEA use the same population size \(24\) and generation budget \(140\);) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 216.0 Tm (the QIEA additionally uses a rotation step ?? = 0.035 rad. All optimizers maximize the identical) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 202.5 Tm (quadratic objective of Eq. \(2\) and all results are means over twenty independent seeds. Figures) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 189.0 Tm (are generated directly from the experiment.) Tj ET
+BT /F2 11 Tf 1 0 0 1 56.0 169.5 Tm (4.2 Results) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 155.5 Tm (Table 1 reports the comparison. The QIEA achieves the smallest mean gap to the best solution) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 142.0 Tm (found \(0.06%\), ahead of the GA \(0.54%\), greedy value-density selection \(1.84%\), and the) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 128.5 Tm (synergy-blind linear optimizer \(2.58%\). Random search is not competitive \(26.83%\), confirming) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 115.0 Tm (that the search space is non-trivial. The Linear-DP result is the key finding: an exact) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 101.5 Tm (optimizer of the conventional additive objective is outperformed by every interaction-aware) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 88.0 Tm (heuristic, because its provably optimal additive solution leaves defence-in-depth value) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 74.5 Tm (unclaimed. This confirms that synergy modelling, not optimizer choice alone, governs allocation) Tj ET
 endstream
 endobj
 9 0 obj
-<< /Length 9048 >>
+<< /Length 9466 >>
 stream
-BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm (representation: rather than recombining fixed bit-strings, it maintains a per-control) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 772.5 Tm (probability amplitude that the rotation gate steers toward promising regions, which ? combined) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 759.0 Tm (with the final local-search refinement ? yields more reliable exploitation of the sparse synergy) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 745.5 Tm (pairs. As shown in Fig. 1, the QIEA converges rapidly and stabilizes above the classical GA) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 732.0 Tm (trajectory and both synergy-blind reference lines within roughly 60 generations.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 715.5 Tm (Table 1. Method comparison on the synergy-aware objective, reported as means ± standard) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 702.0 Tm (deviation over 20 independent random seeds. All optimizers maximize the same quadratic objective) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 688.5 Tm (V\(x\) of Eq. \(2\) under an identical 35%-of-portfolio budget. "Gap to best" is the relative) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 675.0 Tm (shortfall against the best solution found by any method on each seed \(lower is better\); "True) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 661.5 Tm (risk reduction" uses ground-truth mitigation; "ROI" is \(true risk reduction ? spend\)/spend.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 648.0 Tm (Currency figures are in thousands of monetary units. Best values in each column are shown in) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 634.5 Tm (bold.) Tj ET
-56 596.0 483.0 24.0 re 0.95 0.95 0.95 rg f 0 0 0 rg
-BT /F2 8 Tf 1 0 0 1 59.0 610.0 Tm (Method) Tj ET
-BT /F2 8 Tf 1 0 0 1 119.4 610.0 Tm (Controls) Tj ET
-BT /F2 8 Tf 1 0 0 1 119.4 600.0 Tm (funded) Tj ET
-BT /F2 8 Tf 1 0 0 1 179.8 610.0 Tm (Budget util.) Tj ET
-BT /F2 8 Tf 1 0 0 1 240.1 610.0 Tm (Objective) Tj ET
-BT /F2 8 Tf 1 0 0 1 240.1 600.0 Tm (value) Tj ET
-BT /F2 8 Tf 1 0 0 1 300.5 610.0 Tm (True risk) Tj ET
-BT /F2 8 Tf 1 0 0 1 300.5 600.0 Tm (reduction) Tj ET
-BT /F2 8 Tf 1 0 0 1 360.9 610.0 Tm (ROI) Tj ET
-BT /F2 8 Tf 1 0 0 1 421.2 610.0 Tm (Gap to best) Tj ET
-BT /F2 8 Tf 1 0 0 1 421.2 600.0 Tm (\(%\)) Tj ET
-BT /F2 8 Tf 1 0 0 1 481.6 610.0 Tm (Runtime \(ms\)) Tj ET
-56 596.0 m 539 596.0 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
-BT /F1 8 Tf 1 0 0 1 59.0 588.0 Tm (Random Search) Tj ET
-BT /F1 8 Tf 1 0 0 1 119.4 588.0 Tm (43) Tj ET
-BT /F1 8 Tf 1 0 0 1 179.8 588.0 Tm (99.3%) Tj ET
-BT /F1 8 Tf 1 0 0 1 240.1 588.0 Tm (6669.1) Tj ET
-BT /F1 8 Tf 1 0 0 1 300.5 588.0 Tm (6524.4) Tj ET
-BT /F1 8 Tf 1 0 0 1 360.9 588.0 Tm (79.4%) Tj ET
-BT /F1 8 Tf 1 0 0 1 421.2 588.0 Tm (26.828 ±) Tj ET
-BT /F1 8 Tf 1 0 0 1 421.2 578.0 Tm (1.445) Tj ET
-BT /F1 8 Tf 1 0 0 1 481.6 588.0 Tm (281.7) Tj ET
-56 574.0 m 539 574.0 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
-BT /F1 8 Tf 1 0 0 1 59.0 566.0 Tm (Greedy) Tj ET
-BT /F1 8 Tf 1 0 0 1 59.0 556.0 Tm (\(value-density\)) Tj ET
-BT /F1 8 Tf 1 0 0 1 119.4 566.0 Tm (47) Tj ET
-BT /F1 8 Tf 1 0 0 1 179.8 566.0 Tm (99.8%) Tj ET
-BT /F1 8 Tf 1 0 0 1 240.1 566.0 Tm (8946.0) Tj ET
-BT /F1 8 Tf 1 0 0 1 300.5 566.0 Tm (8776.2) Tj ET
-BT /F1 8 Tf 1 0 0 1 360.9 566.0 Tm (140.0%) Tj ET
-BT /F1 8 Tf 1 0 0 1 421.2 566.0 Tm (1.845 ± 0.204) Tj ET
-BT /F1 8 Tf 1 0 0 1 481.6 566.0 Tm (0.0) Tj ET
-56 552.0 m 539 552.0 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
-BT /F1 8 Tf 1 0 0 1 59.0 544.0 Tm (Classical GA) Tj ET
-BT /F1 8 Tf 1 0 0 1 119.4 544.0 Tm (46) Tj ET
-BT /F1 8 Tf 1 0 0 1 179.8 544.0 Tm (99.8%) Tj ET
-BT /F1 8 Tf 1 0 0 1 240.1 544.0 Tm (9065.1) Tj ET
-BT /F1 8 Tf 1 0 0 1 300.5 544.0 Tm (8893.2) Tj ET
-BT /F1 8 Tf 1 0 0 1 360.9 544.0 Tm (143.2%) Tj ET
-BT /F1 8 Tf 1 0 0 1 421.2 544.0 Tm (0.538 ± 0.377) Tj ET
-BT /F1 8 Tf 1 0 0 1 481.6 544.0 Tm (136.2) Tj ET
-56 540.0 m 539 540.0 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
-BT /F1 8 Tf 1 0 0 1 59.0 532.0 Tm (QIEA \(ours\)) Tj ET
-BT /F1 8 Tf 1 0 0 1 119.4 532.0 Tm (46) Tj ET
-BT /F1 8 Tf 1 0 0 1 179.8 532.0 Tm (100.0%) Tj ET
-BT /F1 8 Tf 1 0 0 1 240.1 532.0 Tm (9109.1) Tj ET
-BT /F1 8 Tf 1 0 0 1 300.5 532.0 Tm (8943.1) Tj ET
-BT /F1 8 Tf 1 0 0 1 360.9 532.0 Tm (144.2%) Tj ET
-BT /F1 8 Tf 1 0 0 1 421.2 532.0 Tm (0.056 ± 0.142) Tj ET
-BT /F1 8 Tf 1 0 0 1 481.6 532.0 Tm (251.5) Tj ET
-56 528.0 m 539 528.0 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
-BT /F1 8 Tf 1 0 0 1 59.0 520.0 Tm (Linear-DP) Tj ET
-BT /F1 8 Tf 1 0 0 1 59.0 510.0 Tm (\(synergy-blind\)) Tj ET
-BT /F1 8 Tf 1 0 0 1 119.4 520.0 Tm (47) Tj ET
-BT /F1 8 Tf 1 0 0 1 179.8 520.0 Tm (100.0%) Tj ET
-BT /F1 8 Tf 1 0 0 1 240.1 520.0 Tm (8879.4) Tj ET
-BT /F1 8 Tf 1 0 0 1 300.5 520.0 Tm (8707.7) Tj ET
-BT /F1 8 Tf 1 0 0 1 360.9 520.0 Tm (137.7%) Tj ET
-BT /F1 8 Tf 1 0 0 1 421.2 520.0 Tm (2.575 ± 0.202) Tj ET
-BT /F1 8 Tf 1 0 0 1 481.6 520.0 Tm (29.5) Tj ET
-56 506.0 m 539 506.0 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
-BT /F1 10 Tf 1 0 0 1 56.0 500.0 Tm (Table 2 isolates each layer's contribution through a controlled ablation in which components are) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 486.5 Tm (enabled cumulatively. Starting from an optimization-only baseline, adding the prediction layer) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 473.0 Tm (lifts realized annual risk reduction by 2.6%; adding the knowledge layer adds a further 1.1) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 459.5 Tm (percentage points \(to 3.7%\); and adding the synergy-aware objective adds a further 3.8 points,) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 446.0 Tm (for a total improvement of 7.5% and a rise in return on security investment from 128.5% to) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 432.5 Tm (145.3%. The monotonic improvement across all four configurations demonstrates that every layer) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 419.0 Tm (is justified and that the largest single contribution comes from modelling synergies. Consistent) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 405.5 Tm (with this, Fig. 2 shows the QIEA dominating the budget?risk-reduction efficiency frontier at) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 392.0 Tm (every budget level from 10% to 50% of full portfolio cost, with the margin over the greedy and) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 378.5 Tm (random baselines widening as the budget ? and therefore the number of exploitable synergy pairs) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 365.0 Tm (? grows.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 348.5 Tm (Table 2. Layer-wise ablation of the hybrid framework, with components enabled cumulatively) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 335.0 Tm (\(single representative seed, seed offset +99\). "Lift vs. base" is the relative change in) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 321.5 Tm (realized annual risk reduction against the optimization-only configuration. ELR utility is the) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 308.0 Tm (knowledge-adjusted expected loss reduction; true risk reduction uses ground-truth mitigation.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 294.5 Tm (Currency figures are in thousands of monetary units.) Tj ET
-56 256.0 483.0 24.0 re 0.95 0.95 0.95 rg f 0 0 0 rg
-BT /F2 8 Tf 1 0 0 1 59.0 270.0 Tm (Framework) Tj ET
-BT /F2 8 Tf 1 0 0 1 59.0 260.0 Tm (configuration) Tj ET
-BT /F2 8 Tf 1 0 0 1 139.5 270.0 Tm (Controls funded) Tj ET
-BT /F2 8 Tf 1 0 0 1 220.0 270.0 Tm (ELR utility) Tj ET
-BT /F2 8 Tf 1 0 0 1 300.5 270.0 Tm (True risk) Tj ET
-BT /F2 8 Tf 1 0 0 1 300.5 260.0 Tm (reduction) Tj ET
-BT /F2 8 Tf 1 0 0 1 381.0 270.0 Tm (ROI) Tj ET
-BT /F2 8 Tf 1 0 0 1 461.5 270.0 Tm (Lift vs. base) Tj ET
-56 256.0 m 539 256.0 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
-BT /F1 8 Tf 1 0 0 1 59.0 248.0 Tm (QIEA only \(no) Tj ET
-BT /F1 8 Tf 1 0 0 1 59.0 238.0 Tm (learning /) Tj ET
-BT /F1 8 Tf 1 0 0 1 59.0 228.0 Tm (knowledge /) Tj ET
-BT /F1 8 Tf 1 0 0 1 59.0 218.0 Tm (synergy\)) Tj ET
-BT /F1 8 Tf 1 0 0 1 139.5 248.0 Tm (47) Tj ET
-BT /F1 8 Tf 1 0 0 1 220.0 248.0 Tm (8057.7) Tj ET
-BT /F1 8 Tf 1 0 0 1 300.5 248.0 Tm (8358.3) Tj ET
-BT /F1 8 Tf 1 0 0 1 381.0 248.0 Tm (128.5%) Tj ET
-BT /F1 8 Tf 1 0 0 1 461.5 248.0 Tm (+0.0%) Tj ET
-56 214.0 m 539 214.0 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
-BT /F1 8 Tf 1 0 0 1 59.0 206.0 Tm (+ Prediction layer) Tj ET
-BT /F1 8 Tf 1 0 0 1 139.5 206.0 Tm (46) Tj ET
-BT /F1 8 Tf 1 0 0 1 220.0 206.0 Tm (8291.4) Tj ET
-BT /F1 8 Tf 1 0 0 1 300.5 206.0 Tm (8578.5) Tj ET
-BT /F1 8 Tf 1 0 0 1 381.0 206.0 Tm (134.2%) Tj ET
-BT /F1 8 Tf 1 0 0 1 461.5 206.0 Tm (+2.6%) Tj ET
-56 202.0 m 539 202.0 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
-BT /F1 8 Tf 1 0 0 1 59.0 194.0 Tm (+ Knowledge layer) Tj ET
-BT /F1 8 Tf 1 0 0 1 139.5 194.0 Tm (47) Tj ET
-BT /F1 8 Tf 1 0 0 1 220.0 194.0 Tm (8828.4) Tj ET
-BT /F1 8 Tf 1 0 0 1 300.5 194.0 Tm (8668.5) Tj ET
-BT /F1 8 Tf 1 0 0 1 381.0 194.0 Tm (137.2%) Tj ET
-BT /F1 8 Tf 1 0 0 1 461.5 194.0 Tm (+3.7%) Tj ET
-56 190.0 m 539 190.0 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
-BT /F1 8 Tf 1 0 0 1 59.0 182.0 Tm (+ Synergy layer) Tj ET
-BT /F1 8 Tf 1 0 0 1 59.0 172.0 Tm (\(full framework\)) Tj ET
-BT /F1 8 Tf 1 0 0 1 139.5 182.0 Tm (47) Tj ET
-BT /F1 8 Tf 1 0 0 1 220.0 182.0 Tm (9137.4) Tj ET
-BT /F1 8 Tf 1 0 0 1 300.5 182.0 Tm (8983.3) Tj ET
-BT /F1 8 Tf 1 0 0 1 381.0 182.0 Tm (145.3%) Tj ET
-BT /F1 8 Tf 1 0 0 1 461.5 182.0 Tm (+7.5%) Tj ET
-56 168.0 m 539 168.0 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
-BT /F1 10 Tf 1 0 0 1 56.0 162.0 Tm (Figure captions) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm (quality. The QIEA also delivers the highest return on security investment \(144.2%\) and the) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 772.5 Tm (fullest budget utilization \(100.0%\). Although the QIEA and the GA share the same population and) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 759.0 Tm (generation budget, the QIEA's edge \(0.06% versus 0.54% gap\) arises from its probabilistic qubit) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 745.5 Tm (representation: rather than recombining fixed bit-strings, it maintains a per-control) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 732.0 Tm (probability amplitude that the rotation gate steers toward promising regions, which ? combined) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 718.5 Tm (with the final local-search refinement ? yields more reliable exploitation of the sparse synergy) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 705.0 Tm (pairs. As shown in Fig. 1, the QIEA converges rapidly and stabilizes above the classical GA) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 691.5 Tm (trajectory and both synergy-blind reference lines within roughly 60 generations.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 675.0 Tm (Table 1. Method comparison on the synergy-aware objective, reported as means ± standard) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 661.5 Tm (deviation over 20 independent random seeds. All optimizers maximize the same quadratic objective) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 648.0 Tm (V\(x\) of Eq. \(2\) under an identical 35%-of-portfolio budget. "Gap to best" is the relative) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 634.5 Tm (shortfall against the best solution found by any method on each seed \(lower is better\); "True) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 621.0 Tm (risk reduction" uses ground-truth mitigation; "ROI" is \(true risk reduction ? spend\)/spend.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 607.5 Tm (Currency figures are in thousands of monetary units. Best values in each column are shown in) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 594.0 Tm (bold.) Tj ET
+56 555.5 483.0 24.0 re 0.95 0.95 0.95 rg f 0 0 0 rg
+BT /F2 8 Tf 1 0 0 1 59.0 569.5 Tm (Method) Tj ET
+BT /F2 8 Tf 1 0 0 1 119.4 569.5 Tm (Controls) Tj ET
+BT /F2 8 Tf 1 0 0 1 119.4 559.5 Tm (funded) Tj ET
+BT /F2 8 Tf 1 0 0 1 179.8 569.5 Tm (Budget util.) Tj ET
+BT /F2 8 Tf 1 0 0 1 240.1 569.5 Tm (Objective) Tj ET
+BT /F2 8 Tf 1 0 0 1 240.1 559.5 Tm (value) Tj ET
+BT /F2 8 Tf 1 0 0 1 300.5 569.5 Tm (True risk) Tj ET
+BT /F2 8 Tf 1 0 0 1 300.5 559.5 Tm (reduction) Tj ET
+BT /F2 8 Tf 1 0 0 1 360.9 569.5 Tm (ROI) Tj ET
+BT /F2 8 Tf 1 0 0 1 421.2 569.5 Tm (Gap to best) Tj ET
+BT /F2 8 Tf 1 0 0 1 421.2 559.5 Tm (\(%\)) Tj ET
+BT /F2 8 Tf 1 0 0 1 481.6 569.5 Tm (Runtime \(ms\)) Tj ET
+56 555.5 m 539 555.5 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
+BT /F1 8 Tf 1 0 0 1 59.0 547.5 Tm (Random Search) Tj ET
+BT /F1 8 Tf 1 0 0 1 119.4 547.5 Tm (43) Tj ET
+BT /F1 8 Tf 1 0 0 1 179.8 547.5 Tm (99.3%) Tj ET
+BT /F1 8 Tf 1 0 0 1 240.1 547.5 Tm (6669.1) Tj ET
+BT /F1 8 Tf 1 0 0 1 300.5 547.5 Tm (6524.4) Tj ET
+BT /F1 8 Tf 1 0 0 1 360.9 547.5 Tm (79.4%) Tj ET
+BT /F1 8 Tf 1 0 0 1 421.2 547.5 Tm (26.828 ±) Tj ET
+BT /F1 8 Tf 1 0 0 1 421.2 537.5 Tm (1.445) Tj ET
+BT /F1 8 Tf 1 0 0 1 481.6 547.5 Tm (281.7) Tj ET
+56 533.5 m 539 533.5 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
+BT /F1 8 Tf 1 0 0 1 59.0 525.5 Tm (Greedy) Tj ET
+BT /F1 8 Tf 1 0 0 1 59.0 515.5 Tm (\(value-density\)) Tj ET
+BT /F1 8 Tf 1 0 0 1 119.4 525.5 Tm (47) Tj ET
+BT /F1 8 Tf 1 0 0 1 179.8 525.5 Tm (99.8%) Tj ET
+BT /F1 8 Tf 1 0 0 1 240.1 525.5 Tm (8946.0) Tj ET
+BT /F1 8 Tf 1 0 0 1 300.5 525.5 Tm (8776.2) Tj ET
+BT /F1 8 Tf 1 0 0 1 360.9 525.5 Tm (140.0%) Tj ET
+BT /F1 8 Tf 1 0 0 1 421.2 525.5 Tm (1.845 ± 0.204) Tj ET
+BT /F1 8 Tf 1 0 0 1 481.6 525.5 Tm (0.0) Tj ET
+56 511.5 m 539 511.5 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
+BT /F1 8 Tf 1 0 0 1 59.0 503.5 Tm (Classical GA) Tj ET
+BT /F1 8 Tf 1 0 0 1 119.4 503.5 Tm (46) Tj ET
+BT /F1 8 Tf 1 0 0 1 179.8 503.5 Tm (99.8%) Tj ET
+BT /F1 8 Tf 1 0 0 1 240.1 503.5 Tm (9065.1) Tj ET
+BT /F1 8 Tf 1 0 0 1 300.5 503.5 Tm (8893.2) Tj ET
+BT /F1 8 Tf 1 0 0 1 360.9 503.5 Tm (143.2%) Tj ET
+BT /F1 8 Tf 1 0 0 1 421.2 503.5 Tm (0.538 ± 0.377) Tj ET
+BT /F1 8 Tf 1 0 0 1 481.6 503.5 Tm (136.2) Tj ET
+56 499.5 m 539 499.5 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
+BT /F1 8 Tf 1 0 0 1 59.0 491.5 Tm (QIEA \(ours\)) Tj ET
+BT /F1 8 Tf 1 0 0 1 119.4 491.5 Tm (46) Tj ET
+BT /F1 8 Tf 1 0 0 1 179.8 491.5 Tm (100.0%) Tj ET
+BT /F1 8 Tf 1 0 0 1 240.1 491.5 Tm (9109.1) Tj ET
+BT /F1 8 Tf 1 0 0 1 300.5 491.5 Tm (8943.1) Tj ET
+BT /F1 8 Tf 1 0 0 1 360.9 491.5 Tm (144.2%) Tj ET
+BT /F1 8 Tf 1 0 0 1 421.2 491.5 Tm (0.056 ± 0.142) Tj ET
+BT /F1 8 Tf 1 0 0 1 481.6 491.5 Tm (251.5) Tj ET
+56 487.5 m 539 487.5 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
+BT /F1 8 Tf 1 0 0 1 59.0 479.5 Tm (Linear-DP) Tj ET
+BT /F1 8 Tf 1 0 0 1 59.0 469.5 Tm (\(synergy-blind\)) Tj ET
+BT /F1 8 Tf 1 0 0 1 119.4 479.5 Tm (47) Tj ET
+BT /F1 8 Tf 1 0 0 1 179.8 479.5 Tm (100.0%) Tj ET
+BT /F1 8 Tf 1 0 0 1 240.1 479.5 Tm (8879.4) Tj ET
+BT /F1 8 Tf 1 0 0 1 300.5 479.5 Tm (8707.7) Tj ET
+BT /F1 8 Tf 1 0 0 1 360.9 479.5 Tm (137.7%) Tj ET
+BT /F1 8 Tf 1 0 0 1 421.2 479.5 Tm (2.575 ± 0.202) Tj ET
+BT /F1 8 Tf 1 0 0 1 481.6 479.5 Tm (29.5) Tj ET
+56 465.5 m 539 465.5 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
+BT /F1 10 Tf 1 0 0 1 56.0 459.5 Tm (Table 2 isolates each layer's contribution through a controlled ablation in which components are) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 446.0 Tm (enabled cumulatively. Starting from an optimization-only baseline, adding the prediction layer) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 432.5 Tm (lifts realized annual risk reduction by 2.6%; adding the knowledge layer adds a further 1.1) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 419.0 Tm (percentage points \(to 3.7%\); and adding the synergy-aware objective adds a further 3.8 points,) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 405.5 Tm (for a total improvement of 7.5% and a rise in return on security investment from 128.5% to) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 392.0 Tm (145.3%. The monotonic improvement across all four configurations demonstrates that every layer) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 378.5 Tm (is justified and that the largest single contribution comes from modelling synergies. Consistent) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 365.0 Tm (with this, Fig. 2 shows the QIEA dominating the budget?risk-reduction efficiency frontier at) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 351.5 Tm (every budget level from 10% to 50% of full portfolio cost, with the margin over the greedy and) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 338.0 Tm (random baselines widening as the budget ? and therefore the number of exploitable synergy pairs) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 324.5 Tm (? grows.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 308.0 Tm (Table 2. Layer-wise ablation of the hybrid framework, with components enabled cumulatively) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 294.5 Tm (\(single representative seed, seed offset +99\). "Lift vs. base" is the relative change in) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 281.0 Tm (realized annual risk reduction against the optimization-only configuration. ELR utility is the) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 267.5 Tm (knowledge-adjusted expected loss reduction; true risk reduction uses ground-truth mitigation.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 254.0 Tm (Currency figures are in thousands of monetary units.) Tj ET
+56 215.5 483.0 24.0 re 0.95 0.95 0.95 rg f 0 0 0 rg
+BT /F2 8 Tf 1 0 0 1 59.0 229.5 Tm (Framework) Tj ET
+BT /F2 8 Tf 1 0 0 1 59.0 219.5 Tm (configuration) Tj ET
+BT /F2 8 Tf 1 0 0 1 139.5 229.5 Tm (Controls funded) Tj ET
+BT /F2 8 Tf 1 0 0 1 220.0 229.5 Tm (ELR utility) Tj ET
+BT /F2 8 Tf 1 0 0 1 300.5 229.5 Tm (True risk) Tj ET
+BT /F2 8 Tf 1 0 0 1 300.5 219.5 Tm (reduction) Tj ET
+BT /F2 8 Tf 1 0 0 1 381.0 229.5 Tm (ROI) Tj ET
+BT /F2 8 Tf 1 0 0 1 461.5 229.5 Tm (Lift vs. base) Tj ET
+56 215.5 m 539 215.5 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
+BT /F1 8 Tf 1 0 0 1 59.0 207.5 Tm (QIEA only \(no) Tj ET
+BT /F1 8 Tf 1 0 0 1 59.0 197.5 Tm (learning /) Tj ET
+BT /F1 8 Tf 1 0 0 1 59.0 187.5 Tm (knowledge /) Tj ET
+BT /F1 8 Tf 1 0 0 1 59.0 177.5 Tm (synergy\)) Tj ET
+BT /F1 8 Tf 1 0 0 1 139.5 207.5 Tm (47) Tj ET
+BT /F1 8 Tf 1 0 0 1 220.0 207.5 Tm (8057.7) Tj ET
+BT /F1 8 Tf 1 0 0 1 300.5 207.5 Tm (8358.3) Tj ET
+BT /F1 8 Tf 1 0 0 1 381.0 207.5 Tm (128.5%) Tj ET
+BT /F1 8 Tf 1 0 0 1 461.5 207.5 Tm (+0.0%) Tj ET
+56 173.5 m 539 173.5 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
+BT /F1 8 Tf 1 0 0 1 59.0 165.5 Tm (+ Prediction layer) Tj ET
+BT /F1 8 Tf 1 0 0 1 139.5 165.5 Tm (46) Tj ET
+BT /F1 8 Tf 1 0 0 1 220.0 165.5 Tm (8291.4) Tj ET
+BT /F1 8 Tf 1 0 0 1 300.5 165.5 Tm (8578.5) Tj ET
+BT /F1 8 Tf 1 0 0 1 381.0 165.5 Tm (134.2%) Tj ET
+BT /F1 8 Tf 1 0 0 1 461.5 165.5 Tm (+2.6%) Tj ET
+56 161.5 m 539 161.5 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
+BT /F1 8 Tf 1 0 0 1 59.0 153.5 Tm (+ Knowledge layer) Tj ET
+BT /F1 8 Tf 1 0 0 1 139.5 153.5 Tm (47) Tj ET
+BT /F1 8 Tf 1 0 0 1 220.0 153.5 Tm (8828.4) Tj ET
+BT /F1 8 Tf 1 0 0 1 300.5 153.5 Tm (8668.5) Tj ET
+BT /F1 8 Tf 1 0 0 1 381.0 153.5 Tm (137.2%) Tj ET
+BT /F1 8 Tf 1 0 0 1 461.5 153.5 Tm (+3.7%) Tj ET
+56 149.5 m 539 149.5 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
+BT /F1 8 Tf 1 0 0 1 59.0 141.5 Tm (+ Synergy layer) Tj ET
+BT /F1 8 Tf 1 0 0 1 59.0 131.5 Tm (\(full framework\)) Tj ET
+BT /F1 8 Tf 1 0 0 1 139.5 141.5 Tm (47) Tj ET
+BT /F1 8 Tf 1 0 0 1 220.0 141.5 Tm (9137.4) Tj ET
+BT /F1 8 Tf 1 0 0 1 300.5 141.5 Tm (8983.3) Tj ET
+BT /F1 8 Tf 1 0 0 1 381.0 141.5 Tm (145.3%) Tj ET
+BT /F1 8 Tf 1 0 0 1 461.5 141.5 Tm (+7.5%) Tj ET
+56 127.5 m 539 127.5 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
+BT /F1 10 Tf 1 0 0 1 56.0 121.5 Tm (Figure captions) Tj ET
 endstream
 endobj
 10 0 obj
@@ -443,7 +446,7 @@ BT /F2 12.5 Tf 1 0 0 1 56.0 78.5 Tm (Declaration of competing interests) Tj ET
 endstream
 endobj
 12 0 obj
-<< /Length 5206 >>
+<< /Length 5181 >>
 stream
 BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm (The author declares no competing interests.) Tj ET
 BT /F2 12.5 Tf 1 0 0 1 56.0 763.5 Tm (Funding) Tj ET
@@ -463,71 +466,72 @@ BT /F1 10 Tf 1 0 0 1 56.0 538.0 Tm (structure the manuscript and the accompanyin
 BT /F1 10 Tf 1 0 0 1 56.0 524.5 Tm (author reviewed and edited the content as needed and takes full responsibility for the content) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 511.0 Tm (of the published article.) Tj ET
 BT /F2 12.5 Tf 1 0 0 1 56.0 488.5 Tm (References) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 470.0 Tm ([1] L.A. Gordon, M.P. Loeb, The economics of information security investment, ACM Trans. Inf.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 456.5 Tm (Syst. Secur. 5 \(2002\) 438?457. https://doi.org/10.1145/581271.581274.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 440.0 Tm ([2] J. Grossklags, N. Christin, J. Chuang, Secure or insure? A game-theoretic analysis of) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 426.5 Tm (information security games, in: Proc. 17th Int. Conf. World Wide Web, ACM, 2008, pp. 209?218.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 413.0 Tm (https://doi.org/10.1145/1367497.1367526.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 396.5 Tm ([3] V.M. Bier, S. Oliveros, L. Samuelson, Choosing what to protect: strategic defensive) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 383.0 Tm (allocation against an unknown attacker, J. Public Econ. Theory 9 \(2007\) 563?587.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 369.5 Tm (https://doi.org/10.1111/j.1467-9779.2007.00320.x.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 470.0 Tm ([1] M. Albanese, I. Iganibo, O. Adebiyi, A framework for designing vulnerability metrics,) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 456.5 Tm (Comput. Secur. 132 \(2023\) 103382. https://doi.org/10.1016/j.cose.2023.103382.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 440.0 Tm ([2] A. Marcelli, et al., Solving transport infrastructure investment project selection and) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 426.5 Tm (scheduling using genetic algorithms, Mathematics 12 \(2024\) 3056.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 413.0 Tm (https://doi.org/10.3390/math12193056.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 396.5 Tm ([3] J. Jeong, A. Mbakwe, et al., Cybersecurity capabilities and cyber-attacks as drivers of) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 383.0 Tm (investment in cybersecurity systems: a UK survey for 2018 and 2019, Comput. Secur. 124 \(2023\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 369.5 Tm (102954. https://doi.org/10.1016/j.cose.2022.102954.) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 353.0 Tm ([4] A. Mohammadi, M. Pavlidis, H. Mouratidis, A knowledge-based approach for information) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 339.5 Tm (security risk assessment, Knowl.-Based Syst. 210 \(2020\) 106448.) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 326.0 Tm (https://doi.org/10.1016/j.knosys.2020.106448.) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 309.5 Tm ([5] K.-H. Han, J.-H. Kim, Quantum-inspired evolutionary algorithm for a class of combinatorial) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 296.0 Tm (optimization, IEEE Trans. Evol. Comput. 6 \(2002\) 580?593.) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 282.5 Tm (https://doi.org/10.1109/TEVC.2002.804320.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 266.0 Tm ([6] Y. Zhang, S. Wang, G. Ji, A comprehensive survey on quantum-inspired optimization) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 252.5 Tm (algorithms, Artif. Intell. Rev. 54 \(2021\) 1?45. https://doi.org/10.1007/s10462-020-09922-6.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 236.0 Tm ([7] A. Layeb, A novel quantum-inspired cuckoo search algorithm for the 0-1 knapsack problem,) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 222.5 Tm (Int. J. Bio-Inspired Comput. 3 \(2011\) 297?305. https://doi.org/10.1504/IJBIC.2011.042260.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 206.0 Tm ([8] R. Kumar, et al., A knowledge-based integrated system of hesitant fuzzy set, AHP and TOPSIS) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 192.5 Tm (for evaluating security?durability of web applications, IEEE Access 8 \(2020\) 48870?48885.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 179.0 Tm (https://doi.org/10.1109/ACCESS.2020.2978038.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 162.5 Tm ([9] E. Altulaihan, M.A. Almaiah, A. Aljughaiman, Anomaly detection IDS for detecting DoS attacks) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 149.0 Tm (in IoT networks based on machine learning algorithms, Sensors 24 \(2024\) 713.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 135.5 Tm (https://doi.org/10.3390/s24020713.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 119.0 Tm ([10] M. Almars, F. Alharbi, E. Atlam, I. Mahgoub, Machine learning-based security solutions for) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 105.5 Tm (IoT networks: a comprehensive survey, Sensors 25 \(2025\) 3341. https://doi.org/10.3390/s25113341.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 89.0 Tm ([11] E. Gyamfi, et al., Evaluating ensemble learning models for intrusion detection in the) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 75.5 Tm (Internet of Medical Things, Sensors 24 \(2024\) 5937. https://doi.org/10.3390/s24185937.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 266.0 Tm ([6] Y. Wang, et al., Quantum-inspired differential evolution with grey wolf optimizer for 0-1) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 252.5 Tm (knapsack problem, Mathematics 9 \(2021\) 1233. https://doi.org/10.3390/math9111233.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 236.0 Tm ([7] R. Kumar, et al., A knowledge-based integrated system of hesitant fuzzy set, AHP and TOPSIS) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 222.5 Tm (for evaluating security?durability of web applications, IEEE Access 8 \(2020\) 48870?48885.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 209.0 Tm (https://doi.org/10.1109/ACCESS.2020.2978038.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 192.5 Tm ([8] E. Altulaihan, M.A. Almaiah, A. Aljughaiman, Anomaly detection IDS for detecting DoS attacks) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 179.0 Tm (in IoT networks based on machine learning algorithms, Sensors 24 \(2024\) 713.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 165.5 Tm (https://doi.org/10.3390/s24020713.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 149.0 Tm ([9] M. Almars, F. Alharbi, E. Atlam, I. Mahgoub, Machine learning-based security solutions for) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 135.5 Tm (IoT networks: a comprehensive survey, Sensors 25 \(2025\) 3341. https://doi.org/10.3390/s25113341.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 119.0 Tm ([10] E. Gyamfi, et al., Evaluating ensemble learning models for intrusion detection in the) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 105.5 Tm (Internet of Medical Things, Sensors 24 \(2024\) 5937. https://doi.org/10.3390/s24185937.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 89.0 Tm ([11] G. Folino, et al., Comprehensive analysis and evaluation of anomalous user activity in web) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 75.5 Tm (server logs, Sensors 24 \(2024\) 746. https://doi.org/10.3390/s24030746.) Tj ET
 endstream
 endobj
 13 0 obj
-<< /Length 3851 >>
+<< /Length 3951 >>
 stream
-BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm ([12] G. Folino, et al., Comprehensive analysis and evaluation of anomalous user activity in web) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 772.5 Tm (server logs, Sensors 24 \(2024\) 746. https://doi.org/10.3390/s24030746.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 756.0 Tm ([13] Á. Michelena, et al., Design and evaluation of unsupervised machine learning models for) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 742.5 Tm (anomaly detection in streaming cybersecurity logs, Mathematics 10 \(2022\) 4043.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 729.0 Tm (https://doi.org/10.3390/math10214043.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 712.5 Tm ([14] L.A. Zadeh, Fuzzy sets, Inf. Control 8 \(1965\) 338?353.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 699.0 Tm (https://doi.org/10.1016/S0019-9958\(65\)90241-X.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 682.5 Tm ([15] M.T.J. Ansari, et al., A fuzzy-based unified decision-making technique to evaluate security) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 669.0 Tm (risks: a healthcare perspective, Mathematics 11 \(2023\) 2554.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 655.5 Tm (https://doi.org/10.3390/math11112554.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 639.0 Tm ([16] V. Bolgova, et al., Fuzzy logic and its application in the assessment of information) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 625.5 Tm (security risk of industrial Internet of Things, Symmetry 15 \(2023\) 1958.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 612.0 Tm (https://doi.org/10.3390/sym15101958.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 595.5 Tm ([17] F. Ullah, et al., An intrusion detection system over the IoT data streams using eXplainable) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 582.0 Tm (artificial intelligence \(XAI\), Sensors 25 \(2025\) 847. https://doi.org/10.3390/s25030847.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 565.5 Tm ([18] S. Teng, et al., A synthetic review on enterprise digital transformation: a bibliometric) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 552.0 Tm (analysis, Sustainability 16 \(2024\) 1836. https://doi.org/10.3390/su16051836.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 535.5 Tm ([19] Z. Zhang, et al., MOQEA/D: multi-objective QEA with decomposition mechanism and excellent) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 522.0 Tm (global search and its application, IEEE Trans. Intell. Transp. Syst. 25 \(2024\) 12456?12470.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 508.5 Tm (https://doi.org/10.1109/TITS.2024.3373510.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 492.0 Tm ([20] A. Dey, S. Bhattacharyya, S. Dey, D. Konar, J. Plato?, V. Sná?el, L. Mrsic, P. Pal, A) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 478.5 Tm (review of quantum-inspired metaheuristic algorithms for automatic clustering, Mathematics 11) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 465.0 Tm (\(2023\) 2018. https://doi.org/10.3390/math11092018.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 448.5 Tm ([21] P.K. Gupta, et al., Portfolio optimization problem: a taxonomic review of solution) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 435.0 Tm (methodologies, IEEE Access 11 \(2023\) 33100?33120. https://doi.org/10.1109/ACCESS.2023.3263198.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 418.5 Tm ([22] F. Glover, G. Kochenberger, Y. Du, Quantum bridge analytics I: a tutorial on formulating) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 405.0 Tm (and using QUBO models, 4OR 17 \(2019\) 335?371. https://doi.org/10.1007/s10288-019-00424-y.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 388.5 Tm ([23] A. Diaba, et al., Deep anomaly detection framework utilizing federated learning for) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 375.0 Tm (electricity theft zero-day cyberattacks, Sensors 24 \(2024\) 3236.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 361.5 Tm (https://doi.org/10.3390/s24103236.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 345.0 Tm ([24] [Author Name], QAI-CIP: Quantum-Inspired AI for Cybersecurity Investment Prioritization) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 331.5 Tm ([software], GitHub, 2026. https://github.com/AshokPrjcts/Journal/tree/main/qai-cyber-investment.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm ([12] Á. Michelena, et al., Design and evaluation of unsupervised machine learning models for) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 772.5 Tm (anomaly detection in streaming cybersecurity logs, Mathematics 10 \(2022\) 4043.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 759.0 Tm (https://doi.org/10.3390/math10214043.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 742.5 Tm ([13] L.A. Zadeh, Fuzzy sets, Inf. Control 8 \(1965\) 338?353.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 729.0 Tm (https://doi.org/10.1016/S0019-9958\(65\)90241-X.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 712.5 Tm ([14] C. Çal?, et al., Intuitionistic fuzzy sets with ordered pairs and their usage in) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 699.0 Tm (multi-attribute decision making: a novel intuitionistic fuzzy TOPSIS method, Mathematics 11) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 685.5 Tm (\(2023\) 3867. https://doi.org/10.3390/math11183867.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 669.0 Tm ([15] M.T.J. Ansari, et al., A fuzzy-based unified decision-making technique to evaluate security) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 655.5 Tm (risks: a healthcare perspective, Mathematics 11 \(2023\) 2554.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 642.0 Tm (https://doi.org/10.3390/math11112554.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 625.5 Tm ([16] V. Bolgova, et al., Fuzzy logic and its application in the assessment of information) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 612.0 Tm (security risk of industrial Internet of Things, Symmetry 15 \(2023\) 1958.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 598.5 Tm (https://doi.org/10.3390/sym15101958.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 582.0 Tm ([17] F. Ullah, et al., An intrusion detection system over the IoT data streams using eXplainable) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 568.5 Tm (artificial intelligence \(XAI\), Sensors 25 \(2025\) 847. https://doi.org/10.3390/s25030847.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 552.0 Tm ([18] S. Teng, et al., A synthetic review on enterprise digital transformation: a bibliometric) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 538.5 Tm (analysis, Sustainability 16 \(2024\) 1836. https://doi.org/10.3390/su16051836.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 522.0 Tm ([19] Z. Zhang, et al., MOQEA/D: multi-objective QEA with decomposition mechanism and excellent) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 508.5 Tm (global search and its application, IEEE Trans. Intell. Transp. Syst. 25 \(2024\) 12456?12470.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 495.0 Tm (https://doi.org/10.1109/TITS.2024.3373510.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 478.5 Tm ([20] A. Dey, S. Bhattacharyya, S. Dey, D. Konar, J. Plato?, V. Sná?el, L. Mrsic, P. Pal, A) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 465.0 Tm (review of quantum-inspired metaheuristic algorithms for automatic clustering, Mathematics 11) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 451.5 Tm (\(2023\) 2018. https://doi.org/10.3390/math11092018.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 435.0 Tm ([21] P.K. Gupta, et al., Portfolio optimization problem: a taxonomic review of solution) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 421.5 Tm (methodologies, IEEE Access 11 \(2023\) 33100?33120. https://doi.org/10.1109/ACCESS.2023.3263198.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 405.0 Tm ([22] M. Nakano, et al., Multi-objective optimization technique based on QUBO and an Ising) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 391.5 Tm (machine, IEEE Access 12 \(2024\) 10357?10370. https://doi.org/10.1109/ACCESS.2024.3353194.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 375.0 Tm ([23] A. Diaba, et al., Deep anomaly detection framework utilizing federated learning for) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 361.5 Tm (electricity theft zero-day cyberattacks, Sensors 24 \(2024\) 3236.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 348.0 Tm (https://doi.org/10.3390/s24103236.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 331.5 Tm ([24] [Author Name], QAI-CIP: Quantum-Inspired AI for Cybersecurity Investment Prioritization) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 318.0 Tm ([software], GitHub, 2026. https://github.com/AshokPrjcts/Journal/tree/main/qai-cyber-investment.) Tj ET
 endstream
 endobj
 23 0 obj
@@ -616,27 +620,27 @@ xref
 0000000248 00000 n 
 0000000323 00000 n 
 0000006056 00000 n 
-0000012802 00000 n 
-0000018959 00000 n 
-0000025388 00000 n 
-0000034488 00000 n 
-0000035384 00000 n 
-0000041760 00000 n 
-0000047019 00000 n 
-0000084254 00000 n 
-0000084430 00000 n 
-0000084606 00000 n 
-0000084782 00000 n 
-0000084958 00000 n 
-0000085134 00000 n 
-0000085311 00000 n 
-0000085488 00000 n 
-0000085665 00000 n 
-0000050923 00000 n 
-0000066387 00000 n 
+0000012897 00000 n 
+0000019070 00000 n 
+0000025454 00000 n 
+0000034972 00000 n 
+0000035868 00000 n 
+0000042244 00000 n 
+0000047478 00000 n 
+0000084813 00000 n 
+0000084989 00000 n 
+0000085165 00000 n 
+0000085341 00000 n 
+0000085517 00000 n 
+0000085693 00000 n 
+0000085870 00000 n 
+0000086047 00000 n 
+0000086224 00000 n 
+0000051482 00000 n 
+0000066946 00000 n 
 0000000000 00000 n 
 trailer
 << /Size 26 /Root 1 0 R >>
 startxref
-85842
+86401
 %%EOF

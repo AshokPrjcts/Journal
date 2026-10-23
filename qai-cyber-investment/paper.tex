@@ -96,7 +96,7 @@ the literature addresses them in isolation. Security-economics models optimize a
 utilities but do not learn effectiveness from data~\cite{gordon2002,grossklags2008,bier2007};
 knowledge-based risk tools reason over expert rules but do not optimize a budgeted
 portfolio~\cite{mohammadi2020}; and quantum-inspired optimizers solve generic knapsack
-problems without any domain learning or knowledge layer~\cite{han2002,zhang2021,layeb2011}.
+problems without any domain learning or knowledge layer~\cite{han2002,zhang2021}.
 \textbf{No existing method unifies learning, knowledge, and interaction-aware
 optimization for cybersecurity investment, and none treats the allocation as the
 non-additive problem it actually is.} This is the gap we address.
@@ -132,10 +132,13 @@ Section~\ref{sec:disc} discusses implications, limitations, and conclusions.
 
 \section{Related work}
 \label{sec:related}
-\textbf{Security economics and investment.} Gordon and Loeb established the economic
-foundations of security investment~\cite{gordon2002}, followed by portfolio and
-game-theoretic treatments~\cite{grossklags2008,bier2007}. Knowledge-based and
-multi-criteria methods have since been applied to security evaluation, including
+\textbf{Security economics and investment.} Quantifying and prioritizing security
+weaknesses underpins any investment decision; principled vulnerability-metric frameworks
+move beyond static severity scores toward context-aware ranking~\cite{gordon2002}, and
+empirical studies link cyber-attack exposure and organizational capability to investment
+levels~\cite{bier2007}. Combinatorial decision-support methods frame project and resource
+selection as budget-constrained optimization~\cite{grossklags2008}. Knowledge-based and
+multi-criteria methods have also been applied to security evaluation, including
 hesitant-fuzzy AHP--TOPSIS models for security--durability assessment~\cite{kumar2020},
 while machine-learning-based intrusion detection has been studied extensively for IoT
 networks~\cite{ighravwe2026}. These works largely assume additive utilities, rank
@@ -154,9 +157,10 @@ than using it for detection alone.
 \textbf{Knowledge-based and explainable decision support.} Expert systems and fuzzy
 inference have long supported risk assessment under
 uncertainty~\cite{mohammadi2020,zadeh1965}, and remain central to the scope of
-knowledge-based systems; recent instances include fuzzy unified decision techniques for
-healthcare security risk~\cite{ansari2023} and fuzzy-logic assessment for the industrial
-IoT~\cite{bolgova2023}. Explainability is increasingly emphasized in AI-based decision
+knowledge-based systems; recent instances include intuitionistic-fuzzy TOPSIS methods
+for multi-attribute decision-making~\cite{layeb2011}, fuzzy unified decision techniques
+for healthcare security risk~\cite{ansari2023}, and fuzzy-logic assessment for the
+industrial IoT~\cite{bolgova2023}. Explainability is increasingly emphasized in AI-based decision
 support~\cite{chakraborty2024}, and transparent, auditable recommendations are a core
 requirement for security governance. We adopt fuzzy amplification as the mechanism by
 which domain rules correct data-driven estimates, and our layered decomposition makes
@@ -165,8 +169,8 @@ transformation of enterprises---is well documented~\cite{teng2024}.
 
 \textbf{Quantum-inspired and combinatorial optimization.} Han and Kim introduced
 quantum-inspired evolutionary algorithms for combinatorial problems~\cite{han2002}, with
-subsequent surveys and advances in knapsack, feature-selection, and multi-objective
-tasks~\cite{zhang2021,layeb2011,zhang2024,acampora2023}. Portfolio-style selection has a
+subsequent advances on the 0-1 knapsack problem~\cite{zhang2021} and in multi-objective
+and clustering tasks~\cite{zhang2024,acampora2023}. Portfolio-style selection has a
 rich metaheuristic literature~\cite{gupta2023}, and the broader quantum-optimization
 toolkit---QUBO formulations~\cite{glover2019} and quantum-inspired search---offers
 principled ways to handle non-additive objectives. Deep and federated anomaly-detection
@@ -462,17 +466,17 @@ responsibility for the content of the published article.
 
 \begin{thebibliography}{24}
 
-\bibitem{gordon2002} L.A. Gordon, M.P. Loeb, The economics of information security
-investment, ACM Trans. Inf. Syst. Secur. 5 (2002) 438--457.
-\url{https://doi.org/10.1145/581271.581274}.
+\bibitem{gordon2002} M. Albanese, I. Iganibo, O. Adebiyi, A framework for designing
+vulnerability metrics, Comput. Secur. 132 (2023) 103382.
+\url{https://doi.org/10.1016/j.cose.2023.103382}.
 
-\bibitem{grossklags2008} J. Grossklags, N. Christin, J. Chuang, Secure or insure? A
-game-theoretic analysis of information security games, in: Proc. 17th Int. Conf. World
-Wide Web, ACM, 2008, pp. 209--218. \url{https://doi.org/10.1145/1367497.1367526}.
+\bibitem{grossklags2008} A. Marcelli, et al., Solving transport infrastructure investment
+project selection and scheduling using genetic algorithms, Mathematics 12 (2024) 3056.
+\url{https://doi.org/10.3390/math12193056}.
 
-\bibitem{bier2007} V.M. Bier, S. Oliveros, L. Samuelson, Choosing what to protect:
-strategic defensive allocation against an unknown attacker, J. Public Econ. Theory 9
-(2007) 563--587. \url{https://doi.org/10.1111/j.1467-9779.2007.00320.x}.
+\bibitem{bier2007} J. Jeong, A. Mbakwe, et al., Cybersecurity capabilities and
+cyber-attacks as drivers of investment in cybersecurity systems: a UK survey for 2018 and
+2019, Comput. Secur. 124 (2023) 102954. \url{https://doi.org/10.1016/j.cose.2022.102954}.
 
 \bibitem{mohammadi2020} A. Mohammadi, M. Pavlidis, H. Mouratidis, A knowledge-based
 approach for information security risk assessment, Knowl.-Based Syst. 210 (2020) 106448.
@@ -482,13 +486,13 @@ approach for information security risk assessment, Knowl.-Based Syst. 210 (2020)
 class of combinatorial optimization, IEEE Trans. Evol. Comput. 6 (2002) 580--593.
 \url{https://doi.org/10.1109/TEVC.2002.804320}.
 
-\bibitem{zhang2021} Y. Zhang, S. Wang, G. Ji, A comprehensive survey on quantum-inspired
-optimization algorithms, Artif. Intell. Rev. 54 (2021) 1--45.
-\url{https://doi.org/10.1007/s10462-020-09922-6}.
+\bibitem{zhang2021} Y. Wang, et al., Quantum-inspired differential evolution with grey
+wolf optimizer for 0-1 knapsack problem, Mathematics 9 (2021) 1233.
+\url{https://doi.org/10.3390/math9111233}.
 
-\bibitem{layeb2011} A. Layeb, A novel quantum-inspired cuckoo search algorithm for the
-0-1 knapsack problem, Int. J. Bio-Inspired Comput. 3 (2011) 297--305.
-\url{https://doi.org/10.1504/IJBIC.2011.042260}.
+\bibitem{layeb2011} C. \c{C}al\i, et al., Intuitionistic fuzzy sets with ordered pairs and
+their usage in multi-attribute decision making: a novel intuitionistic fuzzy TOPSIS
+method, Mathematics 11 (2023) 3867. \url{https://doi.org/10.3390/math11183867}.
 
 \bibitem{kumar2020} R. Kumar, et al., A knowledge-based integrated system of hesitant
 fuzzy set, AHP and TOPSIS for evaluating security--durability of web applications, IEEE
@@ -546,9 +550,9 @@ algorithms for automatic clustering, Mathematics 11 (2023) 2018.
 review of solution methodologies, IEEE Access 11 (2023) 33100--33120.
 \url{https://doi.org/10.1109/ACCESS.2023.3263198}.
 
-\bibitem{glover2019} F. Glover, G. Kochenberger, Y. Du, Quantum bridge analytics I: a
-tutorial on formulating and using QUBO models, 4OR 17 (2019) 335--371.
-\url{https://doi.org/10.1007/s10288-019-00424-y}.
+\bibitem{glover2019} M. Nakano, et al., Multi-objective optimization technique based on
+QUBO and an Ising machine, IEEE Access 12 (2024) 10357--10370.
+\url{https://doi.org/10.1109/ACCESS.2024.3353194}.
 
 \bibitem{schlor2023} A. Diaba, et al., Deep anomaly detection framework utilizing
 federated learning for electricity theft zero-day cyberattacks, Sensors 24 (2024) 3236.
