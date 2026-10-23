@@ -46,13 +46,13 @@ The remainder of the paper is organized as follows. Section 2 reviews related wo
 
 ## 2. Related work
 
-**Security economics and investment.** Gordon and Loeb established the economic foundations of security investment [1], followed by portfolio and game-theoretic treatments [2,3]. Knowledge-based and multi-criteria methods have since been applied to security evaluation and platform selection, including hesitant-fuzzy AHP–TOPSIS models [8] and fuzzy multi-criteria frameworks for cybersecurity platform selection [9]. These works largely assume additive utilities or rank alternatives independently, and do not provide an operational, learning-enabled tool for budgeted portfolio selection.
+**Security economics and investment.** Gordon and Loeb established the economic foundations of security investment [1], followed by portfolio and game-theoretic treatments [2,3]. Knowledge-based and multi-criteria methods have since been applied to security evaluation, including hesitant-fuzzy AHP–TOPSIS models for security–durability assessment [8], while machine-learning-based intrusion detection has been studied extensively for IoT networks [9]. These works largely assume additive utilities, rank alternatives independently, or target detection rather than budgeting, and do not provide an operational tool for budgeted portfolio selection.
 
-**Machine learning for security risk.** Data-driven models are now central to threat detection and risk estimation: recent surveys and empirical studies cover machine-learning-based IoT security [10], ensemble intrusion detection [11], optimized anomaly detection with gradient-boosting classifiers [12], and systematic analyses of IoT cybersecurity risk [13]. We adopt a comparable data-driven predictor to estimate per-control mitigation effectiveness, but embed it within an optimization pipeline rather than using it for detection alone.
+**Machine learning for security risk.** Data-driven models are now central to threat detection and risk estimation: recent surveys and empirical studies cover machine-learning-based IoT security [10], ensemble intrusion detection [11], machine-learning-based anomaly detection in server logs [12], and unsupervised anomaly detection over streaming cybersecurity logs [13]. We adopt a comparable data-driven predictor to estimate per-control mitigation effectiveness, but embed it within an optimization pipeline rather than using it for detection alone.
 
 **Knowledge-based and explainable decision support.** Expert systems and fuzzy inference have long supported risk assessment under uncertainty [4,14], and remain central to the scope of knowledge-based systems; recent instances include fuzzy unified decision techniques for healthcare security risk [15] and fuzzy-logic assessment for the industrial IoT [16]. Explainability is increasingly emphasized in AI-based decision support [17], and transparent, auditable recommendations are a core requirement for security governance. We adopt fuzzy amplification as the mechanism by which domain rules correct data-driven estimates, and our layered decomposition makes each recommendation explainable. The broader motivation—securing the digital transformation of enterprises—is well documented [18].
 
-**Quantum-inspired and combinatorial optimization.** Han and Kim introduced quantum-inspired evolutionary algorithms for combinatorial problems [5], with subsequent surveys and advances in knapsack, feature-selection, and multi-objective tasks [6,7,19,20]. Portfolio-style selection has a rich metaheuristic literature [21], and the broader quantum-optimization toolkit—QUBO formulations [22] and quantum-inspired search—offers principled ways to handle non-additive objectives. Explainable machine learning for intrusion detection further motivates transparent models in security [23]. We are, to our knowledge, the first to apply a QIEA to synergy-aware cybersecurity investment prioritization, and to combine it with a learning and knowledge layer in a single framework.
+**Quantum-inspired and combinatorial optimization.** Han and Kim introduced quantum-inspired evolutionary algorithms for combinatorial problems [5], with subsequent surveys and advances in knapsack, feature-selection, and multi-objective tasks [6,7,19,20]. Portfolio-style selection has a rich metaheuristic literature [21], and the broader quantum-optimization toolkit—QUBO formulations [22] and quantum-inspired search—offers principled ways to handle non-additive objectives. Deep and federated anomaly-detection models for zero-day cyberattacks further motivate data-driven security analytics [23]. We are, to our knowledge, the first to apply a QIEA to synergy-aware cybersecurity investment prioritization, and to combine it with a learning and knowledge layer in a single framework.
 
 ## 3. Problem formulation and framework
 
@@ -190,15 +190,15 @@ During the preparation of this work the author used a generative AI assistant to
 
 [8] R. Kumar, et al., A knowledge-based integrated system of hesitant fuzzy set, AHP and TOPSIS for evaluating security–durability of web applications, IEEE Access 8 (2020) 48870–48885. https://doi.org/10.1109/ACCESS.2020.2978038.
 
-[9] D.E. Ighravwe, et al., A fuzzy multi-criteria decision framework for selecting cybersecurity platforms under strategic PESTEL factors, Appl. Sci. 16 (2026) 6326. https://doi.org/10.3390/app16136326.
+[9] E. Altulaihan, M.A. Almaiah, A. Aljughaiman, Anomaly detection IDS for detecting DoS attacks in IoT networks based on machine learning algorithms, Sensors 24 (2024) 713. https://doi.org/10.3390/s24020713.
 
 [10] M. Almars, F. Alharbi, E. Atlam, I. Mahgoub, Machine learning-based security solutions for IoT networks: a comprehensive survey, Sensors 25 (2025) 3341. https://doi.org/10.3390/s25113341.
 
 [11] E. Gyamfi, et al., Evaluating ensemble learning models for intrusion detection in the Internet of Medical Things, Sensors 24 (2024) 5937. https://doi.org/10.3390/s24185937.
 
-[12] A.A. Alsulami, et al., Optimizing anomaly detection through machine learning, Electronics 13 (2024) 2148. https://doi.org/10.3390/electronics13112148.
+[12] G. Folino, et al., Comprehensive analysis and evaluation of anomalous user activity in web server logs, Sensors 24 (2024) 746. https://doi.org/10.3390/s24030746.
 
-[13] M. Humayun, et al., Cybersecurity risk analysis in the IoT: a systematic review, Electronics 12 (2023) 3958. https://doi.org/10.3390/electronics12183958.
+[13] Á. Michelena, et al., Design and evaluation of unsupervised machine learning models for anomaly detection in streaming cybersecurity logs, Mathematics 10 (2022) 4043. https://doi.org/10.3390/math10214043.
 
 [14] L.A. Zadeh, Fuzzy sets, Inf. Control 8 (1965) 338–353. https://doi.org/10.1016/S0019-9958(65)90241-X.
 
@@ -206,7 +206,7 @@ During the preparation of this work the author used a generative AI assistant to
 
 [16] V. Bolgova, et al., Fuzzy logic and its application in the assessment of information security risk of industrial Internet of Things, Symmetry 15 (2023) 1958. https://doi.org/10.3390/sym15101958.
 
-[17] P. Chakraborty, et al., Explainable artificial intelligence-based decision support systems: a recent review, Electronics 13 (2024) 2842. https://doi.org/10.3390/electronics13142842.
+[17] F. Ullah, et al., An intrusion detection system over the IoT data streams using eXplainable artificial intelligence (XAI), Sensors 25 (2025) 847. https://doi.org/10.3390/s25030847.
 
 [18] S. Teng, et al., A synthetic review on enterprise digital transformation: a bibliometric analysis, Sustainability 16 (2024) 1836. https://doi.org/10.3390/su16051836.
 
@@ -218,6 +218,6 @@ During the preparation of this work the author used a generative AI assistant to
 
 [22] F. Glover, G. Kochenberger, Y. Du, Quantum bridge analytics I: a tutorial on formulating and using QUBO models, 4OR 17 (2019) 335–371. https://doi.org/10.1007/s10288-019-00424-y.
 
-[23] M.S.A. Muthanna, et al., Leveraging explainable artificial intelligence in real-time cyberattack identification: intrusion detection system approach, Appl. Sci. 13 (2023) 8587. https://doi.org/10.3390/app13158587.
+[23] A. Diaba, et al., Deep anomaly detection framework utilizing federated learning for electricity theft zero-day cyberattacks, Sensors 24 (2024) 3236. https://doi.org/10.3390/s24103236.
 
 [24] [Author Name], QAI-CIP: Quantum-Inspired AI for Cybersecurity Investment Prioritization [software], GitHub, 2026. https://github.com/AshokPrjcts/Journal/tree/main/qai-cyber-investment.
