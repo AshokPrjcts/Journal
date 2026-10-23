@@ -4,11 +4,11 @@
 
 ---
 
-**Author:** [Author Name]<sup>a,*</sup>
+**Author:** Ashok Kumar Sailla<sup>a,*</sup>
 
-<sup>a</sup> [Department, Institution, Full Postal Address, Country]
+<sup>a</sup> Midwest University, United States
 
-<sup>*</sup> Corresponding author. E-mail address: [author@institution.edu]
+<sup>*</sup> Corresponding author. E-mail address: Ashoksailla5@gmail.com
 
 ---
 
@@ -166,7 +166,7 @@ This research did not receive any specific grant from funding agencies in the pu
 
 ## CRediT author statement
 
-**[Author Name]:** Conceptualization, Methodology, Software, Formal analysis, Investigation, Writing – original draft, Writing – review and editing, Visualization.
+**Ashok Kumar Sailla:** Conceptualization, Methodology, Software, Formal analysis, Investigation, Writing – original draft, Writing – review and editing, Visualization.
 
 ## Data availability
 
@@ -224,4 +224,4 @@ During the preparation of this work the author used a generative AI assistant to
 
 [23] A. Diaba, et al., Deep anomaly detection framework utilizing federated learning for electricity theft zero-day cyberattacks, Sensors 24 (2024) 3236. https://doi.org/10.3390/s24103236.
 
-[24] [Author Name], QAI-CIP: Quantum-Inspired AI for Cybersecurity Investment Prioritization [software], GitHub, 2026. https://github.com/AshokPrjcts/Journal/tree/main/qai-cyber-investment.
+[24] A.K. Sailla, QAI-CIP: Quantum-Inspired AI for Cybersecurity Investment Prioritization [software], GitHub, 2026. https://github.com/AshokPrjcts/Journal/tree/main/qai-cyber-investment.
