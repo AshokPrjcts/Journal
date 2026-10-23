@@ -130,20 +130,45 @@ Section~\ref{sec:disc} discusses implications, limitations, and conclusions.
 \label{sec:related}
 \textbf{Security economics and investment.} Gordon and Loeb established the economic
 foundations of security investment~\cite{gordon2002}, followed by portfolio and
-game-theoretic treatments~\cite{grossklags2008,bier2007}. These works largely assume
-additive utilities and do not provide an operational, learning-enabled decision tool.
+game-theoretic treatments~\cite{grossklags2008,bier2007}. Knowledge-based and
+multi-criteria methods have since been applied to security evaluation and platform
+selection, including hesitant-fuzzy AHP--TOPSIS models~\cite{kumar2020} and fuzzy
+multi-criteria frameworks for cybersecurity platform selection~\cite{ighravwe2026}.
+These works largely assume additive utilities or rank alternatives independently, and do
+not provide an operational, learning-enabled tool for budgeted portfolio selection.
 
-\textbf{Knowledge-based decision support.} Expert systems and fuzzy inference have long
-supported risk assessment under uncertainty~\cite{mohammadi2020,zadeh1965}, and remain
-central to the scope of knowledge-based systems. We adopt fuzzy amplification as the
-mechanism by which domain rules correct data-driven estimates.
+\textbf{Machine learning for security risk.} Data-driven models are now central to
+threat detection and risk estimation: recent surveys and empirical studies cover
+machine-learning-based IoT security~\cite{almars2025}, ensemble intrusion
+detection~\cite{gyamfi2024}, optimized anomaly detection with gradient-boosting
+classifiers~\cite{alsulami2024}, and systematic analyses of IoT cybersecurity
+risk~\cite{humayun2023}. We adopt a comparable data-driven predictor to estimate
+per-control mitigation effectiveness, but embed it within an optimization pipeline rather
+than using it for detection alone.
 
-\textbf{Quantum-inspired optimization.} Han and Kim introduced quantum-inspired
-evolutionary algorithms for combinatorial problems~\cite{han2002}, with subsequent
-advances in knapsack and feature-selection tasks~\cite{zhang2021,layeb2011}. We are, to
-our knowledge, the first to apply a QIEA to synergy-aware cybersecurity investment
-prioritization, and to combine it with a learning and knowledge layer in a single
-framework.
+\textbf{Knowledge-based and explainable decision support.} Expert systems and fuzzy
+inference have long supported risk assessment under
+uncertainty~\cite{mohammadi2020,zadeh1965}, and remain central to the scope of
+knowledge-based systems; recent instances include fuzzy unified decision techniques for
+healthcare security risk~\cite{ansari2023} and fuzzy-logic assessment for the industrial
+IoT~\cite{bolgova2023}. Explainability is increasingly emphasized in AI-based decision
+support~\cite{chakraborty2024}, and transparent, auditable recommendations are a core
+requirement for security governance. We adopt fuzzy amplification as the mechanism by
+which domain rules correct data-driven estimates, and our layered decomposition makes
+each recommendation explainable. The broader motivation---securing the digital
+transformation of enterprises---is well documented~\cite{teng2024}.
+
+\textbf{Quantum-inspired and combinatorial optimization.} Han and Kim introduced
+quantum-inspired evolutionary algorithms for combinatorial problems~\cite{han2002}, with
+subsequent surveys and advances in knapsack, feature-selection, and multi-objective
+tasks~\cite{zhang2021,layeb2011,zhang2024,acampora2023}. Portfolio-style selection has a
+rich metaheuristic literature~\cite{gupta2023}, and the broader quantum-optimization
+toolkit---QUBO formulations~\cite{glover2019} and quantum-inspired search---offers
+principled ways to handle non-additive objectives. Explainable machine learning for
+intrusion detection further motivates transparent models in
+security~\cite{schlor2023}. We are, to our knowledge, the first to apply a QIEA to
+synergy-aware cybersecurity investment prioritization, and to combine it with a learning
+and knowledge layer in a single framework.
 
 \section{Problem formulation and framework}
 \label{sec:framework}
@@ -407,7 +432,7 @@ draft and structure the manuscript and the accompanying open-source code. After 
 this tool, the author reviewed and edited the content as needed and takes full
 responsibility for the content of the published article.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{24}
 
 \bibitem{gordon2002} L.A. Gordon, M.P. Loeb, The economics of information security
 investment, ACM Trans. Inf. Syst. Secur. 5 (2002) 438--457.
@@ -437,8 +462,68 @@ optimization algorithms, Artif. Intell. Rev. 54 (2021) 1--45.
 0-1 knapsack problem, Int. J. Bio-Inspired Comput. 3 (2011) 297--305.
 \url{https://doi.org/10.1504/IJBIC.2011.042260}.
 
+\bibitem{kumar2020} R. Kumar, et al., A knowledge-based integrated system of hesitant
+fuzzy set, AHP and TOPSIS for evaluating security--durability of web applications, IEEE
+Access 8 (2020) 48870--48885. \url{https://doi.org/10.1109/ACCESS.2020.2978038}.
+
+\bibitem{ighravwe2026} D.E. Ighravwe, et al., A fuzzy multi-criteria decision framework
+for selecting cybersecurity platforms under strategic PESTEL factors, Appl. Sci. 16
+(2026) 6326. \url{https://doi.org/10.3390/app16136326}.
+
+\bibitem{almars2025} M. Almars, F. Alharbi, E. Atlam, I. Mahgoub, Machine learning-based
+security solutions for IoT networks: a comprehensive survey, Sensors 25 (2025) 3341.
+\url{https://doi.org/10.3390/s25113341}.
+
+\bibitem{gyamfi2024} E. Gyamfi, et al., Evaluating ensemble learning models for intrusion
+detection in the Internet of Medical Things, Sensors 24 (2024) 5937.
+\url{https://doi.org/10.3390/s24185937}.
+
+\bibitem{alsulami2024} A.A. Alsulami, et al., Optimizing anomaly detection through
+machine learning, Electronics 13 (2024) 2148.
+\url{https://doi.org/10.3390/electronics13112148}.
+
+\bibitem{humayun2023} M. Humayun, et al., Cybersecurity risk analysis in the IoT: a
+systematic review, Electronics 12 (2023) 3958.
+\url{https://doi.org/10.3390/electronics12183958}.
+
 \bibitem{zadeh1965} L.A. Zadeh, Fuzzy sets, Inf. Control 8 (1965) 338--353.
 \url{https://doi.org/10.1016/S0019-9958(65)90241-X}.
+
+\bibitem{ansari2023} M.T.J. Ansari, et al., A fuzzy-based unified decision-making
+technique to evaluate security risks: a healthcare perspective, Mathematics 11 (2023)
+2554. \url{https://doi.org/10.3390/math11112554}.
+
+\bibitem{bolgova2023} V. Bolgova, et al., Fuzzy logic and its application in the
+assessment of information security risk of industrial Internet of Things, Symmetry 15
+(2023) 1958. \url{https://doi.org/10.3390/sym15101958}.
+
+\bibitem{chakraborty2024} P. Chakraborty, et al., Explainable artificial
+intelligence-based decision support systems: a recent review, Electronics 13 (2024)
+2842. \url{https://doi.org/10.3390/electronics13142842}.
+
+\bibitem{teng2024} S. Teng, et al., A synthetic review on enterprise digital
+transformation: a bibliometric analysis, Sustainability 16 (2024) 1836.
+\url{https://doi.org/10.3390/su16051836}.
+
+\bibitem{zhang2024} Z. Zhang, et al., MOQEA/D: multi-objective QEA with decomposition
+mechanism and excellent global search and its application, IEEE Trans. Intell. Transp.
+Syst. 25 (2024) 12456--12470. \url{https://doi.org/10.1109/TITS.2024.3373510}.
+
+\bibitem{acampora2023} G. Acampora, A. Vitiello, Quantum-inspired evolutionary
+algorithms: a survey of recent advances and applications, IEEE Comput. Intell. Mag. 18
+(2023) 36--50. \url{https://doi.org/10.1109/MCI.2023.3304085}.
+
+\bibitem{gupta2023} P.K. Gupta, et al., Portfolio optimization problem: a taxonomic
+review of solution methodologies, IEEE Access 11 (2023) 33100--33120.
+\url{https://doi.org/10.1109/ACCESS.2023.3263198}.
+
+\bibitem{glover2019} F. Glover, G. Kochenberger, Y. Du, Quantum bridge analytics I: a
+tutorial on formulating and using QUBO models, 4OR 17 (2019) 335--371.
+\url{https://doi.org/10.1007/s10288-019-00424-y}.
+
+\bibitem{schlor2023} D. Schl\"or, et al., Explainable machine learning for intrusion
+detection, Comput. Secur. 128 (2023) 103160.
+\url{https://doi.org/10.1016/j.cose.2023.103160}.
 
 \bibitem{qaip2026} Author Name, QAI-CIP: Quantum-Inspired AI for Cybersecurity Investment
 Prioritization [software], GitHub, 2026.
