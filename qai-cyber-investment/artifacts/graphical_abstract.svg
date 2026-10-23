@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" font-family="Helvetica,Arial,sans-serif">
+  <rect x="0" y="0" width="1200" height="520" fill="white"/>
+  <text x="600" y="40" font-size="24" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Quantum-Inspired AI for Cybersecurity Investment Prioritization</text>
+  <text x="600" y="68" font-size="16" text-anchor="middle" fill="#555">A Hybrid Decision Intelligence Framework</text>
+
+  <!-- Input -->
+  <rect x="30" y="150" width="160" height="150" rx="10" fill="#eef3f9" stroke="#1f4e79" stroke-width="2"/>
+  <text x="110" y="180" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f4e79">Threat &amp; Asset</text>
+  <text x="110" y="200" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f4e79">Data</text>
+  <text x="110" y="230" font-size="12" text-anchor="middle" fill="#444">asset value</text>
+  <text x="110" y="248" font-size="12" text-anchor="middle" fill="#444">breach prob.</text>
+  <text x="110" y="266" font-size="12" text-anchor="middle" fill="#444">exposure</text>
+  <text x="110" y="284" font-size="12" text-anchor="middle" fill="#444">120 controls</text>
+
+  <!-- Layer 1 Prediction -->
+  <rect x="250" y="150" width="190" height="150" rx="10" fill="#e8f1e4" stroke="#4f8a3b" stroke-width="2"/>
+  <text x="345" y="178" font-size="15" font-weight="bold" text-anchor="middle" fill="#2f6b23">1. Prediction</text>
+  <text x="345" y="202" font-size="12" text-anchor="middle" fill="#444">Logistic regression</text>
+  <text x="345" y="220" font-size="12" text-anchor="middle" fill="#444">learns mitigation m&#770;</text>
+  <text x="345" y="244" font-size="12" text-anchor="middle" fill="#666">MAE = 0.062</text>
+  <text x="345" y="278" font-size="11" text-anchor="middle" fill="#888">data-driven risk analytics</text>
+
+  <!-- Layer 2 Knowledge -->
+  <rect x="500" y="150" width="190" height="150" rx="10" fill="#f3eef7" stroke="#8064a2" stroke-width="2"/>
+  <text x="595" y="178" font-size="15" font-weight="bold" text-anchor="middle" fill="#5f4680">2. Knowledge</text>
+  <text x="595" y="202" font-size="12" text-anchor="middle" fill="#444">Fuzzy expert rules</text>
+  <text x="595" y="220" font-size="12" text-anchor="middle" fill="#444">weight &#947; &#8712; [1.0, 1.6]</text>
+  <text x="595" y="244" font-size="12" text-anchor="middle" fill="#666">recovers hidden</text>
+  <text x="595" y="262" font-size="12" text-anchor="middle" fill="#666">interaction premium</text>
+  <text x="595" y="288" font-size="11" text-anchor="middle" fill="#888">knowledge engineering</text>
+
+  <!-- Layer 3 QIEA -->
+  <rect x="750" y="150" width="200" height="150" rx="10" fill="#fdecec" stroke="#c0504d" stroke-width="2"/>
+  <text x="850" y="178" font-size="15" font-weight="bold" text-anchor="middle" fill="#a33">3. Quantum-Inspired</text>
+  <text x="850" y="196" font-size="15" font-weight="bold" text-anchor="middle" fill="#a33">Optimization</text>
+  <text x="850" y="220" font-size="12" text-anchor="middle" fill="#444">QIEA on qubits</text>
+  <text x="850" y="238" font-size="12" text-anchor="middle" fill="#444">P(x=1)=sin&#178;&#952;</text>
+  <text x="850" y="262" font-size="12" text-anchor="middle" fill="#666">quadratic synergy-</text>
+  <text x="850" y="280" font-size="12" text-anchor="middle" fill="#666">aware knapsack</text>
+
+  <!-- Output -->
+  <rect x="1010" y="150" width="160" height="150" rx="10" fill="#fff6e6" stroke="#e08e0b" stroke-width="2"/>
+  <text x="1090" y="180" font-size="15" font-weight="bold" text-anchor="middle" fill="#b36b00">Investment</text>
+  <text x="1090" y="200" font-size="15" font-weight="bold" text-anchor="middle" fill="#b36b00">Portfolio</text>
+  <text x="1090" y="232" font-size="12" text-anchor="middle" fill="#444">ranked, auditable</text>
+  <text x="1090" y="250" font-size="12" text-anchor="middle" fill="#444">recommendations</text>
+  <text x="1090" y="282" font-size="12" font-weight="bold" text-anchor="middle" fill="#2f6b23">ROI 144%</text>
+
+  <!-- arrows -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <line x1="190" y1="225" x2="248" y2="225" stroke="#555" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="440" y1="225" x2="498" y2="225" stroke="#555" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="690" y1="225" x2="748" y2="225" stroke="#555" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="950" y1="225" x2="1008" y2="225" stroke="#555" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- key result banner -->
+  <rect x="250" y="360" width="700" height="110" rx="10" fill="#f7f7f7" stroke="#ccc" stroke-width="1.5"/>
+  <text x="600" y="392" font-size="16" font-weight="bold" text-anchor="middle" fill="#1a1a1a">Key finding</text>
+  <text x="600" y="420" font-size="14" text-anchor="middle" fill="#333">Modelling defence-in-depth synergies &#8212; not the optimizer alone &#8212; governs allocation quality.</text>
+  <text x="600" y="446" font-size="13" text-anchor="middle" fill="#555">QIEA reaches a 0.06% gap to the best solution vs. 1.84% greedy and 2.58% exact synergy-blind optimizer.</text>
+</svg>

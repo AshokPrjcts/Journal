@@ -32,16 +32,34 @@ defence-in-depth synergies, not the optimiser alone, governs allocation quality.
 
 ```
 Journal/qai-cyber-investment/
-├── qaip.py      # single-file, zero-dependency implementation + experiment
-├── paper.md     # the short-communication manuscript
-├── README.md    # this file
-└── artifacts/   # generated on each run (figures, tables, results)
+├── qaip.py           # single-file, zero-dependency implementation + experiment
+├── build_docs.py     # converts paper.md -> paper.docx and paper.pdf (stdlib only)
+├── paper.md          # the short-communication manuscript (source of truth)
+├── paper.docx        # Word version (generated)
+├── paper.pdf         # PDF version (generated)
+├── highlights.md     # KBS highlights (separate submission file)
+├── cover_letter.md   # editor cover letter
+├── README.md         # this file
+└── artifacts/        # generated on each run (figures, tables, results)
     ├── figure1_convergence.svg
     ├── figure2_frontier.svg
+    ├── graphical_abstract.svg
     ├── table1_performance.csv / .md
     ├── table2_ablation.csv / .md
     └── results.json
 ```
+
+## Generate the Word and PDF manuscript
+
+`paper.md` is the single source of truth. To (re)generate the submission documents:
+
+```bash
+python3 build_docs.py      # writes paper.docx and paper.pdf
+```
+
+This uses only the Python standard library (a `.docx` is authored directly as
+OOXML; the PDF is written by a built-in minimal writer), so it works offline
+with no pandoc/LibreOffice/LaTeX dependency.
 
 ## Run it
 
