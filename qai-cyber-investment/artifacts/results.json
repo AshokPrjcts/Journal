@@ -1,0 +1,166 @@
+{
+  "seed": 20260101,
+  "dataset": {
+    "n_controls": 120,
+    "total_cost": 10465.52,
+    "budget": 3662.93,
+    "budget_fraction": 0.35
+  },
+  "prediction_layer": {
+    "model": "logistic_regression_scratch",
+    "mitigation_MAE": 0.0622
+  },
+  "n_runs": 20,
+  "objective": "quadratic_synergy_aware_ELR",
+  "table1_methods": {
+    "Random Search": {
+      "controls_funded_mean": 43.45,
+      "budget_utilisation_mean": 0.993,
+      "objective_value_mean": 6669.07,
+      "true_risk_reduction_mean": 6524.4,
+      "roi_mean": 0.7938,
+      "optimality_gap_pct_mean": 26.8284,
+      "optimality_gap_pct_std": 1.4454,
+      "runtime_ms_mean": 278.52
+    },
+    "Greedy (value-density)": {
+      "controls_funded_mean": 47.0,
+      "budget_utilisation_mean": 0.9982,
+      "objective_value_mean": 8946.0,
+      "true_risk_reduction_mean": 8776.17,
+      "roi_mean": 1.4003,
+      "optimality_gap_pct_mean": 1.8447,
+      "optimality_gap_pct_std": 0.2039,
+      "runtime_ms_mean": 0.05
+    },
+    "Classical GA": {
+      "controls_funded_mean": 45.95,
+      "budget_utilisation_mean": 0.9985,
+      "objective_value_mean": 9065.12,
+      "true_risk_reduction_mean": 8893.21,
+      "roi_mean": 1.4317,
+      "optimality_gap_pct_mean": 0.5376,
+      "optimality_gap_pct_std": 0.3771,
+      "runtime_ms_mean": 135.79
+    },
+    "QIEA (ours)": {
+      "controls_funded_mean": 46.1,
+      "budget_utilisation_mean": 0.9997,
+      "objective_value_mean": 9109.12,
+      "true_risk_reduction_mean": 8943.1,
+      "roi_mean": 1.4423,
+      "optimality_gap_pct_mean": 0.0555,
+      "optimality_gap_pct_std": 0.1422,
+      "runtime_ms_mean": 252.06
+    },
+    "Linear-DP (synergy-blind)": {
+      "controls_funded_mean": 47.0,
+      "budget_utilisation_mean": 1.0,
+      "objective_value_mean": 8879.4,
+      "true_risk_reduction_mean": 8707.69,
+      "roi_mean": 1.3772,
+      "optimality_gap_pct_mean": 2.5755,
+      "optimality_gap_pct_std": 0.2024,
+      "runtime_ms_mean": 27.8
+    }
+  },
+  "table2_ablation": {
+    "QIEA only (no learning / knowledge / synergy)": {
+      "controls_funded": 47,
+      "budget_spent": 3657.92,
+      "budget_utilisation": 0.9986,
+      "elr_utility": 8057.69,
+      "true_risk_reduction": 8358.3,
+      "roi": 1.285,
+      "risk_reduction_lift_pct": 0.0
+    },
+    "+ Prediction layer": {
+      "controls_funded": 46,
+      "budget_spent": 3662.5,
+      "budget_utilisation": 0.9999,
+      "elr_utility": 8291.38,
+      "true_risk_reduction": 8578.51,
+      "roi": 1.3423,
+      "risk_reduction_lift_pct": 2.635
+    },
+    "+ Knowledge layer": {
+      "controls_funded": 47,
+      "budget_spent": 3653.65,
+      "budget_utilisation": 0.9975,
+      "elr_utility": 8828.38,
+      "true_risk_reduction": 8668.46,
+      "roi": 1.3725,
+      "risk_reduction_lift_pct": 3.711
+    },
+    "+ Synergy layer (full framework)": {
+      "controls_funded": 47,
+      "budget_spent": 3662.26,
+      "budget_utilisation": 0.9998,
+      "elr_utility": 9137.42,
+      "true_risk_reduction": 8983.34,
+      "roi": 1.4529,
+      "risk_reduction_lift_pct": 7.478
+    }
+  },
+  "linear_dp_reference_quad_value": 8879.4,
+  "qiea_vs_best_gap_pct": 0.0555,
+  "figure2_frontier": {
+    "budget_fractions": [
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5
+    ],
+    "curves": {
+      "QIEA (ours)": [
+        3519.98,
+        4879.45,
+        6035.54,
+        7109.12,
+        8116.94,
+        8892.65,
+        9697.15,
+        10459.57,
+        11058.74
+      ],
+      "Classical GA": [
+        3519.98,
+        4853.54,
+        5960.12,
+        7034.82,
+        8010.93,
+        8912.98,
+        9678.73,
+        10353.37,
+        10928.87
+      ],
+      "Greedy": [
+        3526.42,
+        4641.42,
+        5791.07,
+        6578.5,
+        7702.8,
+        8776.17,
+        9560.31,
+        10249.03,
+        10800.88
+      ],
+      "Random": [
+        2296.84,
+        3227.69,
+        3916.94,
+        4970.09,
+        5774.5,
+        6358.31,
+        7168.56,
+        8380.7,
+        8519.25
+      ]
+    }
+  }
+}
