@@ -42,6 +42,7 @@ Journal/qai-cyber-investment/
 ├── paper.pdf         # PDF version, figures embedded (generated)
 ├── highlights.md     # KBS highlights (separate submission file)
 ├── cover_letter.md   # editor cover letter
+├── index.html        # landing page linking to all deliverables
 ├── README.md         # this file
 ├── submission/
 │   └── KBS_submission.zip   # combined submission package (all items)

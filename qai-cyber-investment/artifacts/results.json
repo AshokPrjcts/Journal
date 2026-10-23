@@ -21,7 +21,7 @@
       "roi_mean": 0.7938,
       "optimality_gap_pct_mean": 26.8284,
       "optimality_gap_pct_std": 1.4454,
-      "runtime_ms_mean": 278.52
+      "runtime_ms_mean": 286.55
     },
     "Greedy (value-density)": {
       "controls_funded_mean": 47.0,
@@ -41,7 +41,7 @@
       "roi_mean": 1.4317,
       "optimality_gap_pct_mean": 0.5376,
       "optimality_gap_pct_std": 0.3771,
-      "runtime_ms_mean": 135.79
+      "runtime_ms_mean": 140.01
     },
     "QIEA (ours)": {
       "controls_funded_mean": 46.1,
@@ -51,7 +51,7 @@
       "roi_mean": 1.4423,
       "optimality_gap_pct_mean": 0.0555,
       "optimality_gap_pct_std": 0.1422,
-      "runtime_ms_mean": 252.06
+      "runtime_ms_mean": 259.1
     },
     "Linear-DP (synergy-blind)": {
       "controls_funded_mean": 47.0,
@@ -61,7 +61,7 @@
       "roi_mean": 1.3772,
       "optimality_gap_pct_mean": 2.5755,
       "optimality_gap_pct_std": 0.2024,
-      "runtime_ms_mean": 27.8
+      "runtime_ms_mean": 28.09
     }
   },
   "table2_ablation": {
