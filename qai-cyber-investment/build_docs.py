@@ -194,72 +194,101 @@ def docx_runs(runs):
     return "".join(out)
 
 
-def docx_paragraph(runs, style=None, size=None, bold=False, align=None, space_after=120):
-    ppr = ["<w:spacing w:line=\"360\" w:lineRule=\"auto\" w:after=\"%d\"/>" % space_after]
-    if style:
-        ppr.insert(0, f'<w:pStyle w:val="{style}"/>')
+ACCENT = "1F4E79"       # deep blue for headings
+SUBTLE = "595959"       # grey for affiliation / captions
+
+
+def docx_paragraph(runs, style=None, size=None, bold=False, align=None, space_after=140,
+                   space_before=0, line=276, color=None, italic=False,
+                   indent_left=0, shade=None, keep_next=False):
+    _ = style  # retained for signature compatibility
+    ppr = [f'<w:spacing w:before="{space_before}" w:after="{space_after}" '
+           f'w:line="{line}" w:lineRule="auto"/>']
     if align:
         ppr.append(f'<w:jc w:val="{align}"/>')
-    rpr_extra = ""
-    if size:
-        rpr_extra += f'<w:sz w:val="{size*2}"/><w:szCs w:val="{size*2}"/>'
-    if bold:
-        rpr_extra += "<w:b/>"
-    # inject run-level default size/bold by wrapping: simplest is per-run; here we
-    # add a paragraph mark rPr and rely on run props already set.
-    body = docx_runs(runs)
-    if size or bold:
-        # re-wrap each run to include size/bold
-        new = []
-        for txt, b, it, code in runs:
-            if txt == "":
-                continue
-            props = []
-            if bold or b:
-                props.append("<w:b/>")
-            if it:
-                props.append("<w:i/>")
-            if code:
-                props.append('<w:rFonts w:ascii="Consolas" w:hAnsi="Consolas"/>')
-            if size:
-                props.append(f'<w:sz w:val="{size*2}"/><w:szCs w:val="{size*2}"/>')
-            rpr = f"<w:rPr>{''.join(props)}</w:rPr>" if props else ""
-            new.append(f'<w:r>{rpr}<w:t xml:space="preserve">{xml_escape(txt)}</w:t></w:r>')
-        body = "".join(new)
-    return f"<w:p><w:pPr>{''.join(ppr)}</w:pPr>{body}</w:p>"
+    if indent_left:
+        ppr.append(f'<w:ind w:left="{indent_left}"/>')
+    if shade:
+        ppr.append(f'<w:shd w:val="clear" w:color="auto" w:fill="{shade}"/>')
+    if keep_next:
+        ppr.append('<w:keepNext/>')
+    new = []
+    for txt, b, it, code in runs:
+        if txt == "":
+            continue
+        props = []
+        if bold or b:
+            props.append("<w:b/>")
+        if italic or it:
+            props.append("<w:i/>")
+        if code:
+            props.append('<w:rFonts w:ascii="Consolas" w:hAnsi="Consolas"/>')
+        if size:
+            props.append(f'<w:sz w:val="{size*2}"/><w:szCs w:val="{size*2}"/>')
+        if color:
+            props.append(f'<w:color w:val="{color}"/>')
+        rpr = f"<w:rPr>{''.join(props)}</w:rPr>" if props else ""
+        new.append(f'<w:r>{rpr}<w:t xml:space="preserve">{xml_escape(txt)}</w:t></w:r>')
+    return f'<w:p><w:pPr>{"".join(ppr)}</w:pPr>{"".join(new)}</w:p>'
 
 
 def docx_table(rows):
     header = rows[0]
     ncol = len(header)
-    grid = "".join('<w:gridCol w:w="%d"/>' % int(9360 / ncol) for _ in range(ncol))
-    out = [f'<w:tbl><w:tblPr><w:tblStyle w:val="TableGrid"/>'
+    colw = int(9360 / ncol)
+    grid = "".join(f'<w:gridCol w:w="{colw}"/>' for _ in range(ncol))
+    # Professional "booktabs" look: heavy top/bottom rules, light rule under header,
+    # no vertical rules (also required by KBS).
+    out = [f'<w:tbl><w:tblPr>'
            f'<w:tblW w:w="9360" w:type="dxa"/>'
+           f'<w:jc w:val="center"/>'
            f'<w:tblBorders>'
-           f'<w:top w:val="single" w:sz="4" w:space="0" w:color="999999"/>'
-           f'<w:bottom w:val="single" w:sz="4" w:space="0" w:color="999999"/>'
-           f'<w:insideH w:val="single" w:sz="2" w:space="0" w:color="CCCCCC"/>'
-           f'</w:tblBorders></w:tblPr><w:tblGrid>{grid}</w:tblGrid>']
+           f'<w:top w:val="single" w:sz="12" w:space="0" w:color="1F4E79"/>'
+           f'<w:bottom w:val="single" w:sz="12" w:space="0" w:color="1F4E79"/>'
+           f'<w:insideH w:val="single" w:sz="2" w:space="0" w:color="BFBFBF"/>'
+           f'</w:tblBorders>'
+           f'<w:tblCellMar>'
+           f'<w:top w:w="40" w:type="dxa"/><w:bottom w:w="40" w:type="dxa"/>'
+           f'<w:left w:w="80" w:type="dxa"/><w:right w:w="80" w:type="dxa"/>'
+           f'</w:tblCellMar>'
+           f'</w:tblPr><w:tblGrid>{grid}</w:tblGrid>']
     for r_idx, row in enumerate(rows):
         cells = []
-        for c in row:
+        for c_idx, c in enumerate(row):
             runs = flatten_inline(c)
             run_xml = []
             for txt, b, it, code in runs:
-                props = ["<w:sz w:val=\"18\"/><w:szCs w:val=\"18\"/>"]
+                props = ['<w:sz w:val="17"/><w:szCs w:val="17"/>',
+                         '<w:rFonts w:ascii="Cambria" w:hAnsi="Cambria"/>']
                 if b or r_idx == 0:
                     props.append("<w:b/>")
+                if r_idx == 0:
+                    props.append('<w:color w:val="FFFFFF"/>')
                 if it:
                     props.append("<w:i/>")
                 rpr = f"<w:rPr>{''.join(props)}</w:rPr>"
                 run_xml.append(f'<w:r>{rpr}<w:t xml:space="preserve">{xml_escape(txt)}</w:t></w:r>')
-            shade = '<w:shd w:val="clear" w:fill="F2F2F2"/>' if r_idx == 0 else ""
+            # header: accent fill + white text; body: zebra shading on odd rows
+            if r_idx == 0:
+                shade = '<w:shd w:val="clear" w:color="auto" w:fill="1F4E79"/>'
+            elif r_idx % 2 == 0:
+                shade = '<w:shd w:val="clear" w:color="auto" w:fill="EEF3F9"/>'
+            else:
+                shade = ""
+            # right-align numeric columns (not the first), centre header
+            align = "left"
+            if r_idx == 0:
+                align = "left" if c_idx == 0 else "center"
+            elif c_idx > 0:
+                align = "right"
+            jc = f'<w:jc w:val="{align}"/>'
             cells.append(
-                f'<w:tc><w:tcPr><w:tcW w:w="%d" w:type="dxa"/>{shade}</w:tcPr>'
-                % int(9360 / ncol)
-                + f'<w:p><w:pPr><w:spacing w:after="20"/></w:pPr>{"".join(run_xml)}</w:p></w:tc>')
+                f'<w:tc><w:tcPr><w:tcW w:w="{colw}" w:type="dxa"/>{shade}'
+                f'<w:vAlign w:val="center"/></w:tcPr>'
+                f'<w:p><w:pPr><w:spacing w:before="20" w:after="20" w:line="240" '
+                f'w:lineRule="auto"/>{jc}</w:pPr>{"".join(run_xml)}</w:p></w:tc>')
         out.append(f"<w:tr>{''.join(cells)}</w:tr>")
-    out.append("</w:tbl><w:p><w:pPr><w:spacing w:after=\"120\"/></w:pPr></w:p>")
+    out.append('</w:tbl><w:p><w:pPr><w:spacing w:after="160"/></w:pPr></w:p>')
     return "".join(out)
 
 
@@ -303,36 +332,76 @@ def build_docx(blocks, out_path):
         images.append((rid, name, data))
         return rid, png_size(path)
 
+    para_idx = 0  # count body paragraphs after title to detect author block
+    seen_h1 = False
     for kind, payload in blocks:
         if kind == "image":
             rid, (iw, ih) = add_image(payload)
             body.append(docx_image_paragraph(rid, iw, ih))
             continue
         if kind == "h1":
-            body.append(docx_paragraph(flatten_inline(payload), size=18, bold=True,
-                                       align="center", space_after=200))
+            # Title: large, bold, accent-coloured, centred, with a rule below
+            body.append(docx_paragraph(flatten_inline(payload), size=19, bold=True,
+                                       align="center", color=ACCENT,
+                                       space_before=120, space_after=160, line=288))
+            seen_h1 = True
+            para_idx = 0
         elif kind == "h2":
-            body.append(docx_paragraph(flatten_inline(payload), size=14, bold=True,
-                                       space_after=140))
+            body.append(docx_paragraph(flatten_inline(payload), size=13.5, bold=True,
+                                       color=ACCENT, space_before=240, space_after=100,
+                                       keep_next=True))
         elif kind == "h3":
-            body.append(docx_paragraph(flatten_inline(payload), size=12, bold=True,
-                                       space_after=120))
+            body.append(docx_paragraph(flatten_inline(payload), size=11.5, bold=True,
+                                       color="2E2E2E", space_before=160, space_after=80,
+                                       keep_next=True))
         elif kind == "p":
-            body.append(docx_paragraph(flatten_inline(payload), size=11))
+            low = payload.lstrip("*").strip()
+            # Author / affiliation / corresponding block (right after the title)
+            if seen_h1 and para_idx < 4 and (
+                    payload.startswith("**Author:**")
+                    or payload.startswith("<sup>")
+                    or "Corresponding author" in payload):
+                is_name = payload.startswith("**Author:**")
+                body.append(docx_paragraph(
+                    flatten_inline(payload), size=12 if is_name else 9.5,
+                    align="center", italic=not is_name,
+                    color=None if is_name else SUBTLE, space_after=40))
+            # Keywords line: subtle shaded block
+            elif payload.startswith("**Keywords:**"):
+                body.append(docx_paragraph(flatten_inline(payload), size=10,
+                                           color=SUBTLE, space_before=80, space_after=160))
+            # Figure captions: smaller, grey, justified
+            elif low.startswith("Fig.") or low.startswith("**Fig."):
+                body.append(docx_paragraph(flatten_inline(payload), size=9.5,
+                                           color=SUBTLE, space_after=160, line=240))
+            # Table captions (begin with **Table n.**)
+            elif low.startswith("**Table"):
+                body.append(docx_paragraph(flatten_inline(payload), size=9.5,
+                                           color=SUBTLE, space_before=40, space_after=60,
+                                           line=240, keep_next=True))
+            else:
+                body.append(docx_paragraph(flatten_inline(payload), size=11,
+                                           align="both", line=288))
+            para_idx += 1
         elif kind == "ul":
             for it in payload:
                 runs = flatten_inline("\u2022  " + it)
-                body.append(docx_paragraph(runs, size=11, space_after=40))
+                body.append(docx_paragraph(runs, size=11, space_after=50,
+                                           indent_left=360, line=276))
         elif kind == "ol":
             for idx, it in enumerate(payload, 1):
                 runs = flatten_inline(f"{idx}.  " + it)
-                body.append(docx_paragraph(runs, size=11, space_after=40))
+                body.append(docx_paragraph(runs, size=11, space_after=50,
+                                           indent_left=360, line=276))
         elif kind == "quote":
             for q in payload:
                 runs = flatten_inline(q)
-                # monospace-ish: mark as code run
+                # algorithm / equation line in a light shaded monospace box
                 runs = [(t, b, i2, True) for (t, b, i2, _c) in runs]
-                body.append(docx_paragraph(runs, size=10, space_after=20))
+                body.append(docx_paragraph(runs, size=9.5, space_after=0,
+                                           space_before=0, line=252,
+                                           indent_left=180, shade="F5F7FA"))
+            body.append(docx_paragraph([("", False, False, False)], space_after=120))
         elif kind == "table":
             body.append(docx_table(payload))
 
@@ -341,8 +410,22 @@ def build_docx(blocks, out_path):
         '<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
         f'<w:body>{"".join(body)}'
         '<w:sectPr><w:pgSz w:w="11906" w:h="16838"/>'
-        '<w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440"/></w:sectPr>'
+        '<w:pgMar w:top="1440" w:right="1418" w:bottom="1440" w:left="1418"/></w:sectPr>'
         '</w:body></w:document>')
+
+    # Document defaults + a few named styles for a clean, journal-like look.
+    styles = (
+        '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
+        '<w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
+        '<w:docDefaults><w:rPrDefault><w:rPr>'
+        '<w:rFonts w:ascii="Cambria" w:hAnsi="Cambria" w:cs="Cambria"/>'
+        '<w:sz w:val="22"/><w:szCs w:val="22"/><w:color w:val="1A1A1A"/>'
+        '</w:rPr></w:rPrDefault>'
+        '<w:pPrDefault><w:pPr><w:spacing w:after="140" w:line="288" w:lineRule="auto"/>'
+        '</w:pPr></w:pPrDefault></w:docDefaults>'
+        '<w:style w:type="paragraph" w:default="1" w:styleId="Normal">'
+        '<w:name w:val="Normal"/></w:style>'
+        '</w:styles>')
 
     content_types = (
         '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
@@ -351,6 +434,7 @@ def build_docx(blocks, out_path):
         '<Default Extension="xml" ContentType="application/xml"/>'
         '<Default Extension="png" ContentType="image/png"/>'
         '<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>'
+        '<Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>'
         '</Types>')
     rels = (
         '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
@@ -365,12 +449,16 @@ def build_docx(blocks, out_path):
     document_rels = (
         '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
         '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
+        '<Relationship Id="rIdStyles" '
+        'Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" '
+        'Target="styles.xml"/>'
         f'{img_rels}</Relationships>')
 
     with zipfile.ZipFile(out_path, "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("[Content_Types].xml", content_types)
         z.writestr("_rels/.rels", rels)
         z.writestr("word/document.xml", document)
+        z.writestr("word/styles.xml", styles)
         z.writestr("word/_rels/document.xml.rels", document_rels)
         for _rid, name, data in images:
             z.writestr(f"word/media/{name}", data)
@@ -622,34 +710,48 @@ def _img_data_uri(path):
 
 def build_html(blocks, out_path):
     css = """
+    :root { --accent:#1f4e79; --subtle:#595959; --rule:#d8e0ea; }
     @page { size: A4; margin: 22mm 20mm; }
     html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    body { font-family: "Times New Roman", Georgia, serif; font-size: 11pt;
-           line-height: 1.5; color: #111; max-width: 820px; margin: 0 auto;
-           padding: 24px; }
-    h1 { font-size: 20pt; text-align: center; line-height: 1.25; margin: 0 0 6px; }
-    h2 { font-size: 14pt; border-bottom: 1px solid #ddd; padding-bottom: 3px;
-         margin-top: 22px; }
-    h3 { font-size: 12pt; margin-top: 16px; }
-    p { margin: 0 0 10px; text-align: justify; }
-    ul, ol { margin: 0 0 10px 22px; }
-    li { margin-bottom: 3px; }
-    code { font-family: "Consolas", monospace; font-size: 10pt;
-           background: #f4f4f4; padding: 0 2px; }
-    blockquote { font-family: "Consolas", monospace; font-size: 9.5pt;
-                 background: #f7f7f7; border-left: 3px solid #bbb;
-                 margin: 10px 0; padding: 8px 12px; white-space: pre-wrap;
-                 line-height: 1.35; }
+    body { font-family: Cambria, "Times New Roman", Georgia, serif; font-size: 11pt;
+           line-height: 1.55; color: #1a1a1a; max-width: 820px; margin: 0 auto;
+           padding: 28px 24px; }
+    h1 { font-size: 20pt; text-align: center; line-height: 1.28; margin: 4px 0 14px;
+         color: var(--accent); font-weight: 700;
+         border-bottom: 2px solid var(--accent); padding-bottom: 12px; }
+    h2 { font-size: 14pt; color: var(--accent); margin-top: 26px; margin-bottom: 8px;
+         padding-bottom: 3px; border-bottom: 1px solid var(--rule); font-weight: 700; }
+    h3 { font-size: 12pt; color: #2e2e2e; margin-top: 18px; margin-bottom: 6px;
+         font-weight: 700; }
+    p { margin: 0 0 11px; text-align: justify; }
+    ul, ol { margin: 0 0 11px 24px; }
+    li { margin-bottom: 4px; }
+    code { font-family: "Consolas", "Courier New", monospace; font-size: 9.5pt;
+           background: #f2f5f9; padding: 0 3px; border-radius: 3px; }
+    blockquote { font-family: "Consolas", "Courier New", monospace; font-size: 9.5pt;
+                 background: #f5f7fa; border-left: 4px solid var(--accent);
+                 margin: 12px 0; padding: 10px 14px; white-space: pre-wrap;
+                 line-height: 1.4; border-radius: 0 4px 4px 0; }
     table { border-collapse: collapse; width: 100%; font-size: 9pt;
-            margin: 8px 0 16px; page-break-inside: avoid; }
-    th, td { border: none; border-bottom: 1px solid #ccc; padding: 5px 7px;
-             text-align: left; vertical-align: top; }
-    thead th { border-top: 1.5px solid #333; border-bottom: 1.5px solid #333;
-               background: #f2f2f2; font-weight: bold; }
-    figure { text-align: center; margin: 14px 0; page-break-inside: avoid; }
-    figure img { max-width: 92%; height: auto; border: 1px solid #eee; }
-    .keywords { font-size: 10.5pt; }
-    @media print { a { color: #111; text-decoration: none; } }
+            margin: 10px auto 18px; page-break-inside: avoid; }
+    th, td { padding: 6px 8px; vertical-align: middle; }
+    td { border-bottom: 1px solid #cfd8e3; }
+    td:not(:first-child) { text-align: right; }
+    thead th { background: var(--accent); color: #fff; font-weight: 700;
+               text-align: center; }
+    thead th:first-child { text-align: left; }
+    tbody tr:nth-child(even) { background: #eef3f9; }
+    figure { text-align: center; margin: 16px 0; page-break-inside: avoid; }
+    figure img { max-width: 92%; height: auto; border: 1px solid #e4e9f0;
+                 border-radius: 3px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .author { text-align: center; font-size: 12pt; margin: 2px 0; }
+    .affil { text-align: center; font-size: 9.5pt; color: var(--subtle);
+             font-style: italic; margin: 1px 0; }
+    .keywords { font-size: 10pt; color: var(--subtle);
+                background: #f5f7fa; padding: 7px 12px; border-radius: 4px; }
+    .caption { font-size: 9.5pt; color: var(--subtle); line-height: 1.4;
+               margin: -6px 0 16px; }
+    @media print { a { color: #1a1a1a; text-decoration: none; } }
     """
     parts = ['<!DOCTYPE html>', '<html lang="en"><head>',
              '<meta charset="utf-8">',
@@ -678,7 +780,17 @@ def build_html(blocks, out_path):
         elif kind == "h3":
             parts.append(f"<h3>{_html_inline(payload)}</h3>")
         elif kind == "p":
-            cls = ' class="keywords"' if payload.startswith("**Keywords:**") else ""
+            low = payload.lstrip("*").strip()
+            if payload.startswith("**Keywords:**"):
+                cls = ' class="keywords"'
+            elif payload.startswith("**Author:**"):
+                cls = ' class="author"'
+            elif payload.startswith("<sup>") or "Corresponding author" in payload:
+                cls = ' class="affil"'
+            elif low.startswith("Fig.") or low.startswith("**Fig.") or low.startswith("**Table"):
+                cls = ' class="caption"'
+            else:
+                cls = ""
             parts.append(f"<p{cls}>{_html_inline(payload)}</p>")
         elif kind == "ul":
             parts.append("<ul>" + "".join(f"<li>{_html_inline(it)}</li>" for it in payload) + "</ul>")
