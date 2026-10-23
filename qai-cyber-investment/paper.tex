@@ -71,7 +71,11 @@ knowledge \sep decision-support \sep prioritization
 
 \section{Introduction}
 \label{sec:intro}
-Organizations face an expanding threat surface under hard budget constraints,
+The accelerating volume and sophistication of cyberattacks have made
+artificial-intelligence-driven defence a practical necessity, with machine-learning
+models now routinely deployed for intrusion detection and risk estimation across
+enterprise and IoT environments. Yet detection capability is only half of the problem:
+organizations face an expanding threat surface under hard budget constraints,
 forcing security leaders to decide \emph{which} controls to fund rather than
 \emph{whether} to invest~\cite{gordon2002,grossklags2008}. In practice these
 decisions are dominated by qualitative risk matrices and single-criterion rankings
@@ -254,6 +258,24 @@ objective $V(\cdot)$; population $P$; generations $G$; rotation step $\Delta\the
 \end{algorithmic}
 \end{algorithm}
 
+\subsection{Positioning and complexity}
+\label{sec:complexity}
+The quadratic objective in Eq.~(\ref{eq:quad}) is an instance of the quadratic knapsack
+problem, which is NP-hard; exact solution is intractable for realistic portfolio sizes,
+motivating the metaheuristic route taken by the broader portfolio-optimization
+literature~\cite{gupta2023}. Our choice of a quantum-inspired evolutionary algorithm is
+deliberate: quantum-inspired metaheuristics retain a compact probabilistic (qubit) state
+that balances exploration and exploitation without the overhead of maintaining an
+explicit population of full solutions, and have repeatedly outperformed classical
+evolutionary algorithms on combinatorial benchmarks~\cite{zhang2021,layeb2011,zhang2024,acampora2023}.
+The objective can equivalently be expressed as a quadratic unconstrained binary
+optimization (QUBO) model after a penalty reformulation of the budget
+constraint~\cite{glover2019}, which makes the framework portable to quantum-annealing and
+gate-based hardware in future work while remaining fully classical here. Each QIEA
+generation costs $O(P\,(n + |S|))$ time---linear in the number of controls $n$ and
+synergy pairs $|S|$---so the method scales gracefully; the full 20-seed study completes in
+roughly twenty seconds on a commodity CPU.
+
 \section{Experiments}
 \label{sec:exp}
 
@@ -384,9 +406,14 @@ centralized analytics, or identity hardening with privileged-access management--
 than independently top-ranked controls. (ii)~The framework's transparency supports
 governance: each recommendation decomposes into a learned effectiveness, an explicit
 knowledge weight, and a named synergy contribution, so a CISO can justify every funded
-item to auditors and boards. (iii)~The gains are economically material---a 7.5\% increase
-in realized risk reduction and a return on security investment rising to 145\%---achieved
-purely by reallocating a fixed budget, requiring no additional spend.
+item to auditors and boards. This aligns with the growing demand for explainability in
+AI-based security decision support~\cite{chakraborty2024}, where opaque, black-box
+recommendations are a barrier to adoption. (iii)~The gains are economically material---a
+7.5\% increase in realized risk reduction and a return on security investment rising to
+145\%---achieved purely by reallocating a fixed budget, requiring no additional spend. As
+enterprises accelerate their digital transformation and the attack surface widens
+accordingly~\cite{teng2024}, such budget-efficient, interaction-aware prioritization
+becomes increasingly valuable.
 
 \subsection{Limitations and future work}
 Three limitations bound these conclusions. First, the evaluation uses a synthetic,
