@@ -20,10 +20,35 @@ from __future__ import annotations
 import html
 import os
 import re
+import struct
 import zipfile
+import zlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(HERE, "paper.md")
+ART = os.path.join(HERE, "artifacts")
+
+# Figures are embedded as PNGs; ensure they exist (rasterized from SVG).
+FIG1 = os.path.join(ART, "figure1_convergence.png")
+FIG2 = os.path.join(ART, "figure2_frontier.png")
+
+
+def _ensure_pngs():
+    try:
+        import svg2png
+    except Exception:
+        return
+    for name in ("figure1_convergence", "figure2_frontier", "graphical_abstract"):
+        svg = os.path.join(ART, name + ".svg")
+        png = os.path.join(ART, name + ".png")
+        if os.path.exists(svg) and not os.path.exists(png):
+            svg2png.rasterize(svg, png, scale=2.0)
+
+
+def png_size(path):
+    with open(path, "rb") as f:
+        d = f.read(26)
+    return struct.unpack(">II", d[16:24])
 
 
 # --------------------------------------------------------------------------- #
@@ -102,6 +127,18 @@ def read_blocks(path):
             i += 1
         blocks.append(("p", " ".join(para)))
     return blocks
+
+
+def insert_figures(blocks):
+    """Insert ('image', png_path) blocks immediately before each figure caption."""
+    out = []
+    for kind, payload in blocks:
+        if kind == "p" and payload.startswith("**Fig. 1.**") and os.path.exists(FIG1):
+            out.append(("image", FIG1))
+        if kind == "p" and payload.startswith("**Fig. 2.**") and os.path.exists(FIG2):
+            out.append(("image", FIG2))
+        out.append((kind, payload))
+    return out
 
 
 def flatten_inline(text):
@@ -225,9 +262,51 @@ def docx_table(rows):
     return "".join(out)
 
 
+def docx_image_paragraph(rel_id, img_w_px, img_h_px, max_w_px=600):
+    """Return a centered paragraph containing an inline image drawing."""
+    # scale to max width, convert px->EMU (914400 EMU per inch, 96 px per inch)
+    scale = min(1.0, max_w_px / img_w_px)
+    cx = int(img_w_px * scale * 9525)
+    cy = int(img_h_px * scale * 9525)
+    drawing = (
+        '<w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0" '
+        'xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing">'
+        f'<wp:extent cx="{cx}" cy="{cy}"/>'
+        '<wp:docPr id="1" name="Figure"/>'
+        '<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">'
+        '<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">'
+        '<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">'
+        '<pic:nvPicPr><pic:cNvPr id="0" name="Figure"/><pic:cNvPicPr/></pic:nvPicPr>'
+        f'<pic:blipFill><a:blip r:embed="{rel_id}" '
+        'xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>'
+        '<a:stretch><a:fillRect/></a:stretch></pic:blipFill>'
+        '<pic:spPr><a:xfrm><a:off x="0" y="0"/>'
+        f'<a:ext cx="{cx}" cy="{cy}"/></a:xfrm>'
+        '<a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr></pic:pic>'
+        '</a:graphicData></a:graphic></wp:inline></w:drawing>')
+    return ('<w:p><w:pPr><w:jc w:val="center"/><w:spacing w:after="120"/></w:pPr>'
+            f'<w:r>{drawing}</w:r></w:p>')
+
+
 def build_docx(blocks, out_path):
     body = []
+    images = []  # (rel_id, media_name, bytes)
+    img_counter = [0]
+
+    def add_image(path):
+        img_counter[0] += 1
+        rid = f"rIdImg{img_counter[0]}"
+        name = f"image{img_counter[0]}.png"
+        with open(path, "rb") as f:
+            data = f.read()
+        images.append((rid, name, data))
+        return rid, png_size(path)
+
     for kind, payload in blocks:
+        if kind == "image":
+            rid, (iw, ih) = add_image(payload)
+            body.append(docx_image_paragraph(rid, iw, ih))
+            continue
         if kind == "h1":
             body.append(docx_paragraph(flatten_inline(payload), size=18, bold=True,
                                        align="center", space_after=200))
@@ -269,6 +348,7 @@ def build_docx(blocks, out_path):
         '<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">'
         '<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>'
         '<Default Extension="xml" ContentType="application/xml"/>'
+        '<Default Extension="png" ContentType="image/png"/>'
         '<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>'
         '</Types>')
     rels = (
@@ -277,21 +357,85 @@ def build_docx(blocks, out_path):
         '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>'
         '</Relationships>')
 
+    img_rels = "".join(
+        f'<Relationship Id="{rid}" '
+        'Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" '
+        f'Target="media/{name}"/>' for rid, name, _ in images)
+    document_rels = (
+        '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
+        '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">'
+        f'{img_rels}</Relationships>')
+
     with zipfile.ZipFile(out_path, "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("[Content_Types].xml", content_types)
         z.writestr("_rels/.rels", rels)
         z.writestr("word/document.xml", document)
+        z.writestr("word/_rels/document.xml.rels", document_rels)
+        for _rid, name, data in images:
+            z.writestr(f"word/media/{name}", data)
 
 
 # =========================================================================== #
 # PDF WRITER  (minimal, multi-page, Helvetica core fonts)
 # =========================================================================== #
+def decode_png_rgb(path):
+    """Decode a non-interlaced 8-bit RGB PNG to (w, h, raw_rgb_bytes)."""
+    with open(path, "rb") as f:
+        d = f.read()
+    assert d[:8] == b"\x89PNG\r\n\x1a\n"
+    pos = 8
+    width = height = 0
+    idat = b""
+    while pos < len(d):
+        ln = struct.unpack(">I", d[pos:pos + 4])[0]
+        typ = d[pos + 4:pos + 8]
+        data = d[pos + 8:pos + 8 + ln]
+        if typ == b"IHDR":
+            width, height = struct.unpack(">II", data[:8])
+        elif typ == b"IDAT":
+            idat += data
+        elif typ == b"IEND":
+            break
+        pos += 12 + ln
+    raw = zlib.decompress(idat)
+    stride = width * 3
+    out = bytearray()
+    prev = bytearray(stride)
+    p = 0
+    for _ in range(height):
+        ft = raw[p]; p += 1
+        line = bytearray(raw[p:p + stride]); p += stride
+        if ft == 1:  # Sub
+            for i in range(3, stride):
+                line[i] = (line[i] + line[i - 3]) & 0xff
+        elif ft == 2:  # Up
+            for i in range(stride):
+                line[i] = (line[i] + prev[i]) & 0xff
+        elif ft == 3:  # Average
+            for i in range(stride):
+                a = line[i - 3] if i >= 3 else 0
+                line[i] = (line[i] + ((a + prev[i]) >> 1)) & 0xff
+        elif ft == 4:  # Paeth
+            for i in range(stride):
+                a = line[i - 3] if i >= 3 else 0
+                b = prev[i]
+                c = prev[i - 3] if i >= 3 else 0
+                pp = a + b - c
+                pa, pb, pc = abs(pp - a), abs(pp - b), abs(pp - c)
+                pr = a if (pa <= pb and pa <= pc) else (b if pb <= pc else c)
+                line[i] = (line[i] + pr) & 0xff
+        out += line
+        prev = line
+    return width, height, bytes(out)
+
+
 class PDF:
     def __init__(self, width=595, height=842, margin=56):
         self.w, self.h, self.m = width, height, margin
         self.pages = []
         self.cur = []
         self.y = self.h - self.m
+        self.images = []  # list of (name, w, h, zlib_rgb)
 
     def _wrap(self, text, font_size, bold=False, max_width=None):
         max_width = max_width or (self.w - 2 * self.m)
@@ -341,6 +485,21 @@ class PDF:
         self.cur.append(f"{self.m} {self.y:.1f} m {self.w - self.m} {self.y:.1f} l 0.7 w 0.6 0.6 0.6 RG S 0 0 0 RG")
         self.y -= 8
 
+    def image(self, path, max_w=None):
+        iw, ih, rgb = decode_png_rgb(path)
+        max_w = max_w or (self.w - 2 * self.m)
+        draw_w = max_w
+        draw_h = draw_w * ih / iw
+        # new page if it doesn't fit
+        if self.y - draw_h < self.m:
+            self._newpage()
+        name = f"Im{len(self.images) + 1}"
+        self.images.append((name, iw, ih, zlib.compress(rgb, 9)))
+        x = self.m + (max_w - draw_w) / 2
+        y = self.y - draw_h
+        self.cur.append(f"q {draw_w:.1f} 0 0 {draw_h:.1f} {x:.1f} {y:.1f} cm /{name} Do Q")
+        self.y = y - 10
+
     def table(self, rows, size=8):
         ncol = len(rows[0])
         avail = self.w - 2 * self.m
@@ -377,47 +536,71 @@ class PDF:
 
     def save(self, path):
         self._newpage()
-        objs = []
-        # 1 catalog, 2 pages, then per page: content + page obj, plus 2 fonts
+        # Build as binary from the start (images are binary streams).
+        out = bytearray()
+        offsets = {}
+
+        def add_obj(num, body_bytes):
+            offsets[num] = len(out)
+            out.extend(f"{num} 0 obj\n".encode("latin-1"))
+            out.extend(body_bytes)
+            out.extend(b"\nendobj\n")
+
         n_pages = len(self.pages)
-        font_reg = 3
-        font_bold = 4
+        font_reg, font_bold = 3, 4
         first_content = 5
         page_obj_start = first_content + n_pages
+        img_obj_start = page_obj_start + n_pages
+
+        out.extend(b"%PDF-1.4\n%\xe2\xe3\xcf\xd3\n")
 
         kids = " ".join(f"{page_obj_start + i} 0 R" for i in range(n_pages))
-        objs.append(("1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n"))
-        objs.append((f"2 0 obj\n<< /Type /Pages /Count {n_pages} /Kids [{kids}] >>\nendobj\n"))
-        objs.append(("3 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>\nendobj\n"))
-        objs.append(("4 0 obj\n<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>\nendobj\n"))
+        add_obj(1, b"<< /Type /Catalog /Pages 2 0 R >>")
+        add_obj(2, f"<< /Type /Pages /Count {n_pages} /Kids [{kids}] >>".encode("latin-1"))
+        add_obj(3, b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>")
+        add_obj(4, b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>")
 
         for i, content in enumerate(self.pages):
-            stream = "\n".join(content)
-            objs.append((f"{first_content + i} 0 obj\n<< /Length {len(stream)} >>\nstream\n{stream}\nendstream\nendobj\n"))
-        for i in range(n_pages):
-            objs.append((f"{page_obj_start + i} 0 obj\n<< /Type /Page /Parent 2 0 R "
-                         f"/MediaBox [0 0 {self.w} {self.h}] "
-                         f"/Resources << /Font << /F1 {font_reg} 0 R /F2 {font_bold} 0 R >> >> "
-                         f"/Contents {first_content + i} 0 R >>\nendobj\n"))
+            stream = ("\n".join(content)).encode("latin-1", "replace")
+            body = b"<< /Length %d >>\nstream\n" % len(stream) + stream + b"\nendstream"
+            add_obj(first_content + i, body)
 
-        pdf = "%PDF-1.4\n"
-        offsets = []
-        for obj in objs:
-            offsets.append(len(pdf.encode("latin-1", "replace")))
-            pdf += obj
-        xref_pos = len(pdf.encode("latin-1", "replace"))
-        total = len(objs) + 1
-        pdf += f"xref\n0 {total}\n0000000000 65535 f \n"
-        for off in offsets:
-            pdf += f"{off:010d} 00000 n \n"
-        pdf += f"trailer\n<< /Size {total} /Root 1 0 R >>\nstartxref\n{xref_pos}\n%%EOF"
+        # image XObjects
+        img_names = {}
+        for idx, (name, iw, ih, comp) in enumerate(self.images):
+            num = img_obj_start + idx
+            img_names[name] = num
+            hdr = (f"<< /Type /XObject /Subtype /Image /Width {iw} /Height {ih} "
+                   f"/ColorSpace /DeviceRGB /BitsPerComponent 8 "
+                   f"/Filter /FlateDecode /Length {len(comp)} >>\nstream\n").encode("latin-1")
+            add_obj(num, hdr + comp + b"\nendstream")
+
+        # page objects (reference all images in resources for simplicity)
+        xobj_res = " ".join(f"/{name} {img_names[name]} 0 R" for name in img_names)
+        for i in range(n_pages):
+            res = (f"<< /Font << /F1 {font_reg} 0 R /F2 {font_bold} 0 R >> "
+                   f"/XObject << {xobj_res} >> >>")
+            body = (f"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 {self.w} {self.h}] "
+                    f"/Resources {res} /Contents {first_content + i} 0 R >>").encode("latin-1")
+            add_obj(page_obj_start + i, body)
+
+        total = 1 + 4 + n_pages + len(self.images) + n_pages
+        xref_pos = len(out)
+        out.extend(f"xref\n0 {total + 1}\n".encode("latin-1"))
+        out.extend(b"0000000000 65535 f \n")
+        for num in range(1, total + 1):
+            out.extend(f"{offsets.get(num, 0):010d} 00000 n \n".encode("latin-1"))
+        out.extend(f"trailer\n<< /Size {total + 1} /Root 1 0 R >>\nstartxref\n{xref_pos}\n%%EOF".encode("latin-1"))
         with open(path, "wb") as f:
-            f.write(pdf.encode("latin-1", "replace"))
+            f.write(out)
 
 
 def build_pdf(blocks, out_path):
     pdf = PDF()
     for kind, payload in blocks:
+        if kind == "image":
+            pdf.image(payload)
+            continue
         if kind == "h1":
             plain = html.unescape(re.sub(r"</?su[bp]>|\*\*|\*", "", payload))
             pdf.spacer(4)
@@ -460,12 +643,15 @@ def build_pdf(blocks, out_path):
 
 
 def main():
-    blocks = read_blocks(SRC)
+    _ensure_pngs()
+    blocks = insert_figures(read_blocks(SRC))
     docx_path = os.path.join(HERE, "paper.docx")
     pdf_path = os.path.join(HERE, "paper.pdf")
     build_docx(blocks, docx_path)
     build_pdf(blocks, pdf_path)
+    n_img = sum(1 for k, _ in blocks if k == "image")
     print("Parsed blocks :", len(blocks))
+    print("Figures embedded:", n_img)
     print("Wrote         :", docx_path)
     print("Wrote         :", pdf_path)
 

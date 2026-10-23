@@ -33,33 +33,49 @@ defence-in-depth synergies, not the optimiser alone, governs allocation quality.
 ```
 Journal/qai-cyber-investment/
 ├── qaip.py           # single-file, zero-dependency implementation + experiment
-├── build_docs.py     # converts paper.md -> paper.docx and paper.pdf (stdlib only)
+├── svg2png.py        # stdlib SVG->PNG rasterizer (for figure embedding)
+├── build_docs.py     # converts paper.md -> paper.docx and paper.pdf (figs embedded)
 ├── paper.md          # the short-communication manuscript (source of truth)
-├── paper.docx        # Word version (generated)
-├── paper.pdf         # PDF version (generated)
+├── paper.tex         # Elsevier elsarticle LaTeX version
+├── paper.docx        # Word version, figures embedded (generated)
+├── paper.pdf         # PDF version, figures embedded (generated)
 ├── highlights.md     # KBS highlights (separate submission file)
 ├── cover_letter.md   # editor cover letter
 ├── README.md         # this file
+├── submission/
+│   └── KBS_submission.zip   # combined submission package (all items)
 └── artifacts/        # generated on each run (figures, tables, results)
-    ├── figure1_convergence.svg
-    ├── figure2_frontier.svg
-    ├── graphical_abstract.svg
+    ├── figure1_convergence.svg / .png
+    ├── figure2_frontier.svg / .png
+    ├── graphical_abstract.svg / .png
     ├── table1_performance.csv / .md
     ├── table2_ablation.csv / .md
     └── results.json
 ```
 
-## Generate the Word and PDF manuscript
+## Generate the manuscript documents
 
 `paper.md` is the single source of truth. To (re)generate the submission documents:
 
 ```bash
-python3 build_docs.py      # writes paper.docx and paper.pdf
+python3 qaip.py        # (re)generate all figures/tables/results
+python3 svg2png.py     # rasterize figures SVG -> PNG
+python3 build_docs.py  # writes paper.docx and paper.pdf with figures embedded
 ```
 
-This uses only the Python standard library (a `.docx` is authored directly as
-OOXML; the PDF is written by a built-in minimal writer), so it works offline
-with no pandoc/LibreOffice/LaTeX dependency.
+All three scripts use only the Python standard library (the `.docx` is authored
+directly as OOXML; the PDF and PNG are written by built-in minimal writers), so
+they work fully offline with no pandoc/LibreOffice/LaTeX/matplotlib dependency.
+
+The LaTeX version (`paper.tex`) targets the Elsevier `elsarticle` class and
+compiles with `pdflatex paper.tex` in any standard TeX Live installation.
+
+## Submission package
+
+`submission/KBS_submission.zip` bundles every required item — manuscript
+(`.docx`/`.pdf`/`.tex`), highlights, cover letter, both figures (PNG + SVG),
+the graphical abstract, and the data tables — organized into labelled folders
+with a `MANIFEST.txt`.
 
 ## Run it
 

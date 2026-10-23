@@ -1,9 +1,10 @@
 %PDF-1.4
+%âãÏÓ
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Count 7 /Kids [12 0 R 13 0 R 14 0 R 15 0 R 16 0 R 17 0 R 18 0 R] >>
+<< /Type /Pages /Count 8 /Kids [13 0 R 14 0 R 15 0 R 16 0 R 17 0 R 18 0 R 19 0 R 20 0 R] >>
 endobj
 3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
@@ -314,7 +315,7 @@ BT /F1 8 Tf 1 0 0 1 461.5 79.5 Tm (+3.7%) Tj ET
 endstream
 endobj
 9 0 obj
-<< /Length 6337 >>
+<< /Length 1281 >>
 stream
 BT /F1 8 Tf 1 0 0 1 59.0 778.0 Tm (+ Synergy layer) Tj ET
 BT /F1 8 Tf 1 0 0 1 59.0 768.0 Tm (\(full framework\)) Tj ET
@@ -325,155 +326,220 @@ BT /F1 8 Tf 1 0 0 1 381.0 778.0 Tm (145.3%) Tj ET
 BT /F1 8 Tf 1 0 0 1 461.5 778.0 Tm (+7.5%) Tj ET
 56 764.0 m 539 764.0 l 0.4 w 0.8 0.8 0.8 RG S 0 0 0 RG
 BT /F1 10 Tf 1 0 0 1 56.0 758.0 Tm (Figure captions) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 741.5 Tm (Fig. 1. Convergence of the quantum-inspired optimizer. The curves show the best synergy-aware) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 728.0 Tm (objective value V\(x\) \(in thousands\) attained by the QIEA and the classical genetic algorithm as) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 714.5 Tm (a function of generation, with the value-density greedy solution and the synergy-blind linear-DP) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 701.0 Tm (optimum shown as horizontal reference lines. The QIEA overtakes both references and the GA) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 687.5 Tm (within approximately 60 generations and remains stable thereafter. \(Vector artwork;) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 674.0 Tm (artifacts/figure1_convergence.svg.\)) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 657.5 Tm (Fig. 2. Budget?risk-reduction efficiency frontier. Realized annual risk reduction \(in thousands\)) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 644.0 Tm (is plotted against the security budget, expressed as a percentage of full portfolio cost, for) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 630.5 Tm (the QIEA, classical GA, greedy, and random-search methods. The QIEA Pareto-dominates all) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 617.0 Tm (baselines across the full budget range, and its advantage widens as the budget admits more) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 603.5 Tm (exploitable defence-in-depth synergies. \(Vector artwork; artifacts/figure2_frontier.svg.\)) Tj ET
-BT /F2 12.5 Tf 1 0 0 1 56.0 581.0 Tm (5. Discussion and conclusion) Tj ET
-BT /F2 11 Tf 1 0 0 1 56.0 559.5 Tm (5.1 Principal findings) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 545.5 Tm (We showed that cybersecurity investment prioritization is best treated as a quadratic,) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 532.0 Tm (synergy-aware optimization problem embedded in a decision-intelligence pipeline that learns) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 518.5 Tm (control effectiveness, injects expert knowledge, and searches globally with a quantum-inspired) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 505.0 Tm (optimizer. Two findings stand out. First, the complete framework reaches a 0.06% mean gap to the) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 491.5 Tm (best attainable solution while remaining fully reproducible on commodity hardware. Second, and) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 478.0 Tm (more importantly, the comparison with an exact synergy-blind optimizer \(Table 1\) demonstrates) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 464.5 Tm (that the dominant lever is the problem formulation, not the optimizer: once defence-in-depth) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 451.0 Tm (complementarities are modelled, even simple interaction-aware heuristics beat a provably optimal) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 437.5 Tm (additive solver. This reframes the practical question from "which optimizer should we use?" to) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 424.0 Tm ("are we optimizing the right objective?") Tj ET
-BT /F2 11 Tf 1 0 0 1 56.0 404.5 Tm (5.2 Managerial implications) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 390.5 Tm (For security leaders, the results carry three implications. \(i\) Budgeting should target) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 377.0 Tm (complementary control bundles ? for example, pairing endpoint detection with centralized) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 363.5 Tm (analytics, or identity hardening with privileged-access management ? rather than independently) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 350.0 Tm (top-ranked controls. \(ii\) The framework's transparency supports governance: each recommendation) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 336.5 Tm (decomposes into a learned effectiveness, an explicit knowledge weight, and a named synergy) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 323.0 Tm (contribution, so a CISO can justify every funded item to auditors and boards. \(iii\) The gains) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 309.5 Tm (are economically material ? a 7.5% increase in realized risk reduction and a return on security) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 296.0 Tm (investment rising to 145% ? achieved purely by reallocating a fixed budget, requiring no) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 282.5 Tm (additional spend.) Tj ET
-BT /F2 11 Tf 1 0 0 1 56.0 263.0 Tm (5.3 Limitations and future work) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 249.0 Tm (Three limitations bound these conclusions. First, the evaluation uses a synthetic,) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 235.5 Tm (ground-truth-calibrated portfolio; although this enables exact optimality measurement,) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 222.0 Tm (validation on real incident and control-efficacy datasets is needed, and is our immediate next) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 208.5 Tm (step. Second, the formulation is single-objective \(expected loss reduction\); operational) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 195.0 Tm (settings also weigh compliance, availability, and implementation risk, motivating a) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 181.5 Tm (multi-objective extension. Third, the optimizer gap, while small, is non-zero, and the synergy) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 168.0 Tm (structure is specified by domain experts rather than learned. Future work will \(a\) validate on) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 154.5 Tm (empirical datasets, \(b\) learn synergy weights directly from incident co-occurrence data, \(c\)) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 141.0 Tm (extend to multi-objective and robust formulations, and \(d\) benchmark the quantum-inspired core) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 127.5 Tm (against true quantum-annealing and gate-based hardware. All code, data generators, figures, and) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 114.0 Tm (tables are released openly [9] to support independent replication and extension.) Tj ET
-BT /F2 11 Tf 1 0 0 1 56.0 94.5 Tm (5.4 Conclusion) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 80.5 Tm (This short communication introduced a hybrid decision-intelligence framework that unifies) Tj ET
+q 483.0 0 0 306.3 56.0 435.2 cm /Im1 Do Q
+BT /F1 10 Tf 1 0 0 1 56.0 425.2 Tm (Fig. 1. Convergence of the quantum-inspired optimizer. The curves show the best synergy-aware) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 411.7 Tm (objective value V\(x\) \(in thousands\) attained by the QIEA and the classical genetic algorithm as) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 398.2 Tm (a function of generation, with the value-density greedy solution and the synergy-blind linear-DP) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 384.7 Tm (optimum shown as horizontal reference lines. The QIEA overtakes both references and the GA) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 371.2 Tm (within approximately 60 generations and remains stable thereafter. \(Vector artwork;) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 357.7 Tm (artifacts/figure1_convergence.svg.\)) Tj ET
 endstream
 endobj
 10 0 obj
-<< /Length 5026 >>
+<< /Length 3472 >>
 stream
-BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm (data-driven prediction, knowledge-based reasoning, and quantum-inspired optimization for) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 772.5 Tm (cybersecurity investment prioritization. By formulating the problem as a synergy-aware quadratic) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 759.0 Tm (knapsack and solving it with a transparent QIEA, the framework delivers near-optimal, auditable,) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 745.5 Tm (and economically significant budget allocations, and it establishes that modelling control) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 732.0 Tm (interactions is the decisive factor for effective security budgeting.) Tj ET
-BT /F2 12.5 Tf 1 0 0 1 56.0 709.5 Tm (Declaration of competing interests) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 691.0 Tm (The author declares no competing interests.) Tj ET
-BT /F2 12.5 Tf 1 0 0 1 56.0 668.5 Tm (Funding) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 650.0 Tm (This research did not receive any specific grant from funding agencies in the public,) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 636.5 Tm (commercial, or not-for-profit sectors.) Tj ET
-BT /F2 12.5 Tf 1 0 0 1 56.0 614.0 Tm (CRediT author statement) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 595.5 Tm ([Author Name]: Conceptualization, Methodology, Software, Formal analysis, Investigation, Writing) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 582.0 Tm (? original draft, Writing ? review and editing, Visualization.) Tj ET
-BT /F2 12.5 Tf 1 0 0 1 56.0 559.5 Tm (Data availability) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 541.0 Tm (The study uses a fully reproducible synthetic dataset generated by the released software \(fixed) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 527.5 Tm (random seed\). All code, generated data, figures, and tables are available in the public) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 514.0 Tm (repository cited as software reference [9].) Tj ET
-BT /F2 12.5 Tf 1 0 0 1 56.0 491.5 Tm (Declaration of generative AI and AI-assisted technologies in the) Tj ET
-BT /F2 12.5 Tf 1 0 0 1 56.0 475.0 Tm (manuscript preparation process) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 456.5 Tm (During the preparation of this work the author used a generative AI assistant to help draft and) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 443.0 Tm (structure the manuscript and the accompanying open-source code. After using this tool, the) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 429.5 Tm (author reviewed and edited the content as needed and takes full responsibility for the content) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 416.0 Tm (of the published article.) Tj ET
-BT /F2 12.5 Tf 1 0 0 1 56.0 393.5 Tm (References) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 375.0 Tm ([1] L.A. Gordon, M.P. Loeb, The economics of information security investment, ACM Trans. Inf.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 361.5 Tm (Syst. Secur. 5 \(2002\) 438?457. https://doi.org/10.1145/581271.581274.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 345.0 Tm ([2] J. Grossklags, N. Christin, J. Chuang, Secure or insure? A game-theoretic analysis of) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 331.5 Tm (information security games, in: Proc. 17th Int. Conf. World Wide Web, ACM, 2008, pp. 209?218.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 318.0 Tm (https://doi.org/10.1145/1367497.1367526.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 301.5 Tm ([3] V.M. Bier, S. Oliveros, L. Samuelson, Choosing what to protect: strategic defensive) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 288.0 Tm (allocation against an unknown attacker, J. Public Econ. Theory 9 \(2007\) 563?587.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 274.5 Tm (https://doi.org/10.1111/j.1467-9779.2007.00320.x.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 258.0 Tm ([4] A. Mohammadi, M. Pavlidis, H. Mouratidis, A knowledge-based approach for information) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 244.5 Tm (security risk assessment, Knowl.-Based Syst. 210 \(2020\) 106448.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 231.0 Tm (https://doi.org/10.1016/j.knosys.2020.106448.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 214.5 Tm ([5] K.-H. Han, J.-H. Kim, Quantum-inspired evolutionary algorithm for a class of combinatorial) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 201.0 Tm (optimization, IEEE Trans. Evol. Comput. 6 \(2002\) 580?593.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 187.5 Tm (https://doi.org/10.1109/TEVC.2002.804320.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 171.0 Tm ([6] Y. Zhang, S. Wang, G. Ji, A comprehensive survey on quantum-inspired optimization) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 157.5 Tm (algorithms, Artif. Intell. Rev. 54 \(2021\) 1?45. https://doi.org/10.1007/s10462-020-09922-6.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 141.0 Tm ([7] A. Layeb, A novel quantum-inspired cuckoo search algorithm for the 0-1 knapsack problem,) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 127.5 Tm (Int. J. Bio-Inspired Comput. 3 \(2011\) 297?305. https://doi.org/10.1504/IJBIC.2011.042260.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 111.0 Tm ([8] L.A. Zadeh, Fuzzy sets, Inf. Control 8 \(1965\) 338?353.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 97.5 Tm (https://doi.org/10.1016/S0019-9958\(65\)90241-X.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 81.0 Tm ([9] [Author Name], QAI-CIP: Quantum-Inspired AI for Cybersecurity Investment Prioritization) Tj ET
+q 483.0 0 0 306.3 56.0 479.7 cm /Im2 Do Q
+BT /F1 10 Tf 1 0 0 1 56.0 469.7 Tm (Fig. 2. Budget?risk-reduction efficiency frontier. Realized annual risk reduction \(in thousands\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 456.2 Tm (is plotted against the security budget, expressed as a percentage of full portfolio cost, for) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 442.7 Tm (the QIEA, classical GA, greedy, and random-search methods. The QIEA Pareto-dominates all) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 429.2 Tm (baselines across the full budget range, and its advantage widens as the budget admits more) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 415.7 Tm (exploitable defence-in-depth synergies. \(Vector artwork; artifacts/figure2_frontier.svg.\)) Tj ET
+BT /F2 12.5 Tf 1 0 0 1 56.0 393.2 Tm (5. Discussion and conclusion) Tj ET
+BT /F2 11 Tf 1 0 0 1 56.0 371.7 Tm (5.1 Principal findings) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 357.7 Tm (We showed that cybersecurity investment prioritization is best treated as a quadratic,) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 344.2 Tm (synergy-aware optimization problem embedded in a decision-intelligence pipeline that learns) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 330.7 Tm (control effectiveness, injects expert knowledge, and searches globally with a quantum-inspired) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 317.2 Tm (optimizer. Two findings stand out. First, the complete framework reaches a 0.06% mean gap to the) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 303.7 Tm (best attainable solution while remaining fully reproducible on commodity hardware. Second, and) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 290.2 Tm (more importantly, the comparison with an exact synergy-blind optimizer \(Table 1\) demonstrates) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 276.7 Tm (that the dominant lever is the problem formulation, not the optimizer: once defence-in-depth) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 263.2 Tm (complementarities are modelled, even simple interaction-aware heuristics beat a provably optimal) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 249.7 Tm (additive solver. This reframes the practical question from "which optimizer should we use?" to) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 236.2 Tm ("are we optimizing the right objective?") Tj ET
+BT /F2 11 Tf 1 0 0 1 56.0 216.7 Tm (5.2 Managerial implications) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 202.7 Tm (For security leaders, the results carry three implications. \(i\) Budgeting should target) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 189.2 Tm (complementary control bundles ? for example, pairing endpoint detection with centralized) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 175.7 Tm (analytics, or identity hardening with privileged-access management ? rather than independently) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 162.2 Tm (top-ranked controls. \(ii\) The framework's transparency supports governance: each recommendation) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 148.7 Tm (decomposes into a learned effectiveness, an explicit knowledge weight, and a named synergy) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 135.2 Tm (contribution, so a CISO can justify every funded item to auditors and boards. \(iii\) The gains) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 121.7 Tm (are economically material ? a 7.5% increase in realized risk reduction and a return on security) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 108.2 Tm (investment rising to 145% ? achieved purely by reallocating a fixed budget, requiring no) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 94.7 Tm (additional spend.) Tj ET
+BT /F2 11 Tf 1 0 0 1 56.0 75.2 Tm (5.3 Limitations and future work) Tj ET
 endstream
 endobj
 11 0 obj
-<< /Length 139 >>
+<< /Length 5301 >>
 stream
-BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm ([software], GitHub, 2026. https://github.com/AshokPrjcts/Journal/tree/main/qai-cyber-investment.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm (Three limitations bound these conclusions. First, the evaluation uses a synthetic,) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 772.5 Tm (ground-truth-calibrated portfolio; although this enables exact optimality measurement,) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 759.0 Tm (validation on real incident and control-efficacy datasets is needed, and is our immediate next) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 745.5 Tm (step. Second, the formulation is single-objective \(expected loss reduction\); operational) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 732.0 Tm (settings also weigh compliance, availability, and implementation risk, motivating a) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 718.5 Tm (multi-objective extension. Third, the optimizer gap, while small, is non-zero, and the synergy) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 705.0 Tm (structure is specified by domain experts rather than learned. Future work will \(a\) validate on) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 691.5 Tm (empirical datasets, \(b\) learn synergy weights directly from incident co-occurrence data, \(c\)) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 678.0 Tm (extend to multi-objective and robust formulations, and \(d\) benchmark the quantum-inspired core) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 664.5 Tm (against true quantum-annealing and gate-based hardware. All code, data generators, figures, and) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 651.0 Tm (tables are released openly [9] to support independent replication and extension.) Tj ET
+BT /F2 11 Tf 1 0 0 1 56.0 631.5 Tm (5.4 Conclusion) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 617.5 Tm (This short communication introduced a hybrid decision-intelligence framework that unifies) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 604.0 Tm (data-driven prediction, knowledge-based reasoning, and quantum-inspired optimization for) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 590.5 Tm (cybersecurity investment prioritization. By formulating the problem as a synergy-aware quadratic) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 577.0 Tm (knapsack and solving it with a transparent QIEA, the framework delivers near-optimal, auditable,) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 563.5 Tm (and economically significant budget allocations, and it establishes that modelling control) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 550.0 Tm (interactions is the decisive factor for effective security budgeting.) Tj ET
+BT /F2 12.5 Tf 1 0 0 1 56.0 527.5 Tm (Declaration of competing interests) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 509.0 Tm (The author declares no competing interests.) Tj ET
+BT /F2 12.5 Tf 1 0 0 1 56.0 486.5 Tm (Funding) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 468.0 Tm (This research did not receive any specific grant from funding agencies in the public,) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 454.5 Tm (commercial, or not-for-profit sectors.) Tj ET
+BT /F2 12.5 Tf 1 0 0 1 56.0 432.0 Tm (CRediT author statement) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 413.5 Tm ([Author Name]: Conceptualization, Methodology, Software, Formal analysis, Investigation, Writing) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 400.0 Tm (? original draft, Writing ? review and editing, Visualization.) Tj ET
+BT /F2 12.5 Tf 1 0 0 1 56.0 377.5 Tm (Data availability) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 359.0 Tm (The study uses a fully reproducible synthetic dataset generated by the released software \(fixed) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 345.5 Tm (random seed\). All code, generated data, figures, and tables are available in the public) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 332.0 Tm (repository cited as software reference [9].) Tj ET
+BT /F2 12.5 Tf 1 0 0 1 56.0 309.5 Tm (Declaration of generative AI and AI-assisted technologies in the) Tj ET
+BT /F2 12.5 Tf 1 0 0 1 56.0 293.0 Tm (manuscript preparation process) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 274.5 Tm (During the preparation of this work the author used a generative AI assistant to help draft and) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 261.0 Tm (structure the manuscript and the accompanying open-source code. After using this tool, the) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 247.5 Tm (author reviewed and edited the content as needed and takes full responsibility for the content) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 234.0 Tm (of the published article.) Tj ET
+BT /F2 12.5 Tf 1 0 0 1 56.0 211.5 Tm (References) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 193.0 Tm ([1] L.A. Gordon, M.P. Loeb, The economics of information security investment, ACM Trans. Inf.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 179.5 Tm (Syst. Secur. 5 \(2002\) 438?457. https://doi.org/10.1145/581271.581274.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 163.0 Tm ([2] J. Grossklags, N. Christin, J. Chuang, Secure or insure? A game-theoretic analysis of) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 149.5 Tm (information security games, in: Proc. 17th Int. Conf. World Wide Web, ACM, 2008, pp. 209?218.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 136.0 Tm (https://doi.org/10.1145/1367497.1367526.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 119.5 Tm ([3] V.M. Bier, S. Oliveros, L. Samuelson, Choosing what to protect: strategic defensive) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 106.0 Tm (allocation against an unknown attacker, J. Public Econ. Theory 9 \(2007\) 563?587.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 92.5 Tm (https://doi.org/10.1111/j.1467-9779.2007.00320.x.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 76.0 Tm ([4] A. Mohammadi, M. Pavlidis, H. Mouratidis, A knowledge-based approach for information) Tj ET
 endstream
 endobj
 12 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+<< /Length 1531 >>
+stream
+BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm (security risk assessment, Knowl.-Based Syst. 210 \(2020\) 106448.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 772.5 Tm (https://doi.org/10.1016/j.knosys.2020.106448.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 756.0 Tm ([5] K.-H. Han, J.-H. Kim, Quantum-inspired evolutionary algorithm for a class of combinatorial) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 742.5 Tm (optimization, IEEE Trans. Evol. Comput. 6 \(2002\) 580?593.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 729.0 Tm (https://doi.org/10.1109/TEVC.2002.804320.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 712.5 Tm ([6] Y. Zhang, S. Wang, G. Ji, A comprehensive survey on quantum-inspired optimization) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 699.0 Tm (algorithms, Artif. Intell. Rev. 54 \(2021\) 1?45. https://doi.org/10.1007/s10462-020-09922-6.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 682.5 Tm ([7] A. Layeb, A novel quantum-inspired cuckoo search algorithm for the 0-1 knapsack problem,) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 669.0 Tm (Int. J. Bio-Inspired Comput. 3 \(2011\) 297?305. https://doi.org/10.1504/IJBIC.2011.042260.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 652.5 Tm ([8] L.A. Zadeh, Fuzzy sets, Inf. Control 8 \(1965\) 338?353.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 639.0 Tm (https://doi.org/10.1016/S0019-9958\(65\)90241-X.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 622.5 Tm ([9] [Author Name], QAI-CIP: Quantum-Inspired AI for Cybersecurity Investment Prioritization) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 609.0 Tm ([software], GitHub, 2026. https://github.com/AshokPrjcts/Journal/tree/main/qai-cyber-investment.) Tj ET
+endstream
+endobj
+21 0 obj
+<< /Type /XObject /Subtype /Image /Width 1640 /Height 1040 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /FlateDecode /Length 15290 >>
+stream
+xÚìİË­ëJz€Ñ DN¡‡î©ÛN§SğÀ19 áÑICn@è¿DëÅz¬…İ£g‘*‰ßå–                                                                                €ÛükU%÷k[ôÙ¾vïû3@õj±7k,>™vÓnÍ•©[uÙ¯„İÌâ¶çîmÿn\ {±ÆâC‘i7íæÙ\™ºU·‘ıJXĞÍ,n{îŞöàÆj±7k,>™vÓnÍ•©[uÙ¯„İÌâ¶çîmÿn\ {±ÆâC‘i7íæÙ\™ºU·‘ıJXĞÍ,n{îŞöàÆj±7k,>™vÓnÍ•©[uÙ¯ìüÚˆ1û3»½R4U,PİÌŠä5^Î–{Uë†n¶Ù›µı¬X ú?f¯#+’× ^Î^Î–‚©÷:{,Öİl“7kû3X7°@õÌ^GV$¯A¼œ½œ-SïuöX¬ºÙ&oÖög°n`êÿ˜½¬H^ƒx9{9[
+¦Şëì±X7t³MŞ¬íÏ`İÀÕÿ1{Y‘¼ñrör¶L½×Ùc±nô•İò‚Õ‘<ß[^8·¼»½Rº=f³q×úÜí)Ìø¶¸ØÑÓ8;C·ıyºw««ëäÎkİŒï°—Õ¤«èŒÇ)}6Jİİû–}ò®õy‡7Ü1W¤)ZA·l»ÿÕ8à'ónë†n¦›éfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éf:’n¦›éfº™n¦›éfº™n¦›éfº™n¦›éfºÙòİlöOŒ:’çÛâùÎxŒ³Æ-·{2Ïs½Rx?šqAŞü5¨›õy¾3¾ïÚ‚uÿõ®ÃáÙ_)ëãøôeåí“Ì˜kìŒŸg<jÓUt3İL7S]t3İL7ÓÍ=éfº™n¦›éfV~İL7ÓÍtİL7ÓÍTİL7ó~¤›9z2º™n¦›éfV~İL7ÓÍtİÌöÕÍTİL7ó9V7sôd6t3İL7ÓÍ¬üº™n¦›éº™í«›©.º™n¦›éfÌ†n¦›éfº™µN7ÓÍt3İlºâŞ÷m_İLuiıÙûÆ·ãŠy„ÙçxaüõY7[¯3L÷©`ŠucÉÇ¼U7›qvğÀd–cöéÖI[Ğ€\7k÷Â™î5¨3èf¶¯n¦›éfº™n¦›éfº™n¦›éfº™n¦›éfº™Î ›Ù¾º™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éf:ƒnfûêfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éº™íëùêfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦3LİÍÚİïÍÍş¼s7k÷0Æœç»ö«İöºõÖİlÀEfıyÆÒîsÎòïƒËÏ³n6û§‚õæj½ç»Şçº»>öìvİİStİÌöÕÍt3İL7ÓÍt3İL7ÓÍt3İL7ÓÍt3İÌqŠÎ ›Ù¾º™n¦›éfº™n¦›éfº™n¦›éfº™n¦›éf:ƒn¦›éfº™n¦›éfº™n¦›éfº™n¦›éfº™n¦›ùôå~u3û³n¦›éfº™n¦›éfº™n¦›éfº™n¦›éf>}İò*«•¤n¼å)6èìé¯çlTü¼ö{Ê˜³±ŞŠtã±ä€¯”VÑVà%÷çµ?¹µ+6×qŞûÜÔòİlŠ÷Áo|kÏó¤Ÿ¾¼RnÿT°áççvàö:İL7ÓÍt3İÌŠ¤›éfº™n¦›éfº™næÓ—n¦›éfº™n¦›éfº™nfEÒÍt3İL7ÓÍt3İL7óéK7ÓÍt3İL7ÓÍt3İL7óÉM7ÓÍt3İL7ÓÍt3İL7ÓÍt3İL7ÓÍt3İL7ÓÍ|rÓÍt3İL7ÓÍt3İL7S]t3İÌçgİ                                                                                                                                                                                                                                                                                                                                                                     ˜İÏg÷^ë'Í   @#º    Dº    üº”¹n¹V­g    ét3    ˆt3    ˆz¶,İ   €Yèf    éf    pâ'Á¥«W¿¯¼    %t3    ˆt3    ¸$¥eu¸¯ê×zë¯ÿd»   pnÏnö   àŸ"t3ç›   pnü\Öâñèf    œÓÍ     ÒÍ    à'¸táî«â<èf    ¼ÒÍt3    ^éfOº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº    Dº   ğë/ûûë0!ìL7   ~éfğK7   ÑL7csº   ğ¤›Á+İ   x¼‹fº›ÓÍ   €‡nn   ˆféf   €n‘n   ˆféf   °9'›Á[º ¤øÿú7Ã0Ã0ŒUGŒf¿ÿäs º™n Z™a†a¢™nº he†a†aºèf  ˆ†a†adD3İİL7@.3Ã0ÃĞÍt3ĞÍ Ë
+‡é Öàg4áœn0;ÿ“´Ï°§ ëÑÍàœn0/-K+ (!šÁ9İ`FŠ–  PÈÉfğ•n0½K. ¨E4ƒ¯t3`^*!— äq²¤ĞÍ€IiA  Ùt3H¡›3Çä2  ²‰fH7æ¢)f@ŞÑa†aœo  ›¢™\(f†a†!šnìÍÌ€ƒ>Ã0C7İÍD3 ÑÌ0ÃÍ@7Í D3Ã0C7İØ­zù‚/€¦ÑÌü  dÓÍ€v|+>@kŠ @;ºĞ‚Ÿ’è@4 hJ7ªÍ :Í  ZÓÍ€ŠZ3Ñ:ó=É¾Û `gºP…êÅÎ„C4 X’n­K‘¡˜¡˜†h  ›hf(f(f†!š èf š¢º™aˆf  KúŸÿü÷O#û_Ïo¹ä~¿^·ÅÓYï_m *ÿª†¥Œ_AM_}±{±×İ¶ÌÌ²¼‚l È²l ¨ğ_İÌ»‰”ı¯‚Xb1ÓÍ|âºk$.Ù@^A6dÙ@6¤›n&Ëx7Ùj¥”"YF7³nÙãœeyÙ@6dÙ@6nº™,ãİd·”ÍdİÌê¹	FûFÈ+È²l È²t3ĞÍdï&º™nædİ»	üâ/È1‹dÙ@6déf°¿§	‰ü^$äñ#†  À¤t3H!šQnÛaÔµ  €Iéfğ•hF!ñJ.  f¤›ÁWºÙô+¹  ˜—nçD3òHXŠ  0;İŒ)|ŠWw[ds"•º  ì@7c
+¢ƒ   ö¡›1>'›1Å  `7ºƒÍ¸b  °'İŒ‘‰fÜN1  ØÓÿı÷¿ÆÈãS¿23F‡‘ØÄL”a†a†±öOĞÍC43ŒK¹L13Ã0Ã0t3ĞÍC43ä2ÅÌ0Ã0ÃĞÍ@73ÑÌĞÊ3Ã0Ã0ÃĞÍÀËß˜(šØÍjıÌ¢1Ëğò4Ã0Ã0t3ØŠßÓd4Sü–¥‚´ÛğÂ  ØnÆPD3C.  `ºã?šéHr   ûĞÍˆN¾a¬ÿjf%­  €}èfÍ&:ÙÌ   ‹ÑÍ8Í"Å   6¤›ñJ4‹D3   Ø“nÆ«£™oÄ   ŞÒÍø5ş×ò· š   oéf<Mñs–Õ‰f   À'ºON6SÌ   €Wº'›‰f   @ ›ñp²™2   º¢™h   Dºº™n   DºÙæD3Ñ   xK7Ûœn¦›   oéf;ÍD3   ˆ~>»táÂ«×z„Ùt³m½fº    ›=éfÛÍD3   xK7{ÒÍöäd3İ   .«Â[Î»¯vğ-İlO{F³Ç»nfg   €'İì@7Û“h¦›  Ànv ›mÈÉf¢   DÕ«TaÂÒÍèO4ÓÍ    ÒÍt³éfº   DºÙn¶!?£)š  À‰ŸÏ.]½ğNó¡nF	'›éf   pB7{ÒÍv³äÉfo³Øù°'   À'ºÙ“n¶›õºYF4ÓÍ    *üö°Â\ÖóY$ÒÍv³X7Í    İìà·›ıa±›Mıtòº™İ   à+I7ÓÍœo¶'›Ù   à­İlä\öK7ÛÊJ¤©Œ  @]ºÙn¶•å»™M   Ùt³İl+Ët3gš  @;?Ÿ¥\«ğ.RîôÒË¦›men&š  @SºÙ“n¶µO6³}   İìI7Û‡“Í    ÒéfûX ›‰f   @7ºÙ>Víf¶,   Ğ‚n¶	'›   \¢›m¢O7û”¶Ú[   hD7ÛD‡n&š   +ÑÍ6Ñº›õfº   Ğ”n¶	Ñ   àİlíN6»¥˜‰f   @ºÙu3i   X˜n¶ƒİL4   Ö¦›í z7Í   €åéf;Í    ®ÒÍ–W÷d3Å   Ø„n¶¼>İÌ<   ‹ÑÍ–W±›‰f   À>t³åµîff   X’n¶<Ñ    ƒn¶6'›   äÑÍÖÖ´›™^   `aºÙÚju3'›   »ÑÍÖÖ®›™[   `mºÙÂœl   M7[˜n   M7[X•n&š   {ÒÍ¦›   dÓÍæ    ²éf«r²   @	İlUåİL4   v¦›­J7   (¡›M*f±¯ãê]èf   ÀÎt³éd3Ñ   à*İl"yÅL7   È ›M¡¤˜et3Ñ   @7\y1ÓÍ    2èf#kô7˜çD3   €‡n6°şÅìI7   xèfÍ    n¤›©s.{zÍt3   `OºÙ˜:³'Ñ   à—n6 q¢™n   lK7Mÿ?Ï|Í    ^éf£Í    F ›ÅÉf    ƒĞÍ†"š   B7‡Ÿ    ‡n6'›   ŒC7„“Í    †¢›ÂÉf    CÑÍF š   ŒF7Aÿnæ/4   Îéf·s²   À€t³Û9Ù   `@ºÙ]Şæ2'›   B7ëì$—İx²™í   p ›õ‘’Ëœl   0İ¬Pz¡›‰f    ‰t³lÕ‹™Ÿ    ‡nvÕt¹ì—h   N7K7i.{r²   À%ºÙS‹³ÈFÈeO¢   ÀUºÙÓ¤A,‘h   p•nö´j1{8Ù    ‹nö´^.û%š   dĞÍ–,f'›   äÒÍï¢ÙÏK4   È¦›=6ëföy   €ºÙcÑnæd3   €ºÙc§nf‡   H¤›=B7[ãI‰f    %t3'›   éf›t3»:   À%º™n   @¤›éf    D›w3Ñ   €·t3İ   €H7ÓÍ    ˆt3İ   €H7[,š=B7³“   dØ¹›9Ù   €Ot3İ   €H7ÓÍ    ˆt3İ   €H7ó£     DÛv3'›   pB7ÓÍ    ˆt3İ   €H7ÓÍ    ˆt3Ñ   €hÏnæd3    Îéfº    ‘n¦›   éf«v3û6   @	İÌÉf    Dv3¤	   ÀWº™n   @¤›éf    DºÙİL4   ¨n·næd3    Rèf<)İ    :İl'¥›   T§›-ğ¤D3   €ê6ïf<#'›   ´°U7óGš    $ÒÍf§›   ´ ›ÍN7   êúùìÒÕïôÒË{¨çt³Ù‰f   @]ºÙÓÎİlgäd3    :İìiŸnæ4   N¤§KQ«Öæ]¸œn65İ   ¨E7;ĞÍ¦¦›   µèfºÙ¼D3    ¢ÂnVı2'×júµf¿¶íf<#İ   ¨H7;ĞÍî«Wùğ   ²éf›t³şH³E(ÓÍ   €ê
+«Ô¥nV½€UhÓu³õiÒáE   T¡›=éfº   À+İìi®n&éf   @#£}¿Yáw •Oˆn&y   <t³à·›ı™Á2¡ì   ŒMDÒÍt³ÙÏ7K¹Ö?¦	   0¸ñ»Y»ÚöÖÔİ,ñZº   ÀWºÙn   ÀC7t3    ^ı|6õµ®Ú°›Ùù   NèfOËw3'›   \¢›=éf    MÔÍÑL7    İ    ¢İº™-   @
+İ    ¢y»YÊUü‘&    yt3    ˆt3    ˆt3    ˆ¶êf67    ‰t3    ˆîfşH   €l³t³C4ÓÍ    hJ7   €H7   €hŸnf[   nÒn–rİ   €l«v3¤	   @	İ    "İ    "İ    ¢Mº™   À%º    DSt³C4ÓÍ    hmÉnæËÍ    (¤›   @¤›   @4c7ûzyİ   €B;t3[   €«t3    ˆÖëfşH   €rº    Dº    Dº    Dãw³C4»ÚÍlb    2èf    -ÖÍü‘&    Uèf    M×ÍÎ/¬›   P…n    ÑÚİÌö    n    ÑJİÌi   P‹n    ‘n    ÑàİìÍNºYŒfº    Ùîf6.    ÙÖèfN6    .İ    ¢¹ºÙ§‹‰f    Ôµ@7s²    Õ-ÙÍlV    
+ÍŞÍœl   @º    Dëu3Û   €r#w³C4‹İÌÉf    4²X7³A   ¨B7   €hŞnæ4   hg¢nvøWÑ   €v&ífN6    )İ    ¢eº™M	   @E3v3'›   ĞÚİÌv    ®a»Ù!šıv3'›   Ğn    ÑİÌF    º¹º™“Í    èc–nöü¢    }èf    éf    MÔÍD3    ºÑÍ     ÒÍ     š¥›Åh¦›   ĞÎ˜İìÍŞv3Û   €vt3    ˆt3    ˆ&íf6    MMÑÍœl   @gº    Dº    D3v3[   €Öt3    ˆt3    ˆ¦ëf6    ØÍÑL7    ?İ    ¢¹º™í   @º    Dãw3¤	   ,ï__¬t_³<ş··©›U™ÿ’í5û¾Šu   Ç³ÏÕìİläù×Í°î  àøqŞ¹ÒÍÚÍ¿n†u   ÇóÎ•nÖnşu3¬{   8¦[l®u³ø›˜Ù£[7»«}y]x-[o  p7à\ÍÒÍŸsİŒÑ¶¯ı
+  Àñ£¹*Ô¢›UŒfº^ËÖ[   ÇÜ2WºY•9×ÍmûÚ¯   î=ü¤äºµúCÉ÷º·¾O·Ùb~¾^÷¤›eßWõn6f[¨µ½zn÷«§Ööœ«Ñæy´µÑ»  €n¦›ÕÍ.=Çßèğ‹ ºYÅí®›éf   ›ÓÍÚG¯ÚÍ®>GİL7›eıÑÍ   ù¸õR#jô¼j=GİL7ÓÍt3İ  `ŞVVrùÇãµå{>¯»sïêf—n§g4«8Ï=›Fë××È¯ó3Îz  À˜Ç›µ®«›=t³øåfºÙ\¯/İl½ùÑÍ   Æ9æÒÍÆ<Î¿›Åh¦›õ}éfëÍn  0Î1×ÈİìçÅëe~Ş9¹ÍO·óöÁü|–òøÓ¯•1'º™n¦›-??º  À8Ç\3v³«t³O—?ïf—~ u4{èf½^§£ıîÆªóÓz?  `üãú’ëêf»YzëĞÍt³K÷¥›õßÏ  ÿ¸¾ç±jÉñøIæ:Ia'-®0 ÜÍŞF³‰ş~M7ÓÍF˜ŸÖû9   ã×÷<VÕÍ.m¯øGš)óü6šéfw½¾t³yç§õ~  ÀÇõ%—Ié]µn§¤›U™Ï“n–±-¾v³·7~Ë_hÖm%ûÛì¯¯Ömg‡®Øs  àŞ0i7»šË¾Ş×§&–ò_Ş~¿ÙÉe²çóönöéd³ñ÷óZû¤n¶ŞüÔÚ¯F¸_   ú¯éfºY¼åA¢ÙC7Ë}.ºY»ıj„û   Ïñšn¶[7ûº-Æ‰fİ,÷¹èfíö«î  €¼c·«ÇÎ%ßéİîø=6¨O~Nå=Ç”’vrİ*Û+¥›%¿íf'g¨nV«9”¼.j=¶¯¯”ÿ¾Òï´x<-æÇ»  À½=A7ÓÍ^ÿûÛ?Ò<¹î]¿¡Ùº?èfı_ïºYù~  @İ ›éf¯ÿ]7ËÛ'u3İL7  XÃ2İ,£wwªôş–ØÍ~-ÙÍ>E3İ¬[Ï©õ\t3İ  €ÅœÕÆ…S
+X»keûı]€?Åb7;¹ğÛnö   ƒv¤›éf‰¿§™âëÉf¿†ı9     zv³×Ê¦›   ğJ7{¤›Ù!   ¡›=Õêf)?
+ğK7   V^zúùlk]Õ¿›‰f    #ÓÍt3    ^éfOº    DºÙÉ%u3    Æw{7³	    P•nVòcš6    ÒÍ     êÜÍ|¹    SĞÍ     jÑÍN.©›   0İ    ¢ònæG    Xn    ‘n    ‘n    QõnvrI?
+    À,t3    ˆ
+»YÉiêf    K7   €èÆnfò   –n    Qİnv~aİ   €Yèf    uëf~    €‰”t3?¦	   Àªt3    ˆt3    ˆîêff   €‘UìfçÖÍ    ˜Hv7»t²ÙC7   `*}º™/7   `.º    Dº    DµºÙù…u3    æ’ÑÍâ™f~    €Å\êfo‹™n   ÀzÒ»ÙI4ÓÍ    XLJ7;/f~    €õœw³”bæG    XLbË.fOº    si]Ìt3    æÒ!š=ü(     ³i]Ìt3    æÒº˜=éf    Lçü÷4Ëùr3    f¤›   @¤›   @¤›   @Ô¹›™p    ¦ ›   @¤›   @¤›   @Ô´›ùQ     &¥›   @¤›   @¤›   @Ô³›™m    f¡›   @¤›   @¤›   @Ô®›ùQ     æ¥›   @¤›   @¤›   @Ô­›™j    &¢›   @¤›   @Ô¨›ùr3    ¦¦›   @¤›   @¤›   @Ô§›™g    æ¢›   @¤›   @¤›   @¤›   @Ô¢›ù1M    f§›   @¤›   @¤›   @Ô¡›™d    ¦£›   @¤›   @¤›   @¤›   @¤›   @T½›¢™n   ÀŒt3    ˆt3    ˆt3    ˆZw33   ÀŒt3    ˆt3    ˆt3    ˆt3    ˆt3    ˆêv³C4ÓÍ    ˜”n    ‘n    ‘n    QÓnfz   ˜”n    ‘n    ‘n    ‘n    ‘n    QÅnvˆfº    óÒÍ     ÒÍ    ø‡Ÿ+.]=ï¾òsÅ	ÑÍ    xèfA»nfg   ˜ˆnv ›   (æ©Kq¬ğ¾Rş©"İ   €DºYİ   `mºYİ   `I—Ö¥¶véNûä²_º    çt³‡h¦›   ,C7+¡›   ,&¥Sv³ŸÏ.]¸ERÓÍ    xK7ÓÍ    ˆt³İÌ~   0©KêRï*|y/›n   À+İìé·›ı)sèf   €™iGº™næ|3    ^åu³Z7xr-İ   €éfOº    ¯t³'İ   €W…™ëÒ7]ºVŞ}e«ÒÍÑL7   ˜—nö¤›   ğJ7{ÒÍ     ÒÍ     jÑÍÌ*    ³ÓÍ     ÒÍ     ÒÍ     ÒÍ     ÒÍ     *ïf‡h¦›   ° İ    "İ    "İ    ¢êİÌ”   ° İ    "İ    "İ    "İ    "İ    ¢Ânvˆfº    kĞÍ     ÒÍ     ÒÍ     ªÛÍÌ'    kĞÍ     ÒÍ     ÒÍ     ÒÍ     ÒÍ     *éf‡h¦›   °İ    "İ    "İ    ¢ŠİÌd   °İ    "İ    "İ    "İ    ¢ìnæÇ4   X˜n    ‘n    ‘n    Q­nf&   X‰n    ‘n    ‘n    ‘n    ‘n    ‘n    ‘n    Q^7;D3İ   €Å4êfÿÀH¼ß  ŒÓÍÌ-À ¬É   t3€åY“  2TéfÑ FfM  È ›,Ïš  A7X5   ƒn°<k2  @İ`yÖd  €ºYÿ©>Qrİ”Û¬u;µ×]óoo4Ÿ»±&  ”ü^º–nV2ÕºÙíóoo4Ÿ»±&  ”ü^º–nV2ÕºÙíóoo4Ÿ»±&  ”ü^º–nV2ÕºÙíóoo4Ÿ»±&  ”ü^º–nvuzgx´Ëv¿­'æyUÖd  €’ŞK×ÒÍ®N¯n¦›ÙÏ¹‘5   ä€7ı*‡h¦›¥L¯n¦›ÙÏ¹‘5   ä€7ı*ºYÆôêfº™ıœY“  JxÓ¯¢›eLï€İ¬Öo´xœ=ç¼d®ZÏÏÕßwè¹Œ°­IgM  (‰éWÑÍ2¦W7ÓÍ2³nF-Öd  €’8~•¯ÑÌ1Zœ^İL7ËxÌºµX“  Jâ@úUt³ŒéÕÍt³ŒÇ¬›Q‹5   $¤_E7Ë˜Ş… u‡i=ç-æ³ÅíÌÒ²t³1Y“  JrÓ¯¢›eL¯n¦›ŞnF	k2  @ÉAnúUt³ŒéÕÍt³ÂÛÑÍ(aM  (9ÈM¿Šn–1½º™nVx;º%¬É   %¹éWÑÍ2¦7ãûŞKn¿ÖåG»ßÖ÷5r7k1?-Ú¦n6&k2  @ÉAnúUt³ŒéÕÍt³·sõ¾t³}X“  JrÓ¯Ò®›ıåoŸe6İ¬Ã.­›}½/İlº  @ÉAnúUt3İL7ë³u3jÑÍ   JrÓ¯¢›•w³ZA7»÷q–ô®”fµê¼ÑŸn  Pr€œ~İL7ÓÍÎ/¯›1İ   ä 9ñò‡h¦›•÷İ¬Ãî­›-¹}I§›  ” '^¾i7[xzu3İìäºº­Y“  J/¯›•OuF'ùkÖ·sõ¹0ÿ%Û«Öí\İî-ö½ZÏË«{|Öd  €’êÄËëfåS­›İ>ÿ%ÛK7g›’Îš  Pr@xù”hæí|ªu³Ûç¿d{éfãlSÒY“  J¨/¯›•Oµnvûü—l/İlœmJ:k2  @Éuâåu3€éX“  2èf Ë³&  dĞÍ –gM  È ›,Ïš  A7X5   ƒn°<k2  @İ`yÖd  €ºÀò¬É   t³şSèêí˜áó¹ZuÿYu¶o×eM  (9øM¹ğ!šéfCu3|>W«î?«îÏöíº¬É   %¿)ÖÍFîfø|®VİVİŸíÛuY“  J~S.¬›ÜÌğù\­ºÿ¬º?Û·ë²&  ”ü¦\X7+i3Ş>{îW­ï÷êíØÏËY“  J`S.œÍ£u;Ş×ìW3Ş¯nÖŸ5   ä 6åÂºYë>0Úí³ç~Õú~u³ş¬É   %°)ÖÍZ÷ÑnŸ=÷«Ö÷«›õgM  (9€M¹°nÖºô¼ıZßÇŞóûá{şnÂÈß{¯›q•5   ä 6åÂºYë>Ğóöu³q×hûUëûÕÍú³&  ”À¦\X7kİzŞ¾n6Îóm¿j}¿ºYÖd  €’Ø”ëf­û@ÏÛ×ÍÆy^£íW­ïW7ëÏš  äù	ò®rË'.]½ÅpÊ…u³»:Ãh·W?i}û³ô¨ÑçÕ6ø×V•<Öd   n¦›ÓCf¹}İÌãüôßu³1Y“ €<º™n6N™åöu3óÓ×ÍÆdM  .)lPµZV¼zÊVhºÙ-aöÛ×Í<ÎOÿ]7“5  ¸D7;À~½ä!šéf#ô•¾÷~„ïÏo±½Zt¡ÙûßèÏš  \¢›H¿^R7ëĞzŞ¾nÖg{éfºÙ¬É  @Š[2W‡‡Q~ üõ’ºY¼‹aG£ÎĞºc|º®nÖn{éfºÙt3   …nöé€ôë%u3İ,ûvj=Öó£›õ™Oİ¬?İ  H¡›}: ızÉKáH7ës¼ßº?Œöıÿ«>_İlÌç»İ  Hñ“àäZ—ş©ğÂ'¹Åğ×KêfºY·Ç¹ÛóÕÍÆ|¾+ÑÍ  €ºÙ§Ò¯—ÔÍt³ns·ç«›ù|W¢›  )t³O¤_/Ù¡›­G7»÷vt³1÷7İ¬?k2  "%=|‰YõìVøP+½¤nV±9Ìò=ü)İ£õs¹ë÷F{-~7á®ıY7ëÏš  ¤ĞÍ>şùæĞÍÎ/ìmü~¢›³½t³ôû²’äùÇšü  .òAZ7ÓÍœo¦›éfº™n¶C73	  ÀWyİl´lqğûõ’ºÙáêíôìº™n¦›Ïš  ¤ĞÍ>~½¤n0)k2  B7;ĞÍ –gM  .¹ôe)·Sx™”VøPßÒÍ –gM  .ÑÍt3€åY“ €Kt³§ÄnvˆfºÀD¬É   t3€åY“  2èf Ë³&  dĞÍ –gM  È×Í£]Ş”_^ğö)ß.)ZßÎJû<yVZ“[ìc-^SÿßŞŞHn#a ÀY\
+NaşàÈ“Cq&}^,FİZ‰d‘UÔ{ğ/·F£¦Jµ¬ov{ª<w{‘§	 €gøç‡ÉÍrÎMf™ü÷]nFr³¶gö	Ï‚Ü  ®l˜Ï“›åœ›Ì2ùï»ÜŒäfmÏì¹  \Ù0Ÿ&7Ë97™eòßw¹ÈÍÚÙ'<r3  ¸²a>?Ln&C î¾:~Ôyv­ó*ë“­&ïf°ÙÖÙÏ#<G  0Ã|~˜ÜÌüÅü9TnfŞX+¹™:ñ Àİóùar3óóçP¹™y?b­äfêÄs  w7Ìç‡ÉÍÌ_ÌŸCåfæıˆµ’›©Ï  Üİ0Ÿ&7Ë3õ|~uÄçÌg8Ï•yæ¬÷„Ü,â³ÓWå9Ù‹Qõüó1WzrÅÜ,â÷eŒúÚ*ıyÕZ @­`çü0¹ÙÚl¡ú\V%gXußåfr³ˆz–›ÉÍäf  0j 9?Ln¶6[¨>—UÉVİw¹™Ü,¢åfr3¹  Œ@NùšÉÍÖÎr³¸œaÕ}—›ÉÍ"êYn&7“› À¨ää¹Ùòl!:Ÿ©2GGçc¿w¨’çd¨í™yòªû•­{r³ˆuÎü{
+¢ûÕNıYn Às‚“cäfK²sÙÚœAnVkÖ–›Ÿ_n&7«ò, @Î`çä¹Ù’lÁ\¶6g›Õšµåfçç—›ÉÍª<Ë  3Ø99ænhö’›Íš)äfq9ƒÜ¬Ö¬-7;?¿ÜLnVåY €œÁÎÉ1r³%ÙB•¹lT¶3sÎvß«¼¯èl!:Ì–sÎ¼ï33Ø]û^Åşı~åf  <'Ø99Fnf~”›-¹/r3¹YÄ{—›Í¯íÌ}Cn  W6½'ÇLËÍşşó·»ÿu¤ùË>?ÊÍrÎ¿™ßcÏ}¾f¹™Ü,º¶3÷¹  \Ùô#7“›ÉÍ–Ü¹™Ü,â½ËÍæ×væ¾!7 €+›Ş“cäfr³ ¹~×|é	¹Yæ:_•3dÎFı^€'÷½]ûóªõ €äfm_şğùQnöÌ÷U¥ÎWår³½ûŞ®ıYn  W6À'ÇÈÍäfr3ï«P¯Êäf{÷½]û³Ü  ®l€Oñû4Ír3ï«P¯Êäf{÷½]û³Ü  ®l€O‘›™›f~~şÌùhÔgŒïú{fŞ¯lï=z}v}.Vı^€™çÉğ|e[ŸUu¸k/ €±ÈÉ1r³ióÜLnV}V•›Í¿*¹P¶ç+ÛúÈÍ   óûé€o¡™Ü,t¾“›ÉÍªÏªr³ù×S%Êö|e[¹  dr? 7›9ßÉÍäfÕgU¹Ùüë©’e{¾²­Ü  2¹Ÿ›T§'  4›lOO  hp773£”£'  4›lOO  h 7Ø  Ğ@n°==   Ü`{z2  @¹Àöôd  €r³ùK}‘;_C×¹÷saıÇÒ“  zÌOÈÍ¢ó¹YÛºÎ½Ÿë?–  Ğ3`~:@nÈÍÚÖĞuîı\Xÿ±ôd  €óÓr³è|@nÖ¶†®sïçÂú¥'  ô˜Ÿ›™ßó¯çİu¾/î»uËFO  èT? 7“ä_O¹™ç=   nP}ûê·ĞLn&È¹r3Ïz2  @Ü úöU¹™ ÄzÊÍ</èÉ   qƒêÛWåfIr€+yQOvTå<s³Ö9âzFİ—k½>=ôd  €ÿí«r³ùIÄyäfmë,7“›U¹_£èÉ   =şÛWÛB33ÚàÊyäfmë,7“›U¹_£èÉ   =şÛWåfó“ˆóÈÍÚÖYn&7«r¿FÑ“  zü·¯ÊÍæ'=3õª\":§ŠÈ»"2UëQo™ßWõëÌ–ßêÉ   £ü·¯ÊÍF-¯ÜLn6ğøèu^õ¾äfqôd  €óí«r³QË+7“›<>zW½/¹Y=   gÀ|ûªÜlÔòÊÍäf^çUïKnGO  è0ß¾*7µ¼“çñ+çõ9ü?Ï¿bn–áóüGİ÷l÷7â9ÍßêÉ   £ü·¯ÊÍ’ä'r³¸uÈ|ß{Ö¼ç<Ñõ“íşÊÍ   8 ß¾:97ûëÿ~úïÊa¿<fÈI¾3•'ÈÍäfr³¸çTn  °¹™ÜLn÷XÉÍäfr3  €ºäfÍÍ*çi¹Ù®¿_ z]­ZŸr3  €óøÒ·ĞLn&7+—oDŸ'Û}—›ÍY7¹  ÀCÈÍäfçÑçÉvßåfsÖMn  ğ©r³—Wnº>«®?Û}—›ÍY7¹  ÀCÈÍæ/õ„ÏÏu=ÙÎı¹÷îutıT¼ïÑçYõ{fö=   gÀ?¾Ôš™ÑBs™×“í<r3¹YÄyäf   œwÇ—äfy²¹™ÜLnw¹   çÃİñ%¹Y,En&7“›ÅGn  Àùpw|In°=   Ü`{z2  @ƒO¹YÏ/Ó4£¤¢'  4›lOO  h 7Ø  ĞàmnvÍäf uéÉ   .æff4€ºôd  €r3€íéÉ   ¹Yÿ?Ò4£¤¢'  4¸’›™Ñ JÓ“  |ËÍ†üe33@*z2  @¹Àöôd  €¿ÌÍÌh ÕéÉ   ~ÎÍFıe33@*z2  @ƒóÜÌŒ°=   Ü`{z2  @¹Àöôd  €?r³¡™ =   Ü`{z2  @¹Àöôd  €ŸB3¹À6ôd  €ÙÌŒŠ  Ğ@n°==   AÄ?Ò4£¤¢'  4ˆøËfÿÌh äáÏ;  €$¹    ”ñ4    :¡    ÉÍ    àÿH    „f    p$7   €#¹    	Í    àHn    oış/K    ?ÈÍ    àHn    Gr3    şïë[_ŞöM‡Õ]r3    ^r³¹    /¹ÙÜ   €×OaÔğ¯:s+ëü^Íäf    ¼äfr3    ^r³¹    ¯kŸovòUWÎ<üÿ´]ÏEr3    ^r³¹    /¹ÙÜ   €‹n}.Ù­O*ëü´qÙr3    .’›   À‘Ü    Úâ©“LìÖ'§­ú|3   €ŸÉˆ›   Éˆ›   Éˆdb©Ô­L,an    /¹    ¼#7   €_Ÿİúª™ßK\   @4¹    ÉÍ                                                         võõ/KAj<RÕTï¨_wXIæ´Ö+µ§P±+€Quuå«lH8õw–®õçáOØ!Ã•Ú³&ak•›aW 3g(¹E§~¹ ÅŒ2DwTÛ`¶V¹v0s†’›Qtê—›a+¢˜ÉßÆÛzµµ¥VGUºäéÃ·’4ˆ]şÄŸYªš9{Ô[?_Ó‡ñ2D×Ò%O¶Æ® FÕ•ÜŒ¢{T¹ 5Œ2¤ê¨J—<}Ø6»UWr3ŠîQåf ë²G¡Ş÷`UÔ ³_kUº¬ÚšÚPt†òó5JTlÛOÓôa<APz¸ƒ9e)7ãQ­Ué²jkjW@ÑJnF‰Š•›öË‡;˜S–r3ÕZ•.«¶¦v¡äf”¨X¹h¿*ËÎJo%Y5h¿l“KØ³|3p²=°+ ÄåçkÔú£¿í%ô|X²UË.``Û”›±ñæÙ6˜å›¹Õg(¹µşèo{É†=–l•ã²Ø6åfl¼y¶fùf@nFõJnF­?úÛ^²a@Ï‡$Õøu‡µeò(g‚c¿«˜É\Ìv”˜¡ü|ÌÛÖHmğA¡™Î™É…*7ãQ=V1“¹˜í
+(1CÉÍÈ\±r3ĞÙ~¦³Cfr¡ÊÍxTUÌd.f»JÌPr32W¬Ü4dS„ªš{ËEæf«˜yfRyªQé’gàêÌÄ3‚ aªj2³ú¤D³UÌl³aP¨­F¥KKn†'H³Yªj2³ú¤D³UÌl³aP¨­F¥KKnÆÃŸù@æjl«OÅLæ=‰ú¤è”gÃÀòíÁ’iú[bçWYv–OıquOx‚ ´åfì—K¨O2×§™·3+¶D¹Õ§~¹ UMÚj”›±_.¡>É\Ÿ6dŞÌ¬|ØåfTŸúåf                                                                                                                                                                             @›ÿÜdÅòÜ¯Ìç   ¨NnV÷~e>'   @ur³º÷+ó9   ª“›Õ½_™Ï	   P‘œÄ½   àHöâŞ   p${qï    8’½¸w    E¶üİß)ñ»	F]Ï•sî´>Õï;   @¹™ÜLn   p$7“›ÉÍ    äfr3¹   ÀÑİ\èÊñ£¾o¶óÌÌmz2½èï›ù~   Œ"7k[‡U÷¥ç=ú¾™ï   À(r³¶uXu_zŞã¨ï›ù~   Œ"7k[‡U÷¥ç=ú¾™ï   À(ÑùR†ümæõÜ½æˆßY¡zîWÄ÷   ¸Kn&7‹Xÿûñ}   î’›ÉÍ"Ö¿ç~E|_   €»äfr³ˆõï¹_ß   à®U¹Ç®×ı¾"Ép¼Ü   ÈFn6öz¢ßWÄ1—›   ÙÈÍÆ^OôûŠ8&Ãñr3    ¹ÙØë‰~_Çd8^n   dñyõÑŸuŸízf®ó•sºèóÈÍ   €Ìäfı×3s¯œsÔõDŸGn   d&7ë¿™ë|åœ£®'ú<r3    3¹YÿõÌ\ç+çu=Ñç‘›                                                                                                                                                                            çJ¿?.
+endstream
+endobj
+22 0 obj
+<< /Type /XObject /Subtype /Image /Width 1640 /Height 1040 /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /FlateDecode /Length 17693 >>
+stream
+xÚìİËíHv°QS
+hzØÓ;UµŒ5Ó¸Í%2@v”üÿA'çÁ$ƒÁ{¯…;ªÏ“¯“ñ)Hn                                                                                 'ü­«+ïk]Ü²BmÏK/‚+Ô>|áXe¶œ:_ĞÖşo†%^Ù.‰}¿ƒ¼3èf«¯PÛ³næZ8V™-Ç´$íº™=…4û ëwBuİlõj{ÖÍ|AÇ*³åø‚–¤}A7³§f´`ıB¨Î ›­¾BmÏº™/háXe¶_Ğ’´/èföÒìƒ¬ßAÕt³ÕW¨íY7ó-«Ì–ãZ’öİÌBš}Ğ‚õ;¶öâ©¤ã´4Jı-ºââçØo
+Ö‘/HümÃV‡¿rí)~ÁnµÖWĞÍÊTu³d{Šß}¿)XG¾ ñ·[şÊµ§ø»ÕZ_A7+{PÕÍ’í)~÷ı¦`ù‚Äß6luø+×âwìVk}İ¬ìAU7K¶§øİ÷›‚uäÛ°Õá¯\{ŠßA°[­õt³²Uİ,Ùâwßo
+Ö‘/HümÃV‡¿rí)~¡Ôn5íš·ùFr/qÛó´­®ãWû™#‘¦íG1¢A¶:kğ®W^ñ¸qeåÛ“EW\·º§Ô²âñ9Á_æ1»‘îZÎs¾º™n¦›Ùu3#>İL7ÓÍt35@7ÓÍt3İL7sDÒÍPNt3İÌö¬›éfº™n¦›éfj€nf”ª›éfº™#’nº™µ¯›éfº™n¦›éfº™n¦›¥êfÏº™#’nº™]C7ÓÍt3İL7ÓÍt3İL73JÕÍt3İÌI7Xë(ª›İòke{n>Æzå[FÖwıåğ÷7æ‘pæ–Ú»oùıM¿VYÇÿM©¶ÕÙS–8Ö­şÿj2Æñ÷s¾½[C7ÓÍt3£TİL7ÓÍt3cIã]E7ó7¿n¦›éf~u3t3İL7ó÷•n¦›éfº™±¤ñ‚n¦›Y¿uº™ßn¿ƒºº™n¦›¥êfº™n¦›9n(º™nfı:Öéf~»u3İİL7ÓÍt3¯¬›éfº™ã†‚¡›éfº™cn¦›éfººYœá°êë—mPã:C¯}p‰í¹àQô–¿cW\ƒ3[Ÿ±¤ñB¦®²ÜoŠn6í3ç>Š¦ ©[º™½Œøt3İL7ÓÍEu3İL7ÓÍt3İL7ÓÍt3İL7Ó|0âÓÍt3İL7sÕÍt3İL7ÓÍt3İL7ÓÍt3İL7ÃˆO7ÓÍt3İÌN§›éfº™n¦›éfº™n¦›éfº™n†Ÿn¦›éfº™n¦›éfº™‚¡›éfº™n¦›éfº™n†_À÷]b èÈğ—.È_nã–dÌŸcG³ïk4Qê¯ú˜ÇN;nèf¥¢“n–ì3ëfº™n¶îï Ñ1º™næÈ`,©›éfº™næX§›éfvvİL7ÓÍlº™Ñ1º™næÈ ›éfº™n¦›9Öéfº™n¦›i#º™mC73:F7ÓÍt3İL7ÓÍt3İÌ±N7ÓÍt3İÌQT7ÓÍt3İİL7ÓÍt3İL7ÓÍt3İL7ÓÍt3İL73^ĞÍt3İİ¬áz%©_9æ¼"ßöaÛè;mş
++îƒKì’+Egnf¥şŒ_åw0B‹y¸Nğ—ÌŠ]åÆå¼b‘KpÜ(µ§¬¸œ‹w³|Çg¿ƒšÆº™n¦›éfª‹næwP73^ĞÍt3İL7ÓÍt3¿ƒºÆº™n¦›éfº™nfêfÆº™n¦›éfº™næwP7ÃxA7ÓÍt3İL7ÓÍ¬AİÌxA7ÓÍt3İL7ÓÍüêfèfº™n¦›ù;V7ÓÍ¬AİL7ÓÍt3İL7ÓÍt3İL7                                                                                                                                                                                                                                                                                                                                                                     òëßº?ë×mO÷½    àA7   €Wº    |¹£zU©××9•Ô&|B    JÑÍ    à•n    ;Æ]ß¬íu.v³îŸ   €št3    x¥›   À«	İì×gmÏÒÍ    M7   €Wº    ¼Šv}³^ÏÚÍşşo¶   €¬t³_İìO   €št3İÌ|3   €ôêfã|–n   nÖ@7   HO7k ›   dõë³^ÏúuÀ©÷÷½ÎÒÍ    ²ÒÍ®ĞÍ    ²ÒÍ®ĞÍ    à•n    ¯t3    x¥›   À+İ    ^éf    ğJ7   €Wº    ¼ÒÍ    à•n    ¯t3    x¥›   À+İ    ^éf   ÀÃo¿ÿñúÏb¡,İ   Ø>D3éŒÊt3   `'šIg”¥›  @q?F3éŒšt3   ¨ì`4“Î(H7  €Êt3øD7  €Êt3øD7  €šN3İŒ‚t3   (¥!—éfÔ¤›  @zWZ™nFYº   dÕÜÇşù¯èf ›  @&W¦“ıó_ÿxı§›Q–n   	\<óm1{ªg2Õèf   °¨^×+û1š=şYàT£›  ÀZº_Û_7ƒ·t3   ˆoÜ­0F3éŒ‚t3   kP+ûN7ƒOt3   eÜÔ²·t3øD7  €Â¶2éŒ²t3   ¸Kä©e¢èf   0ÙZ­L7£,İ   &XejÙÿşç|ÿ§›Q™n   ã,4µì©˜½Ö3k“jt3   èkæÔ².§^îG³¯tfÍRn   ]¬{…ÿ£ÙãŸUL5º   4[njÙ«ƒÑL:£ İ   ÎZ¨•ıx~¥nŸèf   pD‚©eoéfğ‰n   ;R¶²‡SÅL7£ İ   L›Z6á4Ì'­L7£,İ   L-ÓÍà;İ  €ÊšZvö«õjeºeéf   ”ujÙˆV¦›Q–n  @Y§–ne¢eéf   äæ4Ì#L4ƒWº   ù˜ZÖPÀD3x¢›  †Vv1|‰fğn  ÀÒæL-»ŞÊNå2—#ƒt3   V”oj™VÑèf   ¬b•©e§¾”\aéf   ç4L­n¡›  P¾©eZ,G7   ­L+ƒ8t3   î•lj™Vièf   ÜÂÔ2¹‚ÓÍ   ˜fÂÔ2­èE7  `4§aje°"İ  €2M-ÓÊ &İ  €â·²ƒ¹L+t3   ¾œ=;òõY¦–Ée†n  Àö¹}5<E+rĞÍ   Š;¸FO-s&‡n  PÜõ¶ÊÔ2­8E7  ¨ìÆ\¦•Áéf   e™Z&—;t3  €²L-ÓÊ€º  @YZ™VìĞÍ   
+Z:—ieÀº  @ûAì©_/fZ’n  PÁ©bö©}Áë­L.‚ÓÍ   ;rŞå‘ÀõÍ´2 İ   Ÿã+ë2mL+RÒÍ   Òh¸Èÿ¹L+‚ÓÍ   h»-æ¢SË¬n`İ  `]¹ìûåı†	°C7  XÑ•\öÅi˜ ;t3  €…\ÏeZÀAº  ÀFç²·	ëH4ÓÊ€¬t3  €È.N0;8‹l?j½ífrn  Ğœ\v$š}¥³M+ŠÑÍ   â˜Ì.)L+RÒÍ   "˜œË¾Î»ÔÊ >ÑÍ   nte‚Ùõ{bje ;t3  €ùæŸùön˜rÀİ  `š ¹lëQÌ¬M =İ  `‚OÆüN+8N7  §y‚Y¨\¦›5éf   İ%Ëe¢P“n  ĞËü\6ôjÿºPœn  p]â\&šeéf   ÍÚ&˜9óø+XÑ@Mº  ÀY9rÙÁ´º²t3  €ƒ"ä²­µ˜üŠÀİ  àGés ¯t3  €O¦µ2¹  İ  à‰\À¦›  üÛº¹L1A7  Ë x¥›  eÉe ìĞÍ  €jî½-æ&—,B7  ŠË 8E7  Ò“Ë h ›  YÉe \¡›  ÉÜxÿM.RøõY¯gı:ãÔ›v\º  ƒ\Ğ‹nö ›  «“Ë úÒÍt3  `Qwå²æV&—ÁêTuñ£^§›  k‘Ë ÑÍèf  À–»-¦\,G7{¢›  ÁÉe sÜÒÍÚ®Š6gèf  @LrÀdºÙİ  e­\f}™èfOt3   ˆÉ×ùßä2€.F­#>õ1.~°fº  p/¹ İìA7  n!—„¥›=èf  ÀLrÀÒz]ß,Ú{½¥›  sÈe 	Ôìf  Ğ=—í¿]s.³¦à‰@„nf¾  0B÷\¶ÿvf—uä²f§>óYÍt3   #¹ %İ   ™\˜n  pÖ´ëüorÀ,¿^´=ëTæšğ¬³t3  àËWû:şH¹ İìA7  >]”ì5 Ée èfº  ·“¿¾§3¹€jt3  ¨ìH“Ë ¨I7 €².v°ë­l“Ë L7 €²Æu³ßZ. >İ  ÊšœËš[™\À-t3  (K.€º  tı"ÿr ééf  PÊõ;cî¿¾\@º  T —ÀYº  äv¶˜ıïşÇñn¦•˜n  )5ä²×Ÿº™\@º  dÒp>æ±ë«›Ée ”¢› @mW0»r]2¹€Üt3  XÚ•şo×®ç/—›n  ‹ºrÌÇ+Èe °C7 €µ\Ïe_ä2 Ø¡› À.ù–\ ;t3  ®ã³ïä2 Ø§› @L¡r™b@Aº  D*—éf ”¥› @İ/_öàv™ ĞF7 €{E;S4€İ  î?—éf T¦› Àd#rÙÖTÌ>Ñ* &İ  ¦	rù²ã¯c•P™n  £Å9óÈ§•Ë àA7 €A¢	 œ¢› @wr $ › @/A._¦˜@º  \g‚ ä£› @3¹ ÓÍ  à,çc@º  ×=—m&˜@Tº  üÈù˜ Pn  ŸÉeŠ ÜB7 €WÎÇ t3  øâ|L à‹n  ÎÇ ^éf  ”5"—m&˜@º  5ä²ß~ÿcÿ5å2 HF7  çc Çéf  ¤ç|L  n @Vm¹Ìù˜ Àƒn @>Ar™b KÓÍ  HÃù˜ @Gº  «s>& 0‚n À¢âä2Å RÒÍ  XN[.3Á 8E7 `ÎÇ fÒÍ  Îù˜ À-t3  bjÎe&˜ ]èf  D#— èf  1h‚™ó1€6º  ÷r>& “n À]ä2  2İ €Éšs™ó1€™t3  æp>& °İ €¡®ä²îÌ¬ à8İ €Aœ	 ,M7  /çc 9èf  tá|L  İ €+Bå2Å èH7  Í•\f‚ Ÿn Àö.‚¤ó1€”t3 €âö{×Á‡9 ÈG7 ¨¬­†9 ¨@7 (K. Ø¡› ”5¹˜9 X‹n P“	f  ût3 €šä2 €}º @Ms™ó1€ôt3 €j.Î1Ûye¹ ÈD7 ¨ãâ¹™Ÿ^V. RÒÍ  *¸~ıÿ××t>& ›n Ø©8ö½níw3¹ ¨@7 H©¹˜½Ö³¯h&— ¥èf  Ét)fßÓ™ó1€št3 €ÚîÙÖÄä2  İ `umÅ¬o4³ €|t3 €uµå²Çs3 €}º ÀrÚ&˜=½ˆ\ °O7 XËÙböéuä2 €}º À~ûı‹Ì(f  ût3 €àzM0ûb¦ Àº @L§&˜ıõïÈkº  Àqº @(S,C3Ñ ¨I7 ˆà‘Ë3İ (K7 ¸WC.›YÌD3  ,İ àã&˜=ob¢ À[º ÀL_¹,B1ÛŠ• §› ÌÑ–ËF3  >ÑÍ  †j`¦˜ ÜK7 á{.wJæ¦˜ £› ô5g‚Ùvæv™V
+ @İ  ‹+Ì3 €€t3 €+rÙĞS23 &øïÿút3 €s™b@Lÿı_ÿóúÏb¡,İ àÅ€”Ş3õŒât3 €#^sÙ„S27Å€)~ŒfÒ5éf  ;®ç²ÑÅL4à:İŞÒÍ  ŞRÌ (â`4“Î(H7 øîm.›sJæ¦˜0×©b¦›Qn °uÊeŠ ·kHaº|¢› •}ÊeŠ qŒNaÒ|¢› 5õ*fW>ƒbPS´&šÁ'º PJ„	f›bÎÒ)L7ãÕ¯ÏN=xçYmïµóôËA7 *ØÉeŠ oÕIaº¯t³İ È­c1»øI3 ¾ô‘Dãº¸dì#uèfº Ò~.SÌ ¬[K¤°™‹Ñ’Ş©Ìuñ•/¾W[d;K7 2é›Ë®³íp4³î€E&:XÌÍÀRnöD7 r5ÁìA1–0¡ğ˜¶úö`7©C7{¢› Kû1—)f ûÚrVaÃ°w4³›İûyÒÍ €uÏeŠP“ûBßéfOt3 `!Gr™bpœ|§›=ÑÍ €%Œ(f½>›Ûeë’Â€·~}ÖıY;O?õ¬ËA7 "‹<ÁlSÌ€õé`À[ºÙƒn t0—)f Í¤0`‡nö › ¡*f?¡b$ oİr}³‹áK7 Ò‹?ÁlSÌ€Ì+vèfO¾ºÙŸ  ÓÏeÅ¬ãç<^Ì¬S ¬‹'cZ€‰Hº™nf¾ p‹qÅ¬ïç4ÇHÀEÌ€ƒfv³^½K7 Ò:Á¬ïGUÌ€61ÅØt³º 0Á©\¦˜tÑ0‘L1ƒât³'º 0ÎÙ\vï)™›bdáÔKà¢_ŸzğÅgµ=½ãrĞÍ €Öš`¶)f@"Špnö › `¦˜ìPÌ€^t³İ ¸®!—İ~Jæ¦˜‰81`İ ¸bÅ	f›b$¢˜Œ£› rÙ_ÏRÌ úRÌ †ÒÍ €O™ëà#»³A_S1’Í FÓÍ  ²#Éëà#ÃN0{PÌ€L3€9t3 («mòØÁÔ¦˜Œ ˜Ì¤›@YŠÙĞ/¨˜É(f “éf PS÷\¶)f Ã˜fpİ jº+—)f §)f¢À º Ô”l‚Ùæv™@FŠÀ½t3 ¨éJ.Û3€Á3€t3 (èSûç¿ş±Ğ)™›bdäÄL€8t3 (åS.{ı÷ÔÍ3€Ñ3€ht3 ¨`g‚Ùş¿#™™Ë6ÅHJ1H7€Üv®Wvv
+™b0‚if aéf Õ×ùWÌ î¥˜§›@>Gn¹D.Û3 )Å`	º dr¤˜]ïfs¾‹bd¥˜¬B7€³Çã3€ùL3X‹n «;[Ì¶¦h6ç»(f@VŠÀŠt3 XWC1Û¢F3ÅHL1X”n +šVÌ&t3ÅHL1Xšn k™\Ì†v3ÅHÌ‰™ 	èf °Š[ŠÙ h¦˜‰)f ièf ßœ+ÿÏéfŠ›b‰n ‘İ[ÌúF3ÅÈÍ43€|t3 èx.k.fßß.Î43«X‘b•n ¡L.fOF\ÍL1SÌ rÓÍ  ˆ{‹ÙŠ›bn ·]Ìæ#ÅÈÍ43€"t3 ¸QC1‹<ÁlSÌ€ì3€Rt3 ¸E²S27·Ë²SÌ 
+ÒÍ `2Å`9Š@Mº L£˜,Ç43€Êt3 ˜@1Xb€n C%»Qæ¦˜5(f lº £˜¬H1à‹n İ-f·Ÿ’ùcûRÌ€
+œ˜	Àİ z9Ëâ³m·‰mŠPƒbÀ[º \·h1ÛÎd1ÅÈJ1àİ ®X·˜m=¢™ Xšif ìÓÍ  ÍÒÅl»Íl ÀÒ3 ĞÍ à¬¡ÅlÚ·PÌ€š3 ÓÍ à¸¥'˜=QÌ€‚3 NÑÍ àˆLÅìA1J1Í€º ìËWÌt3 Å€fº |¢˜éfÀê3 ®ĞÍ à•b¦›«SÌ ¸N7€ïÜ(ó­æb¦›Ëqb& ½èf ğ ˜‰fÀê3 úÒÍ àT1[å”Ì­G1Í€…(f t§›PÖñ\¶\1ÛG³ıGÚH€%˜fÀ º )f¯ML1V¤˜0”n@)Š™&ä ˜0n@Š™b¤¡˜0‡n@zãŠY„o§˜¥˜fÀLº ‰Êe[Òb&š9(f Ì§›RâS27Å(F1à.º É(fŠ‰bÀt3 ÒÈ]Ì6—2Š1Í€Ûéf $ ˜)f@&Š Aèf ,M1SÌ€d3 âĞÍ XÔ bç*f@5Š Ñèf ,çx1[q‚Ù¦˜õ81€˜t3 Vq<—¥/f¢†b@dº ñ)fŠ’b@pº ‘U(f›3zL3`	º 1)fŠ’bÀBt3 ¢TÌ¢}MÅ¨F1`9º qÏe=X1XˆbÀŠt3 "¨pJæ¦˜%™fÀºt3 î¥˜‰f@VŠ «ÓÍ ¸‹b¦˜‰)f $ ›0_‘b¶91(I1 İ€™3ÅHÌ‰™ $£›0Çˆbó›*f@AŠ )éf Ug‚Ù¦˜U)f d¥›0ˆb¦˜é™f@nº İ)f¢b@º )fŠb@º ](fŠPb@)º Õ¹QæƒbdµÁL3  İ€fŠ™b¤q0‹)f ”¢›Ğ Î)™Š›b oéf œ¢˜)f@2Š |¢›pb¦˜ùˆf °C7àµ}ıø ÅL4rPÌ `‡nPÙ~Û3ÅÈN1€º@YÇï†™şF™ŠPh ;t3€š¦å2Å  §gÀº@MŠÙƒbTãF  pœnPb¶)f@1Wr™nÀû&Ígnèf+.‡U¶™+ËÖz±-U>ÖqÖAL1SÌ€4º3İ€”cIİl­mF7#Âúµ-Up0ˆ•-f¢@Ç\&šu,©›­µÍèfDX¿¶¥ôÚf‘-Ë6Å¨¤!ˆ‰f ÔKêfkm3ºÖ¯m)±æS/—.f›3.N!Í (8–ÑÍ·èfD[¿¶«L®\²L1«ï—Š ¥ÆºÙZÛ‰nF´õk»Êáâ13€˜\£ ãÖÑŸY7µèfD[¿¶«Õ½³+İl•o­˜¹Ée ·NûÌºY¨íD7#Úúµ]­ëS1këf«|kÅÈM1È=ûô^ûàìk~#Ÿ¿×2ïõy8ÒÍ®,Û^ëëÊ2‰¼õú^#–O¯Ïa¿ˆ¼FŞ4´|Å¬m²Yšb&šr º™n¦›éfº™n¦›)fEÎĞTÌ ÅL.ĞÍt3İL7ÓÍt3İŒùÅ,r4SÌ ¹L1ĞÍt3İL7ÓÍt3İŒ[ŠYän¦˜r™\ •n/½zİŠ¯ÓeY5Ü`D™¹œ#ïSö‹9û…å³ÖoŸL(f1£™bä£˜„¢›Õÿêfº™ı¢ïºĞÍt³æ³€İL1’‘Ë bÒÍêŒu3İÌ~Ñw]èfºÙí:³¿^M1¸…b™nöúß}óú
+ÿşéñOÿıÓÓß>şÈçüõ¢ã²ÒÍBíSº™nyùèf·ë[Ì¾SÌ æË ÂŠ0ŞÑz]?_7›ßgîê«lÛ£Ÿ»J:»ï8†T[>‘GÊWÌ"s»L ¹ >İL7{û İ,ì¶=ú¹º™n¶âïHAŠ™b,M1X…nöô¾;ıêÊø÷{Ôú”¹Şö·××o¨dË\7»m~®n¦›­ø;RJÍb¶91HA.Xn¦›½}€nvÛı\İL7[ñw¤ÅL1Ö¥˜$í:Û·¼Îänöi¡›İÕÁ"t†hÛùÙ6y9_é<#–…®aÿå¢‹Ùñh¶ÖWÌ€ÕÉe ™Tîf;ªí}wúÛ•nv1—_VºY¨í\7ÓÍ¢?u³i3ÅX”\n¦›}ÑÍBmçº™níø©›M ˜)fÀŠL0HL7ÓÍ¾èf¡¶sİL7‹vüÔÍ†RÌD3`9r@5+^;ıÈ¸ûÇ–õäìuÂ\óÿíã¼®ZÛç¹²¬Ü`æõØ3÷{5´»–Ïèõ~¶/eº/ÀˆÏ3bùø•TÌ3 Å@7ÓÍt3İL7ÓÍt3İ,H4Ky»LÅË ĞÍt3İL7ÓÍt3İÅ¬-šÙB Å İ,H7ë8n½Ò^?n¦›éfº™n¦˜)f r Ì÷©›|Ì‘§_|¯‹Ÿğ¬¿ÿÛŸ Ğ±˜­õÅ3[DC.³Ğ€ôD$İL7ûêf¶€¾\üß3`	&˜Àİì‰nĞb¦˜ñÉe ğJ7{¢›t¤˜‰f@|Š |¢›=ÑÍ ºPÌ3 8¹ ûõÙ‘gÍ|¯SÏ:K7¸¨l1Ûœ˜	,B.€³t³İ YÇbæRf İ™` Ít³İ b¦˜aÉe @/ºÀ)Š™b„¥˜ }éf )fŠ“\ ¢›ü(w1Û/`n—	D¦˜ Céf ;ÒÏ1;Å3 ¹ ˜C7x«ÂY™Š°¹ ˜L7xRä:fŠ°Å ¸…nğ¥Ô•ÿ3 >¹ ¸—n°Õ»W¦b§˜ èf@qÕŠÙƒbÄ$— ¡èf@Y5‹ÙÖ4ÙÌÖŒ&— éf@MŠ™nD`‚ ™nTã¬Lİ¸\ ,A7êèxbæß÷z.Í€î3 `!ºPb¦›÷’Ë €éf@n¥ŠYß\&š](f Àºt3 «:Å¬9ˆ‰fÀ8r €nä£˜Ja¢Ğ‘\ d¢›™t,f‘£ÙˆÓ-3à"Å ÈG7rPÌLn!— ‰éfÀê3¹¸…b ¤§›ëªPÌä2`šƒ™K. êĞÍ€¥/fÎÇf:X½ä2  İX‹b&—}5ÌSÌ €"t3`¹‹™	fÀ-ä2 €º_âbÖË3 #Å `‡nD¦˜ÉeÀ8r À>İˆ)k1“Ë€83 €}ºMÊbæ|L ¹ àİˆC1“Ë€qœ•	 p–nD¯˜Ée@n—	 ĞL7î•¬˜9ˆ c+Í €Êt3àF£ÙíßE.n7"—éf @eºp‹4ÅL.î5´•‰f @qº0™bp]Ç¦› |¢›Óä(frp£AÓÆ3 €·t3`‚ÅL.î2íKÅ à‰n•àv™ŠpW$ ¸n²z1“Ë€ù´2 €Pt3 »¥‹YC.SÌ€+Üì  ,İè¨Z1³Æfr @|ºĞÅºÅL.¦ÑÊ  Ö¢›-ZÌœ	L#— ,J7šÕ)fÖ5p–V €n4X±˜ÉeÀZ @&ºpÊrÅÌù˜Àh¦– d¥›U(fÖ2pV Pn<üöû;ÿÓBÅL.Æ‘Ë  JÑÍ ¸·lÿYÌœ	¢• ”¥›AYGšXÖbfí?’Ë  ĞÍ ¦ÅL.ºÓÊ  øN7ƒš&D³AŸÜù˜@_Z  ŸèfPPbf]ŸÈe  üH7ƒ‚Ö*frĞ‹V À)ºôc‹PÌœ	ô"— ĞF7ƒj®í¿˜Y­À­ €ët3¨&l4“Ë€‹´2  úÒÍ †³/'3çcÉe  ¢›A£Y¯$—Í´2  &ĞÍ ½æ›c*frĞL. `&İ{-fÍİìú‡q>&ĞF+ à.º¤ô©˜5t³ëF.he  ÜN7ƒdö‹YÃd³æO"—g™Z @(º¤Ñ½˜µu3çc§he  „¥›A#ŠÙÙn&—ÇÉe  Ä§›ÁêM3;ŞÍä2à ­ €µèf°®ÑÅl?š98H. `Qº¬hB1Û‰frğ#­ €t3XK¯böxµ¿ş·™ëm4“Ë€}Z  Éèf°Ål;ĞÁ>L1ƒš–\ @Vº,¡×Y™_/ØVÃä2H©¡hie  T ›Apİ‹Ùƒ\<œ
+\r  ¥èfÖ b¶ufV,ízÓÊ  HL7ƒ€Æ³¹ØG3‹ €t3ˆ¦ïÅÿß’Ë€mL7³T ÈD7ƒ8&³ÅØúu3K €¬t3ˆ`Z1ÛÎG3k²’Ë  `Ÿn÷šYÌ63Í€ÿO+ €#t3¸Küb¦›A2f— À)ºÌ7úv™OÜ:p3  h ›Ád3ÑVçF™  p…nÓ¬UÌD3XWÇ\&š P™nÌ,fÛáh¶ÿHkVÔ½˜‰f  T¦›ÁP1/ş¿óD«Vt±†‰f  ğ–nƒ¬RÌ€¥õš?&š À+İFPÌ€¡œn	  èfĞ—bŒ#— ÀLºô°˜‰f†b  óéfp]ØÛe«“Ë  àFº\¡˜ƒ(f  p;İÚ(fÀr  Ä¡›AÅèK. €€t38E1úRÌ   ,İr»L #¹  âÓÍàG3‹Ùfš¤ÖË3  ¸‹n;3 ¹  –£›Á'Šp\  ëÒÍà•b\§˜ Àêt3øÎí2‹ä2  HC7ƒ‡™ÅlÍ ¹  òÑÍ@1®PÌ   +İŒâ3 \  ééf”åâÿ@Å  ŠĞÍ(H1Èe  PnF)‹™hÁÉe  P–nF3‹Ùfš¤ ˜ @qºé)fÀ)r  eı:ãÔÓ»¿×ëëŒX º¹¹]&pœb @qºÙİŒ¬3à ¹  t³'ºù(fÀr  <ikPmuëbï:ÕÖšéfd°˜‰fb  oéfOt3rpñàGr  ìÓÍèf$ ˜;r™b @M/5vä•»¿—nŸ(fÀ¹  NÑÍèf,J1>‘Ë   nöD7c9Šğ‰b  £ºšY÷ÚÖö˜fºq»Là-¹  ¦ÑÍ  iÅl3Í!— À|º„¢˜O3  ¸ËN§ê°t3Ø¡˜ßÉe  p»šİìOˆäJ1;û^‹™•7j(f ÀEº™ùfDãv™ÀÌ  `¦¶NÕV®z51İŒ"f³M4ƒÀä2  ¸…nöD7#ÅØ3  ¸•nöD7ãvŠ — @(¿>;õà‹Oïõ	›éfÜH1ƒâr™b  èfº·¸r»Ì³ï¥˜A@r  D¦›=èfL°˜‰f0\  ,D7c¦iÅl3Í‚QÌ  €åèfÌ¡˜AMr  °.İŒÑ\ü
+’Ë  €t3ÆQÌ  Å  HC7cÅª‘Ë  €|t3º‹VÌD3J1  ²ÒÍèhZ1ÛL3ƒ»Ée  @zº]¸]&¬î`à’Ë  €:t3.RÌ`u{—b  T£›ÑL1ƒÕ	_r  P–nFÅhbŠ  PŠnÆY.ş9Èe   ût3SÌ ¹  àGºG(fŒb  ğ#İŒ}Š¤$—  üH7+î)‹ıõïÓÿ¤˜A&Š  Àt³²^‹Ù§n—)šA/fš  ¤›Õô©‰Í,f›if0—š  œ¢›ôcSÌ w   h ›t*‹)f°´‹ÅL7  *ÓÍªéÍÚŞZ1ƒ™º3Ñ  ¨L7«æb7k{SÅf:ÕÄD3  €Ot³jb3Ñºh›E¦˜  ¼¥›U3­˜m¦™ÁDÎ»  èN7+¥á$Í¶7RÌ`Å  `İ¬ß~ÿcB7SÌ`Å  `(İ¬‚G1k»#ÀñwQÌ`Å  `İ,½+Ñì`7SÌ`&Å  `İ,±‹ÅìH4s»L˜I1  ˜I7Ké«˜]‰f?v3Å¦QÌ   æÓÍòéRÌö£™bÓ(f   wÑÍ2é5Íl'š)f0b  p/İ,SÅìëYŠäv™   èf	´³ã3˜F1  ˆC7[h9(f   Ñèfëº^Ìö#˜bs(f   1éf‹Íÿ³à"Å   2İl9]NÌTÌà^Š  @|ºÙZº\ÊL1ƒ)f   «ĞÍ"šÁÒ3  €µèf«èuÇLÅæSÌ   V¤›Åwü‚fG^M1ƒ™3  €uéf‘õ-fºÌ¡˜  ¬N7ë`4;õšÎĞ„	3  €t³€"L3ÓÍ b  ‰nM—›f~çš0b  nÇñifƒn ›AÅ   +İ,ˆhÅL4ƒ)f   ¹éf·8ÍL4ƒ)f   éêfÿ@$~ï   ât3Ë Çd  €º@zÉ   t3€ô“  èf é9&  4ĞÍ ÒsL  h ›¤ç˜  Ğ@7HÏ1   n6Qï¸òÜ#¯Ùëuz}¯»–¿­Ñò¬Æ1  àÊà×mÚ¢ÖÍn_ş¶FË³Çd  €+ƒ_c´i‹Z7»}ùÛ-Ïj“  ®~Ñ¦-jİìöåok´<«qL  ¸2ø5Fºx.áhö¾£?'–sVÉ   W¼ÆhC¯n¦›ÙÎ¹‘c2  À•¯1ÚĞÅ«›éf¶snä˜  peÀkŒ6tñêfº™íœ9&  \ğ£]¼»Y¯{Œøœ3—ù•e5zùœ½¿ÃÌm ÂºÆ1  `Nd0Fºxu3İ¬á3ëf8&  ÜH7›³xu3İ¬á3ëf8&  ÜH7›³xu3İ¬á3ëf8&  ÜH7›³xß`t‡½ÌG,Ï¯³JËÒÍbrL  ¸2È5Fºxu3İìâëèf8&  L¦›ÍY¼º™nvñut3“  &ÓÍæ,^İL7»ø:ºÉ   “éfsoÃõŞ¯¼~¯ÇG{ßÑï¹›X>#Ú¦n“c2  À•A®1ÚĞÅ«›éf^çì{éfu8&  \äF£ıöû«ü»Øt³	›´nöã{éfuèf   W¹Æhº™nÖq“ÖÍ~|/İ¬İ  àÊ 7Â­N7ëÕt³{?ç•Şu¤Ye]nÌ§›  \ G£éf«ôİlÿñºÑèf   WÈÆhºÙ*}C7Û¼nF4º  À•²1ÚĞÅ«›éf;ÏÕÍÍ1  àÊ ÙmÚ¢nè$¿`ôëœıî–ÿ•õÕëuÎ®÷Û^¯ïeïÏ1  àÊ€ÚmÚ¢ÖÍn_şWÖ—ngâ˜  0'&£M[ÔºÙíËÿÊúÒÍâ¬S“  æÄc´i‹Z7»}ù_Y_ºYœuŠc2  Àœ˜`Œ•c2  @İ =Çd  €º@zÉ   t3€ô“  èf é9&  4ĞÍ ÒsL  h ›¤ç˜  Ğ@7HÏ1   n6Qtöu,áıe•uûÉº=Û¶“  âÆÑVï–ğş²ÊºıdİmÛÉ   qãÆh«wKxYeİ~²nÏ¶mÇd  €8ƒqc´Õ;ƒ%¼¿¬²n?Y·gÛ¶c2  @œÁ¸1Úè¶°âëSs»ı¾g_Çvî˜  pï ÜmèâÕÍH°Şu³u9&  \À£]¼º	Ö»n¶.Çd  €+Xc´¡‹W7#Áz×ÍÖå˜  pe kŒ6tñìf½®Ç>óúğ3ï›ùº÷ºÉ   3ÂÆhC¯n¦›éfÍ¯£›9&  ÜB7›³xu3İL7k~İÌ1  àºÙœÅ«›éfºYóëèfÉ  À¿h{ÖÎÓ__çâ'<ò:g°Æh‘;C´×¿«ŸŒ~ıUzT´Ïy¶şıGÇd  `İìÓ@Ø-BYåõu3ŸóÓ×ÍbrL  ĞÍ>„Ñ"ôU^_7ó9?ıwİ,&Çd   —¶*u*»İò	÷ÂÆh3;Ãê¯¯›ùœŸş»n“c2  Ğ‹nfŒ6º3Dxıh×½pıüëkDZ½ï¹/À|É  @/º™1Ú]aæëëfsÖ—n¦›Eà˜  ôrªJ{p÷§ïH#ŒÑşù¯¬òoPgİ1ş_{wpÇÑ4`8NG]yµå œ„o>+Gâh”-€0Ap¹«™šîêîêçNÿ/®–3µ53ï'S÷¾V7ëw¾t3İlº  ĞŠn6êM7ëİ1î}­nÖï|éfºÙt3   İlÔ3šn6ªcô~ÿ£^g•ïW7›óû­D7  Ny¾ïÔ—ÇşĞ„¯:û Üêùı¯¯ß¾èf9ÏûºYïW7›óû­D7  NÑÍ><6yµ·¬¤›å<ïëf5¾_İlÎï·İ  8E7ûğ@zñu^ÿšÙÅnVn6öut³9çM7Ëg'  ­<èT™? ¬k.»} ½ò"ï‹Ù¿üöã—g´ÇÏş«üş#İ£÷÷2êß˜í{ìñï&Œšgİ,Ÿ  ´²g7ûòş¯™½3İ¬Gg8û:™İC7ÓÍt³ùıØÉß à$7ÒèfWF?-fº™n¦›éfºÙ„İÌA   šĞÍ~êí¯™İ3İ¬Gg8û:™İC7ÓÍt³ùÙÉ  @+ºÙc‹™n0;  hE7»çH1ÓÍ fc'  G<päË[ı¡Íÿ¬³w³ƒÅL7˜  ¡›}p¤›ÿkf?~yF˜  ¡›}ğ¸›½şüÿSÅÌ3Àlìd  €€§§§ÿøíÓn+fÑ fc'  œò €ıòû_ábæ`6v2  ÀAÇ¼ ˜yF˜  pDB4óŒö©§“±ÇÇĞÑ€ãìd  €#z3Ïh÷èfm¡£ÇÙÉ   ?•PÌ<£İ£›µ=†ØÉ   %3Ïh÷èfm¡£v2  @C	ÅÌ3Ú{:OÎñ<{œvc'  <–ó7Í<£½§ÏäOİìd  €‹r¢™g´7úLÎñÔÍÀN  ¸H7K¦ÏäOİìd  €‹t³d­úÌ‘^t¥­ò:ºØÉ   |ıöå`4ûñ;=£]§›éf0;  àˆ„¿læín¦›Áìd  €ƒzG3Ïhot3İf`'  wï?Ø¼øŸgzFûàlïêÑÇ¼Ÿ+ï†×9{lu3vc'  œòõÛ—×_¯¹ìõ—g´¶t³œ×9{lu3vc'  tªÑ>^İL7ƒìd  € İ,çğêfºd'  èf9‡7¹/yıV?‡ÅŸç¯›±;   @7Ë9¼º™nÙÉ   Su³Oÿ‰Ï9=¼º™néf   º™n¦›Ayº  @€n¶m7[ñut3ÈÜÉ   ›ÓÍt³…^G7ƒÌ  °9İL7[èut3ÈÜÉ   ›óïiæ^İ¬ëñõşav2  @€n–¨~~~«÷3ÛëyÍVï*±“  t³üC­›5?>=ŞTb'  èfù‡Z7k~|z¼¨ÄN  ĞÍòµnÖüøôx?P‰   ›”g'  èf åÙÉ   º@yv2  @€nP   ›”g'  èf åÙÉ   º@yv2  @€nP   ›åŞƒv8¦òÙÉ   ºYÎáÕÍt3ÈN  ĞÍr¯n¦›Á@v2  @€n–sxu3İ²“  t³œÃ{ğWíKºŒe'  èf9‡W7ÓÍ` ;   @7Ë9¼º™nÙÉ   ºYÎáÕÍt3ÈN  ĞÍroÃnvåßèñï´zÍ_{å\@%v2  @€n–sxu3İ²“  t³œÃ«›éf0   ›å^İL7ƒìd  € İ,çğ6ìTgÿÜ#ÿ÷ª¯£¡  ¦›å^İL7ƒìd  € İ,çğêfºd'  èf9‡W7ÓÍ` ;   @7Ë9¼»Í•§›]?ş°";   @7Ë9¼º™nÙÉ   Su³¿ÿüg•_g¯n¦›Á@º  @€n¦›%¼İÆÒÍ   t³!İ¬Çï9òû½Nì÷Ãêt3  € İL7ó:Pn   ›éf^ÊÓÍ   ü{š9‡W7ÓÍ` ;   @7Ë9¼{Îÿ.@«÷söu23Tb'  èf9‡W7ÓÍ` ;   @7Ë9¼º™nÙÉ   ºYÎáÕÍt3ÈN  ĞÍ Ê³“  t3€òìd  € İ <;   @7(ÏN  ĞÍ Ê³“  t3€òìd  € İ <;   @7(ÏN  ĞÍ Ê³“  t3€òìd  € İ <;   @7(ÏN  ĞÍ Ê³“  t3€òìd  € İ <;   @7(ÏN  ĞÍ Ê³“  t3€òìd  € İ <;   @7(ÏN  ĞÍ Ê³“  t3€òìd  € İ <;   @7(ÏN  è×Í ˜‡ë  À$İì½¿ÿüçÔ/'   €áºv3¹   €EuêfŠ    KkŞÍ3    
+hÕÍü3    *¹ŞÍä2    ê¹ÒÍ3    ªŠu3Å   €ÚNu3?Ä   €Mìfr    û8Ò»3    öq¤})f    låì)SÌ    (O.   àçûN}y¿?ëâ;ü”b   Àcº™b   À-İL1   àÍ©`õàÿuñuüV¯ü)¹   €Oéf¢    ·t3İ   €˜~M,ö{Z}Õ‹n   Àº™n   À­Âİìåp:3    ›;õ#Ën¿*öG\üò‹ß²h   ÀOmØÍ^¦3#   ÀË®İìåN:3    ›»Ø ~¾YÛJvÏ   Àgä#İL7   ¸%éfº   À-ùH.›­›åä2    xO7   €[º    Üz>ãÔ—ÇşĞæï    t3    ¸¥›                                                        Ôğü¿S¿ù–#Y{ÏpHW<û§Î£³¿íXûœ}«ÀX\¿Kt kÏ€U°á!6-;\}Ì€Ë¢fb˜«@3±
+Ì€Uà.Ñ*0VÁÎWİ›°Ó#6µïˆÃ>ÍÄ*0Vfb˜«À]¢U`¬‚m¯º›(ZmKÇv· üm°U`¬£b˜«À]¢3àÁÍ¡U€Mè³`ÚnQ–¾,zX6–±
+°
+Ü%êff@7ss¨`êff@7sYô°l<,c`pü³l˜çwÃ›C« Ÿ+÷K>›Ì€ÿnİƒ’U`¬c`˜«`ÛÏ»U`¬‚òg?öcÍ¬4Ÿ3à²h0¬3`«ÀXš‰U`¬‚Úg_7ƒ+ÍÄgÁ¸,ºq²
+Ì€U`¬3`h&V°
+ª}İ®4Ÿ…mg óu˜äBi˜«À­²U`¬‚Ío­3`pıƒoØ¡™ø,˜—EÍÄ*0Vfb˜«@3±
+Ì€U`Tt3L¾Ë¢pYôÄäÙ¸CÖL¬3`¸´
+Ì€UÀõ¾1`‡fâŸ!6.‹Î¾U`¬b˜« ö)>õÓ¬3`¸"X¸òY0.‹Î¾U`¬âÙxXŞäëff@7Ã]ÄfØgÁ¸,:ûV°
+LˆU`¬‚Ú§X73ºî
+ 6Ã­~f€òAÆÀ˜}î0;_,Œ0
+>>fÀì|Ò0¸CÆ8ûš‰0Îµ+>š‰0Nzæ¨`XzTŒ0.ÆÀ˜O…Æ€}>§ş‹õæÿF9f€ÙÎş©ŸQ`Ì€(?®fÀ˜c`Ì€Kƒ1ÀgÁgÁ˜g_31fÀ¸"˜3€f‚pÒ]Àg3àìk&fÀ ™`ĞL0xN                                                                                                                                                                           €ız’#Öö˜g~m¥ãàı×~ÏGŞçÙUiŞfø^fx?­Şƒëİºû§ÒV½Ö›gç *]÷u³ùïµt3ï‡÷¬›ÍÙªö
+×»u÷nÆêóì\ÀºÏb#æ¼×ÒÍ¼ÿŞ³n6g¨Ú+\ïÖİ?º«Ï³s ë>‹y˜ó^K7óşwxÏºÙœ} j¯p½[wÿèf¬>ÏÎ5 xvfswök{ÏÉİl¶.=ó1¿2Ÿ÷¾V›5?«|;üoX;t÷WîÇÌ ¸Ö³î¹ÓÍòß¿n–3Ÿº™k‡n¶Ï<ëfT=×æ Ü×1öÜéfùï_7Ë™OİÌµC7Ûgu3ªkó îë{ît³ü÷¯›åÌ§næÚ¡›í3ÏºUÏµù€}®õWîó¯<;´êBGşï=ñ{?OÍÜÍfû¾f˜ÃVŸ¯™ŸÇ«¶ÙJçk•ıS©›Í¶7®\ËzÌOæıFæüôşw.VoÂ³İgö>Î èfº™n¦›éfº™n¦›éfº™n¦›éf  ›éfº™n¦›éfº™n¦›éfº™n¦›€n¦›éfº™n¦›éfº™n¦›éfº™n •Ú¨ç Q÷=úXæ}õ÷±³/¯Óö3»b7«Ú=V?_ºÙºûp¶ckçyŸ«‡¯5º ÌC7ÓÍt³Ú¯SµÃTíUÏ—n¶î>ÔÍt³UÎµn ô¾.ëfıFİó_9ïºY×©ÚaªvªçK7[wêfºÙ*çZ7 z_—u³~Ï£îù¯œwİ¬ÆëTí0U»GÕó¥›­»u3İl•s­› ³=+ızÁn÷W£îù+İ®Ş©zÿüá»Ùß—n¶g¯èql+ıïY³#İl­æ3Û¿—¡› º™n¦›éfº™n¦Wèfº™n¦›éf €n¦›éfº™n¦›éº™n¦›éfº  ›éfº™n¦›éfz…n¦›éfº™n äw³Uî¯2;Ş¨{şU3Ÿïzœ÷ŞÇyÔsë*?ıì1\eg~nÊÜ]ş]€ù÷ê¨ı£›Íó>W?³ÍªV ëÒÍÖ}öœùùQ7[÷¹u•Ï…n¶îîÒÍæß««´ˆ{”n6ÿñ×Í €ÌûjİlÎî¡›[İ¬í1ÔÍÖÚ]ºÙü{u•±bÒÍæ?şº y_­›ÍÙ=t³±s«›µ=†ºÙZ»K7›¯®Ò"VìQºÙüÇ_7€ÚZıüá³¯™ùŞ®t’ŞÏ­åg8_«Ìa«ç÷Vs8ÃùuŞG=³Ì6Û+>Cõx&íı9]qÎ0‡™]e†6²ÊıÏ*ó<Ûõ´ÇıÆló èfº™n¦›éfº™n¦›éfº™n¦› º™n¦›éfº™n¦›éfº™n¦›éf €n¦›éfº™n¦›éfº™n¦›éfº                                                                                                                                                                            5ü$úQ
+endstream
 endobj
 13 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> /XObject << /Im1 21 0 R /Im2 22 0 R >> >> /Contents 5 0 R >>
 endobj
 14 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> /XObject << /Im1 21 0 R /Im2 22 0 R >> >> /Contents 6 0 R >>
 endobj
 15 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> /XObject << /Im1 21 0 R /Im2 22 0 R >> >> /Contents 7 0 R >>
 endobj
 16 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> /XObject << /Im1 21 0 R /Im2 22 0 R >> >> /Contents 8 0 R >>
 endobj
 17 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> /XObject << /Im1 21 0 R /Im2 22 0 R >> >> /Contents 9 0 R >>
 endobj
 18 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> /XObject << /Im1 21 0 R /Im2 22 0 R >> >> /Contents 10 0 R >>
+endobj
+19 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> /XObject << /Im1 21 0 R /Im2 22 0 R >> >> /Contents 11 0 R >>
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> /XObject << /Im1 21 0 R /Im2 22 0 R >> >> /Contents 12 0 R >>
 endobj
 xref
-0 19
+0 24
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000158 00000 n 
-0000000228 00000 n 
-0000000303 00000 n 
-0000005949 00000 n 
-0000012050 00000 n 
-0000018184 00000 n 
-0000027723 00000 n 
-0000034112 00000 n 
-0000039191 00000 n 
-0000039382 00000 n 
-0000039519 00000 n 
-0000039656 00000 n 
-0000039793 00000 n 
-0000039930 00000 n 
-0000040067 00000 n 
-0000040205 00000 n 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000171 00000 n 
+0000000241 00000 n 
+0000000316 00000 n 
+0000005962 00000 n 
+0000012063 00000 n 
+0000018197 00000 n 
+0000027736 00000 n 
+0000029069 00000 n 
+0000032594 00000 n 
+0000037948 00000 n 
+0000072863 00000 n 
+0000073039 00000 n 
+0000073215 00000 n 
+0000073391 00000 n 
+0000073567 00000 n 
+0000073743 00000 n 
+0000073920 00000 n 
+0000074097 00000 n 
+0000039532 00000 n 
+0000054996 00000 n 
+0000000000 00000 n 
 trailer
-<< /Size 19 /Root 1 0 R >>
+<< /Size 24 /Root 1 0 R >>
 startxref
-40343
+74274
 %%EOF
