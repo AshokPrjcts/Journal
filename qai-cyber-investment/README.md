@@ -37,6 +37,7 @@ Journal/qai-cyber-investment/
 ├── build_docs.py     # converts paper.md -> paper.docx and paper.pdf (figs embedded)
 ├── paper.md          # the short-communication manuscript (source of truth)
 ├── paper.tex         # Elsevier elsarticle LaTeX version
+├── paper.html        # self-contained HTML — open in a browser, Print -> Save as PDF
 ├── paper.docx        # Word version, figures embedded (generated)
 ├── paper.pdf         # PDF version, figures embedded (generated)
 ├── highlights.md     # KBS highlights (separate submission file)
@@ -60,8 +61,16 @@ Journal/qai-cyber-investment/
 ```bash
 python3 qaip.py        # (re)generate all figures/tables/results
 python3 svg2png.py     # rasterize figures SVG -> PNG
-python3 build_docs.py  # writes paper.docx and paper.pdf with figures embedded
+python3 build_docs.py  # writes paper.docx, paper.pdf, paper.html (figures embedded)
 ```
+
+### Convert to PDF yourself (easiest, no tools needed)
+
+Open **`paper.html`** in any web browser and choose **Print → Save as PDF**
+(set margins to "Default" and enable "Background graphics"). The file is fully
+self-contained — both figures are embedded as base64 images — so the PDF needs
+no other files. This is the most reliable way to produce a clean, shareable PDF
+on any machine.
 
 All three scripts use only the Python standard library (the `.docx` is authored
 directly as OOXML; the PDF and PNG are written by built-in minimal writers), so

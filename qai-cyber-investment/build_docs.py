@@ -1,12 +1,13 @@
 """
-build_docs.py — Convert the Markdown manuscript into Word (.docx) and PDF.
+build_docs.py — Convert the Markdown manuscript into Word (.docx), PDF, and HTML.
 
 ZERO-DEPENDENCY (Python standard library only). No pandoc / libreoffice /
 python-docx / reportlab required. A .docx file is an OOXML ZIP archive, which
-we author directly; the PDF is produced by a minimal built-in writer.
+we author directly; the PDF is produced by a minimal built-in writer; the HTML
+is self-contained (figures embedded as base64) and print-to-PDF ready.
 
 Usage:
-    python3 build_docs.py            # builds paper.docx and paper.pdf
+    python3 build_docs.py            # builds paper.docx, paper.pdf, paper.html
 
 Supported Markdown subset (sufficient for paper.md):
   # / ## / ### headings, paragraphs, blank-line separation,
@@ -595,6 +596,110 @@ class PDF:
             f.write(out)
 
 
+# =========================================================================== #
+# HTML WRITER  (self-contained, print-to-PDF ready, figures embedded as base64)
+# =========================================================================== #
+def _html_inline(text):
+    """Convert an inline-markdown string to safe HTML (keeps sub/sup tags)."""
+    # protect existing <sub>/<sup> tags, escape the rest, then restore
+    text = text.replace("<sub>", "\u0001SUBO\u0002").replace("</sub>", "\u0001SUBC\u0002")
+    text = text.replace("<sup>", "\u0001SUPO\u0002").replace("</sup>", "\u0001SUPC\u0002")
+    text = html.escape(text, quote=False)
+    text = (text.replace("\u0001SUBO\u0002", "<sub>").replace("\u0001SUBC\u0002", "</sub>")
+                .replace("\u0001SUPO\u0002", "<sup>").replace("\u0001SUPC\u0002", "</sup>"))
+    text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
+    text = re.sub(r"(?<!\*)\*(?!\*)(.+?)(?<!\*)\*(?!\*)", r"<em>\1</em>", text)
+    text = re.sub(r"`(.+?)`", r"<code>\1</code>", text)
+    return text
+
+
+def _img_data_uri(path):
+    import base64
+    with open(path, "rb") as f:
+        b64 = base64.b64encode(f.read()).decode("ascii")
+    return "data:image/png;base64," + b64
+
+
+def build_html(blocks, out_path):
+    css = """
+    @page { size: A4; margin: 22mm 20mm; }
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { font-family: "Times New Roman", Georgia, serif; font-size: 11pt;
+           line-height: 1.5; color: #111; max-width: 820px; margin: 0 auto;
+           padding: 24px; }
+    h1 { font-size: 20pt; text-align: center; line-height: 1.25; margin: 0 0 6px; }
+    h2 { font-size: 14pt; border-bottom: 1px solid #ddd; padding-bottom: 3px;
+         margin-top: 22px; }
+    h3 { font-size: 12pt; margin-top: 16px; }
+    p { margin: 0 0 10px; text-align: justify; }
+    ul, ol { margin: 0 0 10px 22px; }
+    li { margin-bottom: 3px; }
+    code { font-family: "Consolas", monospace; font-size: 10pt;
+           background: #f4f4f4; padding: 0 2px; }
+    blockquote { font-family: "Consolas", monospace; font-size: 9.5pt;
+                 background: #f7f7f7; border-left: 3px solid #bbb;
+                 margin: 10px 0; padding: 8px 12px; white-space: pre-wrap;
+                 line-height: 1.35; }
+    table { border-collapse: collapse; width: 100%; font-size: 9pt;
+            margin: 8px 0 16px; page-break-inside: avoid; }
+    th, td { border: none; border-bottom: 1px solid #ccc; padding: 5px 7px;
+             text-align: left; vertical-align: top; }
+    thead th { border-top: 1.5px solid #333; border-bottom: 1.5px solid #333;
+               background: #f2f2f2; font-weight: bold; }
+    figure { text-align: center; margin: 14px 0; page-break-inside: avoid; }
+    figure img { max-width: 92%; height: auto; border: 1px solid #eee; }
+    .keywords { font-size: 10.5pt; }
+    @media print { a { color: #111; text-decoration: none; } }
+    """
+    parts = ['<!DOCTYPE html>', '<html lang="en"><head>',
+             '<meta charset="utf-8">',
+             '<title>Quantum-Inspired AI for Cybersecurity Investment Prioritization</title>',
+             f'<style>{css}</style></head><body>']
+
+    # accumulate blockquote (pseudocode) lines into one <blockquote>
+    i = 0
+    quote_buf = []
+
+    def flush_quote():
+        if quote_buf:
+            parts.append("<blockquote>" + "\n".join(_html_inline(q) for q in quote_buf)
+                         + "</blockquote>")
+            quote_buf.clear()
+
+    for kind, payload in blocks:
+        if kind != "quote":
+            flush_quote()
+        if kind == "image":
+            parts.append(f'<figure><img src="{_img_data_uri(payload)}" alt="figure"></figure>')
+        elif kind == "h1":
+            parts.append(f"<h1>{_html_inline(payload)}</h1>")
+        elif kind == "h2":
+            parts.append(f"<h2>{_html_inline(payload)}</h2>")
+        elif kind == "h3":
+            parts.append(f"<h3>{_html_inline(payload)}</h3>")
+        elif kind == "p":
+            cls = ' class="keywords"' if payload.startswith("**Keywords:**") else ""
+            parts.append(f"<p{cls}>{_html_inline(payload)}</p>")
+        elif kind == "ul":
+            parts.append("<ul>" + "".join(f"<li>{_html_inline(it)}</li>" for it in payload) + "</ul>")
+        elif kind == "ol":
+            parts.append("<ol>" + "".join(f"<li>{_html_inline(it)}</li>" for it in payload) + "</ol>")
+        elif kind == "quote":
+            quote_buf.extend(payload)
+        elif kind == "table":
+            rows = payload
+            thead = "".join(f"<th>{_html_inline(c)}</th>" for c in rows[0])
+            tbody = "".join(
+                "<tr>" + "".join(f"<td>{_html_inline(c)}</td>" for c in r) + "</tr>"
+                for r in rows[1:])
+            parts.append(f"<table><thead><tr>{thead}</tr></thead><tbody>{tbody}</tbody></table>")
+    flush_quote()
+
+    parts.append("</body></html>")
+    with open(out_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(parts))
+
+
 def build_pdf(blocks, out_path):
     pdf = PDF()
     for kind, payload in blocks:
@@ -647,13 +752,16 @@ def main():
     blocks = insert_figures(read_blocks(SRC))
     docx_path = os.path.join(HERE, "paper.docx")
     pdf_path = os.path.join(HERE, "paper.pdf")
+    html_path = os.path.join(HERE, "paper.html")
     build_docx(blocks, docx_path)
     build_pdf(blocks, pdf_path)
+    build_html(blocks, html_path)
     n_img = sum(1 for k, _ in blocks if k == "image")
     print("Parsed blocks :", len(blocks))
     print("Figures embedded:", n_img)
     print("Wrote         :", docx_path)
     print("Wrote         :", pdf_path)
+    print("Wrote         :", html_path)
 
 
 if __name__ == "__main__":
