@@ -443,7 +443,7 @@ BT /F1 10 Tf 1 0 0 1 56.0 75.5 Tm (information security games, in: Proc. 17th In
 endstream
 endobj
 12 0 obj
-<< /Length 5884 >>
+<< /Length 5882 >>
 stream
 BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm (https://doi.org/10.1145/1367497.1367526.) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 769.5 Tm ([3] V.M. Bier, S. Oliveros, L. Samuelson, Choosing what to protect: strategic defensive) Tj ET
@@ -488,22 +488,23 @@ BT /F1 10 Tf 1 0 0 1 56.0 211.5 Tm (analysis, Sustainability 16 \(2024\) 1836. h
 BT /F1 10 Tf 1 0 0 1 56.0 195.0 Tm ([19] Z. Zhang, et al., MOQEA/D: multi-objective QEA with decomposition mechanism and excellent) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 181.5 Tm (global search and its application, IEEE Trans. Intell. Transp. Syst. 25 \(2024\) 12456?12470.) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 168.0 Tm (https://doi.org/10.1109/TITS.2024.3373510.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 151.5 Tm ([20] G. Acampora, A. Vitiello, Quantum-inspired evolutionary algorithms: a survey of recent) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 138.0 Tm (advances and applications, IEEE Comput. Intell. Mag. 18 \(2023\) 36?50.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 124.5 Tm (https://doi.org/10.1109/MCI.2023.3304085. [bibliographic fields to verify]) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 151.5 Tm ([20] A. Dey, S. Bhattacharyya, S. Dey, D. Konar, J. Plato?, V. Sná?el, L. Mrsic, P. Pal, A) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 138.0 Tm (review of quantum-inspired metaheuristic algorithms for automatic clustering, Mathematics 11) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 124.5 Tm (\(2023\) 2018. https://doi.org/10.3390/math11092018.) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 108.0 Tm ([21] P.K. Gupta, et al., Portfolio optimization problem: a taxonomic review of solution) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 94.5 Tm (methodologies, IEEE Access 11 \(2023\) 33100?33120. https://doi.org/10.1109/ACCESS.2023.3263198.) Tj ET
 BT /F1 10 Tf 1 0 0 1 56.0 78.0 Tm ([22] F. Glover, G. Kochenberger, Y. Du, Quantum bridge analytics I: a tutorial on formulating) Tj ET
 endstream
 endobj
 13 0 obj
-<< /Length 687 >>
+<< /Length 760 >>
 stream
 BT /F1 10 Tf 1 0 0 1 56.0 786.0 Tm (and using QUBO models, 4OR 17 \(2019\) 335?371. https://doi.org/10.1007/s10288-019-00424-y.) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 769.5 Tm ([23] D. Schlör, et al., Explainable machine learning for intrusion detection, Comput. Secur. 128) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 756.0 Tm (\(2023\) 103160. https://doi.org/10.1016/j.cose.2023.103160. [bibliographic fields to verify]) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 739.5 Tm ([24] [Author Name], QAI-CIP: Quantum-Inspired AI for Cybersecurity Investment Prioritization) Tj ET
-BT /F1 10 Tf 1 0 0 1 56.0 726.0 Tm ([software], GitHub, 2026. https://github.com/AshokPrjcts/Journal/tree/main/qai-cyber-investment.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 769.5 Tm ([23] M.S.A. Muthanna, et al., Leveraging explainable artificial intelligence in real-time) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 756.0 Tm (cyberattack identification: intrusion detection system approach, Appl. Sci. 13 \(2023\) 8587.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 742.5 Tm (https://doi.org/10.3390/app13158587.) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 726.0 Tm ([24] [Author Name], QAI-CIP: Quantum-Inspired AI for Cybersecurity Investment Prioritization) Tj ET
+BT /F1 10 Tf 1 0 0 1 56.0 712.5 Tm ([software], GitHub, 2026. https://github.com/AshokPrjcts/Journal/tree/main/qai-cyber-investment.) Tj ET
 endstream
 endobj
 23 0 obj
@@ -598,21 +599,21 @@ xref
 0000032224 00000 n 
 0000035828 00000 n 
 0000041164 00000 n 
-0000047101 00000 n 
-0000081171 00000 n 
-0000081347 00000 n 
-0000081523 00000 n 
-0000081699 00000 n 
-0000081875 00000 n 
-0000082051 00000 n 
-0000082228 00000 n 
-0000082405 00000 n 
-0000082582 00000 n 
-0000047840 00000 n 
-0000063304 00000 n 
+0000047099 00000 n 
+0000081242 00000 n 
+0000081418 00000 n 
+0000081594 00000 n 
+0000081770 00000 n 
+0000081946 00000 n 
+0000082122 00000 n 
+0000082299 00000 n 
+0000082476 00000 n 
+0000082653 00000 n 
+0000047911 00000 n 
+0000063375 00000 n 
 0000000000 00000 n 
 trailer
 << /Size 26 /Root 1 0 R >>
 startxref
-82759
+82830
 %%EOF
