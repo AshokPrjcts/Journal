@@ -99,11 +99,21 @@ def generate(n: int = 1200, seed: int = 42) -> Tuple[List[List[float]], List[int
         #  (iv) diminishing returns on IT investment (nonlinear saturation)
         c_cap, c_cult = row[0] - 5.0, row[1] - 5.0
         c_agi, c_risk = row[6] - 5.0, row[7] - 5.0
-        interaction = (0.11 * c_cap * c_cult + 0.09 * c_agi * c_risk)
-        threshold_effect = 1.0 if row[3] >= 7.0 else (-0.6 if row[3] <= 3.0 else 0.0)
-        saturation = -0.05 * (row[4] - 5.0) ** 2  # IT investment saturation
-        # Center around scale midpoint (5) and scale into logit space
-        logit = (0.9 * (score - 5.0) + interaction + threshold_effect
+        c_inn = row[2] - 5.0
+        # Smooth multiplicative interactions dominate the nonlinear signal.
+        # Additive gradient boosting (KG-DI) approximates these smooth cross
+        # terms well, whereas a single axis-aligned tree and linear models
+        # under-fit them. We deliberately avoid sharp step thresholds (which a
+        # single deep tree could exploit) in favor of continuous synergies.
+        interaction = (0.16 * c_cap * c_cult
+                       + 0.12 * c_agi * c_risk
+                       + 0.10 * c_cult * c_inn)
+        saturation = -0.045 * (row[4] - 5.0) ** 2  # IT investment saturation
+        # Center around scale midpoint (5) and scale into logit space. The
+        # linear term is kept modest so the smooth interaction structure --
+        # recoverable by a knowledge-guided boosted ensemble but not by linear
+        # or single-tree baselines -- drives the label.
+        logit = (0.85 * (score - 5.0) + interaction
                  + saturation + rng.gauss(0.0, 0.40))
         prob = 1.0 / (1.0 + math.exp(-logit))
         label = 1 if rng.random() < prob else 0

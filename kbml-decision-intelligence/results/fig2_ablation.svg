@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="480" viewBox="0 0 900 480" font-family="DejaVu Sans, Arial, sans-serif">
+<rect width="900" height="480" fill="white"/>
+<text x="450.0" y="26.0" font-size="15" fill="#222" text-anchor="middle" font-weight="bold">Fig. 2. Component ablation and cost-sensitive decision layer</text>
+<line x1="70.0" y1="70.0" x2="70.0" y2="410.0" stroke="#000" stroke-width="1.4"/>
+<line x1="70.0" y1="410.0" x2="430.0" y2="410.0" stroke="#000" stroke-width="1.4"/>
+<line x1="70.0" y1="410.0" x2="430.0" y2="410.0" stroke="#eee" stroke-width="1"/>
+<text x="62.0" y="414.0" font-size="9" fill="#222" text-anchor="end" font-weight="normal">0.673</text>
+<line x1="70.0" y1="325.0" x2="430.0" y2="325.0" stroke="#eee" stroke-width="1"/>
+<text x="62.0" y="329.0" font-size="9" fill="#222" text-anchor="end" font-weight="normal">0.679</text>
+<line x1="70.0" y1="240.0" x2="430.0" y2="240.0" stroke="#eee" stroke-width="1"/>
+<text x="62.0" y="244.0" font-size="9" fill="#222" text-anchor="end" font-weight="normal">0.685</text>
+<line x1="70.0" y1="155.0" x2="430.0" y2="155.0" stroke="#eee" stroke-width="1"/>
+<text x="62.0" y="159.0" font-size="9" fill="#222" text-anchor="end" font-weight="normal">0.692</text>
+<line x1="70.0" y1="70.0" x2="430.0" y2="70.0" stroke="#eee" stroke-width="1"/>
+<text x="62.0" y="74.0" font-size="9" fill="#222" text-anchor="end" font-weight="normal">0.698</text>
+<rect x="86.9" y="275.2" width="56.2" height="134.8" fill="#bdbdbd" opacity="0.9"/>
+<text x="115.0" y="269.2" font-size="10" fill="#222" text-anchor="middle" font-weight="bold">0.683</text>
+<text x="115.0" y="426.0" font-size="8.5" fill="#222" text-anchor="middle" font-weight="normal">Neither</text>
+<text x="115.0" y="437.0" font-size="8.5" fill="#222" text-anchor="middle" font-weight="normal">(Logistic Regression)</text>
+<rect x="176.9" y="158.7" width="56.2" height="251.3" fill="#74add1" opacity="0.9"/>
+<text x="205.0" y="152.7" font-size="10" fill="#222" text-anchor="middle" font-weight="bold">0.691</text>
+<text x="205.0" y="426.0" font-size="8.5" fill="#222" text-anchor="middle" font-weight="normal">Knowledge</text>
+<text x="205.0" y="437.0" font-size="8.5" fill="#222" text-anchor="middle" font-weight="normal">prior only</text>
+<rect x="266.9" y="270.0" width="56.2" height="140.0" fill="#f46d43" opacity="0.9"/>
+<text x="295.0" y="264.0" font-size="10" fill="#222" text-anchor="middle" font-weight="bold">0.683</text>
+<text x="295.0" y="426.0" font-size="8.5" fill="#222" text-anchor="middle" font-weight="normal">Boosting</text>
+<text x="295.0" y="437.0" font-size="8.5" fill="#222" text-anchor="middle" font-weight="normal">only</text>
+<rect x="356.9" y="137.4" width="56.2" height="272.6" fill="#d62728" opacity="0.9"/>
+<text x="385.0" y="131.4" font-size="10" fill="#222" text-anchor="middle" font-weight="bold">0.693</text>
+<text x="385.0" y="426.0" font-size="8.5" fill="#222" text-anchor="middle" font-weight="normal">KG-DI (knowledge</text>
+<text x="385.0" y="437.0" font-size="8.5" fill="#222" text-anchor="middle" font-weight="normal">+ boosting)</text>
+<text x="24" y="240.0" font-size="12" text-anchor="middle" transform="rotate(-90 24 240.0)">Mean AUC</text>
+<text x="250.0" y="58.0" font-size="12" fill="#222" text-anchor="middle" font-weight="bold">(a) 2x2 factorial ablation</text>
+<line x1="520.0" y1="70.0" x2="520.0" y2="410.0" stroke="#000" stroke-width="1.4"/>
+<line x1="520.0" y1="410.0" x2="840.0" y2="410.0" stroke="#000" stroke-width="1.4"/>
+<line x1="520.0" y1="70.0" x2="520.0" y2="410.0" stroke="#eee" stroke-width="1"/>
+<text x="520.0" y="428.0" font-size="10" fill="#222" text-anchor="middle" font-weight="normal">0.0</text>
+<line x1="584.0" y1="70.0" x2="584.0" y2="410.0" stroke="#eee" stroke-width="1"/>
+<text x="584.0" y="428.0" font-size="10" fill="#222" text-anchor="middle" font-weight="normal">0.2</text>
+<line x1="648.0" y1="70.0" x2="648.0" y2="410.0" stroke="#eee" stroke-width="1"/>
+<text x="648.0" y="428.0" font-size="10" fill="#222" text-anchor="middle" font-weight="normal">0.4</text>
+<line x1="712.0" y1="70.0" x2="712.0" y2="410.0" stroke="#eee" stroke-width="1"/>
+<text x="712.0" y="428.0" font-size="10" fill="#222" text-anchor="middle" font-weight="normal">0.6</text>
+<line x1="776.0" y1="70.0" x2="776.0" y2="410.0" stroke="#eee" stroke-width="1"/>
+<text x="776.0" y="428.0" font-size="10" fill="#222" text-anchor="middle" font-weight="normal">0.8</text>
+<line x1="840.0" y1="70.0" x2="840.0" y2="410.0" stroke="#eee" stroke-width="1"/>
+<text x="840.0" y="428.0" font-size="10" fill="#222" text-anchor="middle" font-weight="normal">1.0</text>
+<polyline points="520.00,348.97 523.20,348.97 526.40,348.97 529.60,348.97 532.80,348.97 536.00,348.97 539.20,348.97 542.40,348.97 545.60,348.97 548.80,348.97 552.00,348.97 555.20,348.97 558.40,349.85 561.60,349.85 564.80,349.85 568.00,349.85 571.20,349.85 574.40,349.85 577.60,349.85 580.80,349.85 584.00,348.10 587.20,348.97 590.40,341.13 593.60,339.38 596.80,342.00 600.00,340.26 603.20,338.51 606.40,337.64 609.60,334.15 612.80,332.41 616.00,333.28 619.20,332.41 622.40,333.28 625.60,327.18 628.80,327.18 632.00,326.31 635.20,328.05 638.40,325.44 641.60,321.08 644.80,321.08 648.00,318.46 651.20,313.23 654.40,308.87 657.60,308.00 660.80,308.00 664.00,300.15 667.20,290.56 670.40,292.31 673.60,277.49 676.80,271.38 680.00,260.92 683.20,248.72 686.40,246.97 689.60,242.62 692.80,234.77 696.00,229.54 699.20,226.92 702.40,223.44 705.60,215.59 708.80,215.59 712.00,208.62 715.20,209.49 718.40,206.87 721.60,199.03 724.80,201.64 728.00,198.15 731.20,195.54 734.40,190.31 737.60,188.56 740.80,180.72 744.00,171.13 747.20,171.13 750.40,161.54 753.60,153.69 756.80,143.23 760.00,138.00 763.20,132.77 766.40,130.15 769.60,114.46 772.80,106.62 776.00,104.00 779.20,98.77 782.40,93.54 785.60,93.54 788.80,90.92 792.00,88.31 795.20,77.85 798.40,75.23 801.60,72.62 804.80,72.62 808.00,70.00 811.20,70.00 814.40,70.00 817.60,70.00 820.80,70.00 824.00,70.00 827.20,70.00 830.40,70.00 833.60,70.00 836.80,70.00 840.00,70.00" fill="none" stroke="#6a3d9a" stroke-width="2.4"/>
+<line x1="558.4" y1="70.0" x2="558.4" y2="410.0" stroke="#d62728" stroke-width="1.6" stroke-dasharray="4,4"/>
+<text x="562.4" y="84.0" font-size="11" fill="#d62728" text-anchor="start" font-weight="normal">t*=0.12</text>
+<text x="680.0" y="240.0" font-size="12" fill="#d62728" text-anchor="middle" font-weight="bold">-60% cost</text>
+<text x="680.0" y="450.0" font-size="12" fill="#222" text-anchor="middle" font-weight="normal">Decision threshold</text>
+<text x="482" y="240.0" font-size="12" text-anchor="middle" transform="rotate(-90 482 240.0)">Expected cost</text>
+<text x="680.0" y="58.0" font-size="12" fill="#222" text-anchor="middle" font-weight="bold">(b) Cost-sensitive thresholding (FP:FN=1:3)</text>
+</svg>

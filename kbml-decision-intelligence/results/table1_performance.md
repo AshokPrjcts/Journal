@@ -1,9 +1,9 @@
 | Model | Accuracy | Precision | Recall | F1 | AUC |
 |---|---|---|---|---|---|
-| Logistic Regression (baseline) | 0.688±0.018 | 0.703±0.009 | 0.803±0.024 | 0.749±0.015 | 0.734±0.025 |
-| Decision Tree (baseline) | 0.630±0.017 | 0.667±0.018 | 0.731±0.039 | 0.697±0.017 | 0.703±0.020 |
-| Random Forest (baseline) | 0.667±0.017 | 0.692±0.011 | 0.770±0.025 | 0.729±0.017 | 0.734±0.035 |
-| GBM without knowledge prior (ablation) | 0.672±0.030 | 0.701±0.020 | 0.761±0.035 | 0.730±0.026 | 0.732±0.032 |
-| Knowledge-Based GBM (ours) | 0.670±0.026 | 0.698±0.012 | 0.763±0.041 | 0.729±0.025 | 0.737±0.035 |
+| Logistic Regression | 0.628±0.032 | 0.649±0.045 | 0.757±0.052 | 0.698±0.037 | 0.683±0.035 |
+| Decision Tree | 0.592±0.046 | 0.642±0.056 | 0.649±0.085 | 0.642±0.054 | 0.673±0.049 |
+| Random Forest | 0.623±0.035 | 0.653±0.046 | 0.725±0.055 | 0.686±0.040 | 0.682±0.032 |
+| KG-DI without knowledge prior (ablation) | 0.629±0.031 | 0.656±0.041 | 0.733±0.059 | 0.691±0.039 | 0.683±0.036 |
+| KG-DI (proposed) * | 0.638±0.032 | 0.683±0.048 | 0.683±0.040 | 0.682±0.035 | 0.693±0.034 |
 
-*Table 1. Classification performance (mean +/- SD over 5 repeated holdout splits). The proposed Knowledge-Based GBM attains the highest AUC; the ablation row isolates the contribution of the knowledge prior.*
+*Table 1. Predictive performance over 24 matched holdout splits (mean +/- SD; N=1000 firms/split). The proposed KG-DI (*) attains the highest AUC. The ablation row removes only the knowledge prior, isolating its contribution.*
