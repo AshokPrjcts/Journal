@@ -1,0 +1,9 @@
+# This project is intentionally ZERO-DEPENDENCY.
+# All data generation, machine-learning models, metrics, the decision layer,
+# and the SVG figure rendering are implemented using only the Python 3.9+
+# standard library. This guarantees full, long-term reproducibility with no
+# version drift.
+#
+# Requires: Python >= 3.9  (tested on 3.11)
+# To run the full experiment:
+#     python3 src/experiment.py

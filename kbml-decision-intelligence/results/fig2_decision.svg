@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" font-family="DejaVu Sans, Arial, sans-serif">
+<rect width="760" height="520" fill="white"/>
+<text x="380.0" y="26.0" font-size="15" fill="#222" text-anchor="middle" font-weight="bold">Fig. 2. Decision-intelligence layer and knowledge prior</text>
+<line x1="60.0" y1="55.0" x2="60.0" y2="435.0" stroke="#000" stroke-width="1.4"/>
+<line x1="60.0" y1="435.0" x2="390.0" y2="435.0" stroke="#000" stroke-width="1.4"/>
+<line x1="60.0" y1="55.0" x2="60.0" y2="435.0" stroke="#eee" stroke-width="1"/>
+<text x="60.0" y="453.0" font-size="11" fill="#222" text-anchor="middle" font-weight="normal">0.0</text>
+<line x1="126.0" y1="55.0" x2="126.0" y2="435.0" stroke="#eee" stroke-width="1"/>
+<text x="126.0" y="453.0" font-size="11" fill="#222" text-anchor="middle" font-weight="normal">0.2</text>
+<line x1="192.0" y1="55.0" x2="192.0" y2="435.0" stroke="#eee" stroke-width="1"/>
+<text x="192.0" y="453.0" font-size="11" fill="#222" text-anchor="middle" font-weight="normal">0.4</text>
+<line x1="258.0" y1="55.0" x2="258.0" y2="435.0" stroke="#eee" stroke-width="1"/>
+<text x="258.0" y="453.0" font-size="11" fill="#222" text-anchor="middle" font-weight="normal">0.6</text>
+<line x1="324.0" y1="55.0" x2="324.0" y2="435.0" stroke="#eee" stroke-width="1"/>
+<text x="324.0" y="453.0" font-size="11" fill="#222" text-anchor="middle" font-weight="normal">0.8</text>
+<line x1="390.0" y1="55.0" x2="390.0" y2="435.0" stroke="#eee" stroke-width="1"/>
+<text x="390.0" y="453.0" font-size="11" fill="#222" text-anchor="middle" font-weight="normal">1.0</text>
+<polyline points="60.00,333.10 63.30,333.10 66.60,333.10 69.90,333.10 73.20,333.10 76.50,333.10 79.80,333.10 83.10,333.10 86.40,333.10 89.70,333.10 93.00,334.05 96.30,335.00 99.60,332.14 102.90,333.10 106.20,334.05 109.50,331.19 112.80,331.19 116.10,331.19 119.40,331.19 122.70,331.19 126.00,328.33 129.30,329.29 132.60,330.24 135.90,331.19 139.20,333.10 142.50,330.24 145.80,326.43 149.10,327.38 152.40,327.38 155.70,326.43 159.00,323.57 162.30,325.48 165.60,325.48 168.90,327.38 172.20,328.33 175.50,326.43 178.80,323.57 182.10,318.81 185.40,313.10 188.70,310.24 192.00,302.62 195.30,296.90 198.60,296.90 201.90,297.86 205.20,299.76 208.50,291.19 211.80,291.19 215.10,280.71 218.40,276.90 221.70,275.00 225.00,272.14 228.30,275.00 231.60,269.29 234.90,267.38 238.20,264.52 241.50,259.76 244.80,259.76 248.10,255.95 251.40,251.19 254.70,249.29 258.00,248.33 261.30,244.52 264.60,233.10 267.90,229.29 271.20,230.24 274.50,227.38 277.80,218.81 281.10,220.71 284.40,210.24 287.70,200.71 291.00,200.71 294.30,195.00 297.60,193.10 300.90,189.29 304.20,186.43 307.50,184.52 310.80,182.62 314.10,181.67 317.40,178.81 320.70,169.29 324.00,159.76 327.30,152.14 330.60,144.52 333.90,133.10 337.20,124.52 340.50,114.05 343.80,102.62 347.10,96.90 350.40,85.48 353.70,76.90 357.00,74.05 360.30,71.19 363.60,66.43 366.90,63.57 370.20,57.86 373.50,55.00 376.80,55.00 380.10,55.00 383.40,55.00 386.70,55.00 390.00,55.00" fill="none" stroke="#6a3d9a" stroke-width="2.4"/>
+<line x1="96.3" y1="55.0" x2="96.3" y2="435.0" stroke="#d62728" stroke-width="1.6" stroke-dasharray="4,4"/>
+<text x="100.3" y="69.0" font-size="11" fill="#d62728" text-anchor="start" font-weight="normal">optimal t*=0.11</text>
+<text x="225.0" y="498.0" font-size="13" fill="#222" text-anchor="middle" font-weight="normal">Decision threshold</text>
+<text x="18" y="245.0" font-size="13" text-anchor="middle" transform="rotate(-90 18 245.0)">Expected cost</text>
+<text x="225.0" y="47.0" font-size="12" fill="#222" text-anchor="middle" font-weight="bold">(a) Cost-sensitive thresholding</text>
+<line x1="470.0" y1="55.0" x2="470.0" y2="435.0" stroke="#000" stroke-width="1.4"/>
+<line x1="470.0" y1="435.0" x2="710.0" y2="435.0" stroke="#000" stroke-width="1.4"/>
+<rect x="470.0" y="63.5" width="240.0" height="30.4" fill="#2c7fb8" opacity="0.88"/>
+<text x="715.0" y="85.4" font-size="10" fill="#333" text-anchor="start" font-weight="normal">0.22</text>
+<text x="464.0" y="85.4" font-size="10" fill="#222" text-anchor="end" font-weight="normal">digital capability</text>
+<rect x="470.0" y="111.0" width="218.2" height="30.4" fill="#2c7fb8" opacity="0.88"/>
+<text x="693.2" y="132.9" font-size="10" fill="#333" text-anchor="start" font-weight="normal">0.20</text>
+<text x="464.0" y="132.9" font-size="10" fill="#222" text-anchor="end" font-weight="normal">data driven culture</text>
+<rect x="470.0" y="158.6" width="174.5" height="30.4" fill="#2c7fb8" opacity="0.88"/>
+<text x="649.5" y="180.4" font-size="10" fill="#333" text-anchor="start" font-weight="normal">0.16</text>
+<text x="464.0" y="180.4" font-size="10" fill="#222" text-anchor="end" font-weight="normal">leadership support</text>
+<rect x="470.0" y="206.1" width="130.9" height="30.4" fill="#2c7fb8" opacity="0.88"/>
+<text x="605.9" y="227.9" font-size="10" fill="#333" text-anchor="start" font-weight="normal">0.12</text>
+<text x="464.0" y="227.9" font-size="10" fill="#222" text-anchor="end" font-weight="normal">innovation intensity</text>
+<rect x="470.0" y="253.6" width="109.1" height="30.4" fill="#2c7fb8" opacity="0.88"/>
+<text x="584.1" y="275.4" font-size="10" fill="#333" text-anchor="start" font-weight="normal">0.10</text>
+<text x="464.0" y="275.4" font-size="10" fill="#222" text-anchor="end" font-weight="normal">workforce skills</text>
+<rect x="470.0" y="301.1" width="87.3" height="30.4" fill="#2c7fb8" opacity="0.88"/>
+<text x="562.3" y="322.9" font-size="10" fill="#333" text-anchor="start" font-weight="normal">0.08</text>
+<text x="464.0" y="322.9" font-size="10" fill="#222" text-anchor="end" font-weight="normal">it investment</text>
+<rect x="470.0" y="348.6" width="87.3" height="30.4" fill="#2c7fb8" opacity="0.88"/>
+<text x="562.3" y="370.4" font-size="10" fill="#333" text-anchor="start" font-weight="normal">0.08</text>
+<text x="464.0" y="370.4" font-size="10" fill="#222" text-anchor="end" font-weight="normal">organizational agility</text>
+<rect x="470.0" y="396.1" width="43.6" height="30.4" fill="#2c7fb8" opacity="0.88"/>
+<text x="518.6" y="417.9" font-size="10" fill="#333" text-anchor="start" font-weight="normal">0.04</text>
+<text x="464.0" y="417.9" font-size="10" fill="#222" text-anchor="end" font-weight="normal">entrepreneurial risk</text>
+<text x="560.0" y="47.0" font-size="12" fill="#222" text-anchor="middle" font-weight="bold">(b) Knowledge prior weights</text>
+</svg>
